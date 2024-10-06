@@ -1,0 +1,19 @@
+# Ignore DS_Store files from Mac
+**.DS_Store
+
+# We prefer to not use lock files
+**/package-lock.json
+
+# Npm
+**/node_modules/
+
+# Log
+**/logs/
+*.log
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# vitepress
+docs/.vitepress/dist

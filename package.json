@@ -1,0 +1,27 @@
+{
+    "name": "vitepress-note-page",
+    "version": "1.0.0",
+    "description": "Online knowledge base",
+    "author": "take to",
+    "homepage": "https://taketo.cc",
+    "registry": "https://registry.npmmirror.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/taketo4513/vitepress-note-page.git"
+    },
+    "main": "index.js",
+    "scripts": {
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs"
+    },
+    "keywords": [
+        "vitepress",
+        "note",
+        "knowledge base"
+    ],
+    "devDependencies": {
+        "vitepress": "^1.3.4"
+    },
+    "license": "ISC"
+}
