@@ -247,7 +247,7 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'Cloud',
+                text: 'Spring Cloud',
                 collapsed: true,
 
                 items: [
@@ -273,6 +273,34 @@ export default defineConfig({
                     { text: 'Logback', link: '/java/log/logback' },
                     { text: 'Log4j2', link: '/java/log/log4j2' },
                     { text: '应用实例', link: '/java/log/demo' }
+                ]
+            },
+            {
+                text: '认证授权',
+                collapsed: true,
+
+                items: [
+                    {
+                        text: 'ApacheShiro',
+                        collapsed: true,
+        
+                        items: [
+                            { text: '简介概览', link: '/java/permission/apacheshiro/introduce' },
+                            { text: '访问控制', link: '/java/permission/apacheshiro/access' },
+                            { text: '重要的类与方法', link: '/java/permission/apacheshiro/class' },
+                            { text: '过滤器', link: '/java/permission/apacheshiro/filter' },
+                            { text: 'Shiro整合JWT', link: '/java/permission/apacheshiro/jwt' }
+                        ]
+                    },
+                    {
+                        text: 'SpringSecurity',
+                        collapsed: true,
+        
+                        items: [
+                            { text: '简介概览', link: '/java/permission/springsecurity/introduce' },
+                            { text: '整体架构', link: '/java/permission/springsecurity/architecture' }
+                        ]
+                    }
                 ]
             },
             {
