@@ -6,7 +6,7 @@
 
 ## 继承体系
 
-![img](/img/java/container/24.png)
+![An image](/img/java/container/24.png)
 
 `TreeMap`实现了`Map`、`SortedMap`、`NavigableMap`、`Cloneable`、`Serializable`等接口。
 
@@ -117,7 +117,7 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
 
 ## 存储结构
 
-![img](/img/java/container/25.png)
+![An image](/img/java/container/25.png)
 
 `TreeMap`只使用到了红黑树，所以它的时间复杂度为`O(log n)`，我们再来回顾一下红黑树的特性。
 
@@ -481,14 +481,14 @@ private void fixAfterInsertion(Entry<K,V> x) {
 
 三个元素都插入完成后，符合父节点是祖父节点的左节点，叔叔节点为黑色，且当前节点是其父节点的右节点，即情况2）。
 
-![img](/img/java/container/26.png)
+![An image](/img/java/container/26.png)
 
 情况2）需要做以下两步处理：
 
 1. 将父节点作为新的当前节点；
 2. 以新当节点为支点进行左旋，进入情况3）；
 
-![img](/img/java/container/27.png)
+![An image](/img/java/container/27.png)
 
 情况3）需要做以下三步处理：
 
@@ -496,7 +496,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 2. 将祖父节点设为红色；
 3. 以祖父节点为支点进行右旋，进入下一次循环判断；
 
-![img](/img/java/container/28.png)
+![An image](/img/java/container/28.png)
 
 下一次循环不符合父节点为红色了，退出循环，插入再平衡完成。
 
@@ -730,33 +730,33 @@ private void fixAfterDeletion(Entry<K,V> x) {
 
 假设我们有下面这样一颗红黑树。
 
-![img](/img/java/container/29.png)
+![An image](/img/java/container/29.png)
 
 我们删除6号元素，则从右子树中找到了最小元素7，7又没有子节点了，所以把7作为当前节点进行再平衡。
 
 我们看到7是黑节点，且其兄弟为黑节点，且其兄弟的两个子节点都是红色，满足情况4），平衡之后如下图所示。
 
-![img](/img/java/container/30.png)
+![An image](/img/java/container/30.png)
 
 我们再删除7号元素，则从右子树中找到了最小元素8，8有子节点且为黑色，所以8的子节点9是替代节点，以9为当前节点进行再平衡。
 
 我们发现9是红节点，则直接把它涂成黑色即满足了红黑树的特性，不需要再过多的平衡了。
 
-![img](/img/java/container/31.png)
+![An image](/img/java/container/31.png)
 
 这次我们来个狠的，把根节点删除，从右子树中找到了最小的元素5，5没有子节点，所以把5作为当前节点进行再平衡。
 
 我们看到5是黑节点，且其兄弟为红色，符合情况1），平衡之后如下图所示，然后进入情况2）。
 
-![img](/img/java/container/32.png)
+![An image](/img/java/container/32.png)
 
 对情况2）进行再平衡后如下图所示。
 
-![img](/img/java/container/33.png)
+![An image](/img/java/container/33.png)
 
 然后进入下一次循环，发现不符合循环条件了，直接把x涂为黑色即可，退出这个方法之后会把旧x删除掉（见deleteEntry()方法），最后的结果就是下面这样。
 
-![img](/img/java/container/34.png)
+![An image](/img/java/container/34.png)
 
 ### TreeMap的遍历
 

@@ -71,7 +71,7 @@ public static void main(String[] args) {
 
 图示
 
-![img](/img/java/concurrent/40.png)
+![An image](/img/java/concurrent/40.png)
 
 ## 拆分优化
 
@@ -135,7 +135,7 @@ public static void main(String[] args) {
 
 图示
 
-![img](/img/java/concurrent/41.png)
+![An image](/img/java/concurrent/41.png)
 
 ForkJoinPool 实现了**工作窃取算法**来提高 CPU 的利用率：
 

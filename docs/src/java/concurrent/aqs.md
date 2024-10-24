@@ -17,7 +17,7 @@ AQS 核心思想：
 
   CLH 是一种基于单向链表的**高性能、公平的自旋锁**，AQS 是将每条请求共享资源的线程封装成一个 CLH 锁队列的一个结点（Node）来实现锁的分配
 
-  ![img](/img/java/concurrent/42.png)
+  ![An image](/img/java/concurrent/42.png)
 
 ## 设计原理
 
@@ -113,7 +113,7 @@ AbstractQueuedSynchronizer 中 state 设计：
 
   ------
 
-  ![img](/img/java/concurrent/43.png)
+  ![An image](/img/java/concurrent/43.png)
 
 - 条件变量来实现等待、唤醒机制，支持多个条件变量，类似于 Monitor 的 WaitSet，**条件队列是单向链表**
 

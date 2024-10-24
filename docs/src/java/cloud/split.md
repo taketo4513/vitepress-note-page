@@ -49,7 +49,7 @@
 
 面向服务：将自己的业务暴露为接口，供其它微服务调用
 
-![img](/img/java/cloud/05.png)
+![An image](/img/java/cloud/05.png)
 
 cloud-demo：父工程，管理依赖
 

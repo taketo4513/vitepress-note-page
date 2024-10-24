@@ -132,7 +132,7 @@ public class ThreadLocalDateUtil {
 
 JDK8 以前：每个 ThreadLocal 都创建一个 Map，然后用线程作为 Map 的 key，要存储的局部变量作为 Map 的 value，达到各个线程的局部变量隔离的效果。这种结构会造成 Map 结构过大和内存泄露，因为 Thread 停止后无法通过 key 删除对应的数据
 
-![img](/img/java/concurrent/27.png)
+![An image](/img/java/concurrent/27.png)
 
 JDK8 以后：每个 Thread 维护一个 ThreadLocalMap，这个 Map 的 key 是 ThreadLocal 实例本身，value 是真正要存储的值
 
@@ -141,7 +141,7 @@ JDK8 以后：每个 Thread 维护一个 ThreadLocalMap，这个 Map 的 key 是
 - Thread 内部的 Map 是由 ThreadLocal 维护的，由 ThreadLocal 负责向 map 获取和设置线程的变量值
 - 对于不同的线程，每次获取副本值时，别的线程并不能获取到当前线程的副本值，形成副本的隔离，互不干扰
 
-![img](/img/java/concurrent/28.png)
+![An image](/img/java/concurrent/28.png)
 
 JDK8 前后对比：
 
@@ -460,7 +460,7 @@ ThreadLocalMap(ThreadLocal<?> firstKey, Object firstValue) {
 
 ------
 
-  ![img](/img/java/concurrent/29.png)
+  ![An image](/img/java/concurrent/29.png)
 
   ```java
   private static int prevIndex(int i, int len) {
@@ -655,11 +655,11 @@ ThreadLocalMap(ThreadLocal<?> firstKey, Object firstValue) {
 
 ------
 
-  ![img](/img/java/concurrent/30.png)
+  ![An image](/img/java/concurrent/30.png)
 
 ------
 
-  ![img](/img/java/concurrent/31.png)
+  ![An image](/img/java/concurrent/31.png)
 
 - 启发式清理：向后循环扫描过期数据，发现过期数据调用探测式清理方法，如果连续几次的循环都没有发现过期数据，就停止扫描
 
@@ -700,11 +700,11 @@ Memory leak：内存泄漏是指程序中动态分配的堆内存由于某种原
 
 - 如果 key 使用强引用：使用完 ThreadLocal ，threadLocal Ref 被回收，但是 threadLocalMap 的 Entry 强引用了 threadLocal，造成 threadLocal 无法被回收，无法完全避免内存泄漏
 
-  ![img](/img/java/concurrent/32.png)
+  ![An image](/img/java/concurrent/32.png)
 
 - 如果 key 使用弱引用：使用完 ThreadLocal ，threadLocal Ref 被回收，ThreadLocalMap 只持有 ThreadLocal 的弱引用，所以threadlocal 也可以被回收，此时 Entry 中的 key = null。但没有手动删除这个 Entry 或者 CurrentThread 依然运行，依然存在强引用链，value 不会被回收，而这块 value 永远不会被访问到，也会导致 value 内存泄漏
 
-  ![img](/img/java/concurrent/33.png)
+  ![An image](/img/java/concurrent/33.png)
 
 - 两个主要原因：
 

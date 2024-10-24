@@ -302,11 +302,11 @@ private void linkFirst(E e) {
 
 入队的逻辑流程图如下（`ABC`分别从队尾入队，`DE`从对头入队）；
 
-![img](/img/java/container/64.png)
+![An image](/img/java/container/64.png)
 
 ------
 
-![img](/img/java/container/65.png)
+![An image](/img/java/container/65.png)
 
 ### 出队
 

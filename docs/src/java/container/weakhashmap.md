@@ -6,7 +6,7 @@
 
 ## 继承体系
 
-![img](/img/java/container/35.png)
+![An image](/img/java/container/35.png)
 
 可见，`WeakHashMap`没有实现`Clone`和`Serializable`接口，所以不具有克隆和序列化的特性。
 

@@ -8,7 +8,7 @@ Spring 自诞生以来备受青睐，一直被广大开发人员作为 Java 企�
 
 自 2004 年 4 月，Spring 1.0 版本正式发布以来，Spring 已经步入到了第 6 个大版本，也就是 Spring 6。本课程采用Spring当前最新发布的正式版本**6.0.2**。
 
-![img](/img/java/spring/spring/01.png)
+![An image](/img/java/spring/spring/01.png)
 
 ## Spring 的狭义和广义
 
@@ -73,7 +73,7 @@ Spring 有两个最核心模块： IoC 和 AOP。
 
 官网地址：[spring.io](https://spring.io/)
 
-![img](/img/java/spring/spring/02.png)
+![An image](/img/java/spring/spring/02.png)
 
 上图中包含了 Spring 框架的所有模块，这些模块可以满足一切企业级应用开发的需求，在开发过程中可以根据需求有选择性地使用所需要的模块。下面分别对这些模块的作用进行简单介绍。
 

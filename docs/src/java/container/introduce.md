@@ -4,7 +4,7 @@
 
 `Java`集合框架主要包括两种类型的容器，一种是集合（`Collection`），存储一个元素集合，另一种是图（`Map`），存储键/值对映射。`Collection`接口又有`3`种子类型，`List`、`Set`和`Queue`，再下面是一些抽象类，最后是具体实现类，常用的有`ArrayList`、`LinkedList`、`HashSet`、`LinkedHashSet`、`HashMap`、`LinkedHashMap`等等。
 
-![img](/img/java/container/01.png)
+![An image](/img/java/container/01.png)
 
 集合框架是一个用来代表和操纵集合的统一架构。所有的集合框架都包含如下内容：
 
@@ -65,7 +65,7 @@ Map map = Collections.synchronizedMap(new HashMap());
 
 `Java`在`1.5`版本之前所谓的线程安全的容器，主要指的就是同步容器。不过同步容器有个最大的问题，那就是性能差，所有方法都用`synchronized`来保证互斥，串行度太高了。因此`Java`在`1.5`及之后版本提供了性能更高的容器，我们一般称为并发容器。
 
-![img](/img/java/container/02.png)
+![An image](/img/java/container/02.png)
 
 | 容器                                                         | 简述                   |
 | :----------------------------------------------------------- | :--------------------- |

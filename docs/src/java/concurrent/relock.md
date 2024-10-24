@@ -116,7 +116,7 @@ public void lock() {
 
   ------
 
- ![img](/img/java/concurrent/44.png)
+ ![An image](/img/java/concurrent/44.png)
 
 - 进入 tryAcquire 尝试获取锁逻辑，这时 state 已经是1，结果仍然失败（第二次），加锁成功有两种情况：
 
@@ -214,7 +214,7 @@ public void lock() {
 
   ------
 
-  ![img](/img/java/concurrent/45.png)
+  ![An image](/img/java/concurrent/45.png)
 
 - 线程节点加入队列成功，进入 `AbstractQueuedSynchronizer#acquireQueued` 逻辑阻塞线程
 
@@ -295,7 +295,7 @@ public void lock() {
 
 - 再有多个线程经历竞争失败后：
 
-  ![img](/img/java/concurrent/46.png)
+  ![An image](/img/java/concurrent/46.png)
 
 #### 解锁
 
@@ -391,14 +391,14 @@ Thread-0 释放锁，进入 release 流程
   - head 指向刚刚 Thread-1 所在的 Node，该 Node 会清空 Thread
   - 原本的 head 因为从链表断开，而可被垃圾回收（图中有错误，原来的头节点的 waitStatus 被改为 0 了）
 
-  ![img](/img/java/concurrent/47.png)
+  ![An image](/img/java/concurrent/47.png)
 
 - 如果这时有其它线程来竞争**（非公平）**，例如这时有 Thread-4 来了并抢占了锁
 
   - Thread-4 被设置为 exclusiveOwnerThread，state = 1
   - Thread-1 再次进入 acquireQueued 流程，获取锁失败，重新进入 park 阻塞
 
-  ![img](/img/java/concurrent/48.png)
+  ![An image](/img/java/concurrent/48.png)
 
 ### 公平原理
 
@@ -929,7 +929,7 @@ public static void main(String[] args) throws InterruptedException {
 
   ------
 
-  ![img](/img/java/concurrent/49.png)
+  ![An image](/img/java/concurrent/49.png)
 
 - **创建新的 Node 状态为 -2（Node.CONDITION）**，关联 Thread-0，加入等待队列尾部
 
@@ -1022,7 +1022,7 @@ public static void main(String[] args) throws InterruptedException {
 
 - fullyRelease 中会 unpark AQS 队列中的下一个节点竞争锁，假设 Thread-1 竞争成功
 
-  ![img](/img/java/concurrent/50.png)
+  ![An image](/img/java/concurrent/50.png)
 
 - Thread-0 进入 isOnSyncQueue 逻辑判断节点**是否移动到阻塞队列**，没有就 park 阻塞 Thread-0
 
@@ -1161,6 +1161,6 @@ public static void main(String[] args) throws InterruptedException {
 
   ------
 
-  ![img](/img/java/concurrent/51.png)
+  ![An image](/img/java/concurrent/51.png)
 
 - Thread-1 释放锁，进入 unlock 流程

@@ -104,7 +104,7 @@ localhost:8080/hello
 - parent的父项目是`spring-boot-dependencies`
 - 父项目 **版本仲裁中心**，把所有常见的jar的依赖版本都声明好了。
 
-![img](/img/java/spring/mvc/01.png)
+![An image](/img/java/spring/mvc/01.png)
 
 ### 启动器(Starter)是什么？
 
@@ -118,7 +118,7 @@ Spring Boot提供了一种叫做Starter的概念，它是一组预定义的依�
 4. 快速启动和开发应用程序：Spring Boot Starter使得从零开始构建一个完整的Spring Boot应用程序变得容易。它提供了主要领域（如Web开发、数据访问、安全性、消息传递等）的Starter，帮助开发者快速搭建一个具备特定功能的应用程序原型。
 5. 模块化和可扩展性：Spring Boot Starter的组织结构使得应用程序的不同模块可以进行分离和解耦。每个模块可以有自己的Starter和依赖项，使得应用程序的不同部分可以按需进行开发和扩展。
 
-![img](/img/java/spring/boot/02.png)
+![An image](/img/java/spring/boot/02.png)
 
 ::: tip
 Spring Boot提供了许多预定义的Starter，例如spring-boot-starter-web用于构建Web应用程序，spring-boot-starter-data-jpa用于使用JPA进行数据库访问，spring-boot-starter-security用于安全认证和授权等等。

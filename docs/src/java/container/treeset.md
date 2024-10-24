@@ -325,7 +325,7 @@ public NavigableMap<K,V> tailMap(K fromKey, boolean inclusive) {
 
 可以看到，返回的是`AscendingSubMap`对象，这个类的继承链是怎么样的呢？
 
-![img](/img/java/container/08.png)
+![An image](/img/java/container/08.png)
 
 可以看到，这个类并没有继承`TreeMap`，不过通过源码分析也可以看出来这个类是组合了`TreeMap`，也算和`TreeMap`有点关系，只是不是继承关系。
 

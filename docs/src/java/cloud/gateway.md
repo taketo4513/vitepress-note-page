@@ -16,7 +16,7 @@
 - 网关可以做安全控制，也就是登录身份校验，校验通过才放行
 - 通过认证后，网关再根据请求判断应该访问哪个微服务，将请求转发过去
 
-![img](/img/java/cloud/12.png)
+![An image](/img/java/cloud/12.png)
 
 在SpringCloud当中，提供了两种网关实现方案：
 
@@ -124,7 +124,7 @@ http://localhost:8000/user/list
 
 ### 运行流程图
 
-![img](/img/java/cloud/13.png)
+![An image](/img/java/cloud/13.png)
 
 ## 断言工厂
 
@@ -169,7 +169,7 @@ predicates:
 
 `GatewayFilter` 是网关中提供的一种过滤器，可以对进入网关的请求和微服务返回的响应做处理。
 
-![img](/img/java/cloud/14.png)
+![An image](/img/java/cloud/14.png)
 
 Spring提供了38种不同的路由过滤器工厂。
 
@@ -237,7 +237,7 @@ logger.info("RequestHeader: X-Request = {}", request);
 
 ### 基本原理
 
-![img](/img/java/cloud/15.png)
+![An image](/img/java/cloud/15.png)
 
 如图所示：
 
@@ -439,7 +439,7 @@ public class DynamicParamGatewayFilterFactory extends AbstractGatewayFilterFacto
 
 请求路由后，会将三者合并到一个过滤器链（集合）中，排序后依次执行每个过滤器。
 
-![img](/img/java/cloud/16.png)
+![An image](/img/java/cloud/16.png)
 
 **排序的规则：**
 

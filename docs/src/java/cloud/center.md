@@ -9,7 +9,7 @@
 
 在大型微服务项目中，服务提供者的数量会非常多，为了管理这些服务就引入了**注册中心**的概念。注册中心、服务提供者、服务消费者三者间关系如下：
 
-![img](/img/java/cloud/07.jpg)
+![An image](/img/java/cloud/07.jpg)
 
 流程如下：
 
@@ -37,7 +37,7 @@
 
 最广为人知的注册中心就是 Eureka，其结构如下：
 
-![img](/img/java/cloud/08.png)
+![An image](/img/java/cloud/08.png)
 
 `order-service` 如何得知 `user-service` 实例地址？
 

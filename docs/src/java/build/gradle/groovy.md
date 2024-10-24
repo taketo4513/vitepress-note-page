@@ -343,7 +343,7 @@ Groovy 中的异常处理和 java 中的异常处理是一样的。
 
 **总结：**
 
-![img](/img/java/build/gradle/05.png)
+![An image](/img/java/build/gradle/05.png)
 
 **类型转换：**
 

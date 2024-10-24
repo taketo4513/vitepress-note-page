@@ -103,7 +103,7 @@ implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 **如下图所示：**
 
-![img](/img/java/build/gradle/14.png)
+![An image](/img/java/build/gradle/14.png)
 
 **api：**
 
@@ -142,7 +142,7 @@ api 的适用场景是多 module 依赖
 
 依赖冲突是指：在编译过程中，如果存在某个依赖的多个版本，构建系统应该选择哪个进行构建的问题。
 
-![img](/img/java/build/gradle/15.png)
+![An image](/img/java/build/gradle/15.png)
 
 A、B、C 都是本地子项目 module，log4j 是远程依赖。
 
@@ -179,7 +179,7 @@ dependencies {
 }
 ```
 
-![img](/img/java/build/gradle/13.png)
+![An image](/img/java/build/gradle/13.png)
 
 默认情况，Gradle 会使用最新版本的 jar 包【考虑到新版本的 jar 包一般都是向下兼容的】，实际开发中，还是建议使用官方自带的这种解决方案。
 

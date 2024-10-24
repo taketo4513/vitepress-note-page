@@ -20,7 +20,7 @@ Spring给我们提供了一个RestTemplate的API，可以方便的实现Http请�
 
 其中提供了大量的方法，方便我们发送Http请求，例如：
 
-![img](/img/java/cloud/06.png)
+![An image](/img/java/cloud/06.png)
 
 可以看到常见的Get、Post、Put、Delete请求都支持，如果请求参数比较复杂，还可以使用exchange方法来构造请求。
 

@@ -100,7 +100,7 @@ BeanFactory 的子接口，提供了更多高级特性。面向 Spring 的使用
 
 ApplicationContext的主要实现类，具体如下表。
 
-![img](/img/java/spring/spring/03.png)
+![An image](/img/java/spring/spring/03.png)
 
 | 类型名                          | 简介                                                         |
 | ------------------------------- | ------------------------------------------------------------ |

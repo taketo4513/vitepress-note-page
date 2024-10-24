@@ -104,7 +104,7 @@ spring.application.name=user
 
 相当于⼀个三层结构。
 
-![img](/img/java/cloud/09.png)
+![An image](/img/java/cloud/09.png)
 
 ### 拉取多个配置
 
@@ -265,7 +265,7 @@ spring.cloud.nacos.discovery.ephemeral=false
 
 ⼀个服务的多个实例，可能对应的机器配置不同，所以我们可以给不同的实例设置不同的权重，比如：给9182这个实例设置了权重为2，这样它的权重就是9181的两倍，那么就应该要承受2倍的流量。
 
-![img](/img/java/cloud/10.png)
+![An image](/img/java/cloud/10.png)
 
 不过我们在消费⼀个服务时，通常是通过ribbon来进行负载均衡的，所以默认情况下nacos配置的权重是
 
@@ -290,7 +290,7 @@ spring.cloud.nacos.discovery.cluster-name=SH
 
 这种方式来指定当前实例属于哪个集群，比如：
 
-![img](/img/java/cloud/11.png)
+![An image](/img/java/cloud/11.png)
 
 此时在服务消费端，也可以配置：
 

@@ -14,7 +14,7 @@
 
 但同时，由于不是对整个`Map`加锁，导致一些需要扫描整个`Map`的方法(如`size()`,`containsValue()`)需要使用特殊的实现，另外一些方法(如`clear()`)甚至放弃了对一致性的要求，`ConcurrentHashMap`是弱一致性的。
 
-![img](/img/java/container/46.png)
+![An image](/img/java/container/46.png)
 
 `ConcurrentHashMap`中的分段锁称为`Segment`，它即类似于`HashMap`([Jdk7与Jdk8中HashMap的实现](http://my.oschina.net/hosee/blog/618953))的结构，即内部拥有一个`Entry`数组，数组中的每个元素又是一个链表；同时又是一个`ReentrantLock`(`Segment`继承了`ReentrantLock`)。
 
@@ -1212,13 +1212,13 @@ private final void transfer(Node<K,V>[] tab, Node<K,V>[] nextTab) {
 
 在代码的有一个判断`else if ((f = tabAt(tab, i)) == null)`，如果遍历到的节点是`forward`节点，就向后继续遍历，再加上给节点上锁的机制，就完成了多线程的控制。多线程遍历节点，处理了一个节点，就把对应点的值`set`为`forward`，另一个线程看到`forward`，就向后遍历。这样交叉就完成了复制工作。而且还很好的解决了线程安全的问题。
 
-![img](/img/java/container/47.png)
+![An image](/img/java/container/47.png)
 
 #### 扩容过程图解
 
 触发扩容的操作
 
-![img](/img/java/container/48.png)
+![An image](/img/java/container/48.png)
 
 1. 元素个数达到扩容阈值。
 2. 调用 putAll 方法，但目前容量不足以存放所有元素时。
@@ -1226,21 +1226,21 @@ private final void transfer(Node<K,V>[] tab, Node<K,V>[] nextTab) {
 
 **CPU核数与迁移任务hash桶数量分配的关系：**
 
-![img](/img/java/container/49.png)
+![An image](/img/java/container/49.png)
 
 **单线程下线程的任务分配与迁移操作：**
 
-![img](/img/java/container/50.png)
+![An image](/img/java/container/50.png)
 
 **多线程如何分配任务？**
 
-![img](/img/java/container/51.png)
+![An image](/img/java/container/51.png)
 
 **普通链表如何迁移？**
 
 在`ConcurrentHashMap`中，对于数组的桶上的链表结构，扩容时需要拆分成两条新的链表。
 
-![img](/img/java/container/52.png)
+![An image](/img/java/container/52.png)
 
 迁移过程中，通过`ph & n`，即`e.hash & oldCap`计算新数组的索引位置。这部分的思想与`HashMap`是一样的。
 
@@ -1248,7 +1248,7 @@ private final void transfer(Node<K,V>[] tab, Node<K,V>[] nextTab) {
 
 `ConcurrentHashMap`采用`lastRun`节点来辅助拆分两条新链表，而`HashMap`采用首尾指针来拆分两条新链表。
 
-![img](/img/java/container/53.png)
+![An image](/img/java/container/53.png)
 
 `ConcurrentHashMap`中的链表迁移之后，`LastRun`节点及之后的节点的顺序与旧链表相同，其余节点都是倒序的。这是由于`ConcurrentHashMap`迁移桶上链表的时候，加了锁，因此迁移前后顺序不一致没有问题。
 
@@ -1258,19 +1258,19 @@ private final void transfer(Node<K,V>[] tab, Node<K,V>[] nextTab) {
 
 红黑树的迁移算法与`HashMap`中的是一样的，利用了`TreeNode`的链表特性，采用了高低位的首尾指针来拆分两条新链表。
 
-![img](/img/java/container/54.png)
+![An image](/img/java/container/54.png)
 
 **hash桶迁移中以及迁移后如何处理存取请求？**
 
-![img](/img/java/container/55.png)
+![An image](/img/java/container/55.png)
 
 **多线程迁移任务完成后的操作!**
 
-![img](/img/java/container/56.png)
+![An image](/img/java/container/56.png)
 
 ------
 
-![img](/img/java/container/57.png)
+![An image](/img/java/container/57.png)
 
 #### 小结
 

@@ -43,7 +43,7 @@ gradle wrapper --gradle-version 5.2.1 --distribution-type all
 3. 构建本地缓存：`GRADLE_USER_HOME/caches/`，下载再使用相同版本的gradle就不用下载了
 4. 之后执行的 `./gradlew` 所有命令都是使用指定的 gradle 版本
 
-![img](/img/java/build/gradle/04.png)
+![An image](/img/java/build/gradle/04.png)
 
 **gradle-wrapper.properties 文件解读：**
 

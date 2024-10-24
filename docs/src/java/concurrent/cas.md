@@ -38,7 +38,7 @@ CAS 的全称是 Compare-And-Swap（比较交换），是 **CPU 并发原语**
 
 > 其中的关键是 compareAndSet，它的简称就是 CAS （也有 Compare And Swap 的说法），它必须是原子操作。
 
-![img](/img/java/concurrent/20.png)
+![An image](/img/java/concurrent/20.png)
 
 底层原理：CAS 的底层是 `lock cmpxchg` 指令（X86 架构），在单核和多核 CPU 下都能够保证比较交换的原子性
 

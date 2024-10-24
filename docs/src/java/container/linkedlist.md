@@ -940,7 +940,7 @@ public boolean removeLastOccurrence(Object o) {
 
 以下是`ArrayList`和`LinkedList`空间占用图
 
-![img](/img/java/container/07.png)
+![An image](/img/java/container/07.png)
 
 这三个图，可以看到，`LinkedList`的空间占用，要远超`ArrayList`。`LinkedList`的线更陡，随着`List`长度的扩大，所占用的空间要比同长度的`ArrayList`大得多。因为`ArrayList`的数组变量是用`transient`关键字修饰的，如果集合本身需要做序列化操作的话，`ArrayList`这部分多余的空间不会被序列化。
 

@@ -109,7 +109,7 @@ AccessDecisionVoter 是一个投票器，投票器会检查用户是否具备应
 
 需要注意的是，默认过滤器并不是直接放在 Web 项目的原生过滤器链中，而是通过一个 `FilterChainProxy`来统一管理。
 
-![img](/img/java/permission/01.png)
+![An image](/img/java/permission/01.png)
 
 Spring Security 中的过滤器链通过 `FilterChainProxy` 嵌入到 Web项目的原生过滤器链中，这样的过滤器链不仅仅只有一个，可能会有多个。当存在多个过滤器链时，多个过滤器链之间要指定优先级，当请求到达后，会从 `FilterChainProxy` 进行分发，先和哪个过滤器链匹配上，就用哪个过滤器链进行处理。当系统中存在多个不同的认证体系时，那么使用多个过滤器链就非常有效。
 

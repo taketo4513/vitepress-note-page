@@ -23,7 +23,7 @@
 
 脚本插件的本质就是一个脚本文件，使用脚本插件时通过 `apply from:` 将脚本加载进来就可以了，后面的脚本文件可以是本地的也可以是网络上的脚本文件，下面定义一段脚本，我们在 `build.gradle` 文件中使用它，具体如下：
 
-![img](/img/java/build/gradle/17.png)
+![An image](/img/java/build/gradle/17.png)
 
 创建 `version.gradle` 脚本文件
 
@@ -66,7 +66,7 @@ gradle -q taskVersion
 
 二进制插件[对象插件]就是实现了 `org.gradle.api.Plugin` 接口的插件，每个 Java Gradle 插件都有一个 `plugin id`。
 
-![img](/img/java/build/gradle/18.png)
+![An image](/img/java/build/gradle/18.png)
 
 可通过如下方式使用一个 Java 插件
 

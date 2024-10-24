@@ -2,7 +2,7 @@
 
 ## 简介
 
-![img](/img/java/container/63.png)
+![An image](/img/java/container/63.png)
 
 `ConcurrentLinkedQueue`只实现了`Queue`接口，并没有实现`BlockingQueue`接口，所以它不是阻塞队列，也不能用于线程池中，但是它是线程安全的，可用于多线程环境中。
 

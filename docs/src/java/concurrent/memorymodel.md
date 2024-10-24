@@ -11,7 +11,7 @@ JMM 作用：
 
 根据 JMM 的设计，系统存在一个主内存（Main Memory），Java 中所有变量都存储在主存中，对于所有线程都是共享的；每条线程都有自己的工作内存（Working Memory），工作内存中保存的是主存中某些**变量的拷贝**，线程对所有变量的操作都是先对变量进行拷贝，然后在工作内存中进行，不能直接操作主内存中的变量；线程之间无法相互直接访问，线程间的通信（传递）必须通过主内存来完成
 
-![img](/img/java/concurrent/10.png)
+![An image](/img/java/concurrent/10.png)
 
 主内存和工作内存：
 
@@ -29,7 +29,7 @@ Java 内存模型定义了 8 个操作来完成主内存和工作内存的交互
 
 非原子协定：没有被 volatile 修饰的 long、double 外，默认按照两次 32 位的操作
 
-![img](/img/java/concurrent/11.png)
+![An image](/img/java/concurrent/11.png)
 
 - `lock`：作用于主内存，将一个变量标识为被一个线程独占状态（对应 monitor enter）
 - `unlock`：作用于主内存，将一个变量从独占状态释放出来，释放后的变量才可以被其他线程锁定（对应 monitor exit）
@@ -70,7 +70,7 @@ public static void main(String[] args) throws InterruptedException {
 - 因为 t 线程要频繁从主内存中读取 run 的值，JIT 编译器（即时编译器）会将 run 的值缓存至自己工作内存中的高速缓存中，减少对主存中 run 的访问，提高效率
 - 1 秒之后，main 线程修改了 run 的值，并同步至主存，而 t 是从自己工作内存中的高速缓存中读取这个变量的值，结果永远是旧值
 
-![img](/img/java/concurrent/12.png)
+![An image](/img/java/concurrent/12.png)
 
 ### 原子性
 
@@ -118,7 +118,7 @@ CPU 的基本工作是执行存储的指令序列，即程序，程序的执行�
 
 CPU 处理器速度远远大于在主内存中的，为了解决速度差异，在它们之间架设了多级缓存，如 L1、L2、L3 级别的缓存，这些缓存离 CPU 越近就越快，将频繁操作的数据缓存到这里，加快访问速度
 
-![img](/img/java/concurrent/13.png)
+![An image](/img/java/concurrent/13.png)
 
 | 从 CPU 到 | 大约需要的时钟周期                |
 | --------- | --------------------------------- |
@@ -140,7 +140,7 @@ CPU 处理器速度远远大于在主内存中的，为了解决速度差异，�
 
 缓存会造成数据副本的产生，即同一份数据会缓存在不同核心的缓存行中，CPU 要保证数据的一致性，需要做到某个 CPU 核心更改了数据，其它 CPU 核心对应的**整个缓存行必须失效**，这就是伪共享
 
-![img](/img/java/concurrent/14.png)
+![An image](/img/java/concurrent/14.png)
 
 解决方法：
 
@@ -156,7 +156,7 @@ Linux 查看 CPU 缓存行：
 
 缓存一致性：当多个处理器运算任务都涉及到同一块主内存区域的时候，将可能导致各自的缓存数据不一样
 
-![img](/img/java/concurrent/15.png)
+![An image](/img/java/concurrent/15.png)
 
 MESI（Modified Exclusive Shared Or Invalid）是一种广泛使用的**支持写回策略的缓存一致性协议**，CPU 中每个缓存行（caceh line）使用 4 种状态进行标记（使用额外的两位 bit 表示）：
 

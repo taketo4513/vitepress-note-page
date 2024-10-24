@@ -97,7 +97,7 @@ public static void main(String[] args) {
 
 - 补充情况：查询线程 A 查询数据时恰好缓存数据由于时间到期失效，或是第一次查询
 
-  ![img](/img/java/concurrent/52.png)
+  ![An image](/img/java/concurrent/52.png)
 
 可以使用读写锁进行操作
 
@@ -426,11 +426,11 @@ Sync 类的属性：
 
   如果没有成功，在 doAcquireShared 内 for (;;) 循环一次，shouldParkAfterFailedAcquire 内把前驱节点的 waitStatus 改为 -1，再 for (;;) 循环一次尝试 tryAcquireShared，不成功在 parkAndCheckInterrupt() 处 park
 
-  ![img](/img/java/concurrent/53.png)
+  ![An image](/img/java/concurrent/53.png)
 
 - 这种状态下，假设又有 t3 r.lock，t4 w.lock，这期间 t1 仍然持有锁，就变成了下面的样子
 
-  ![img](/img/java/concurrent/54.png)
+  ![An image](/img/java/concurrent/54.png)
 
 ------
 
@@ -522,7 +522,7 @@ Sync 类的属性：
 
   ------
 
-  ![img](/img/java/concurrent/55.png)
+  ![An image](/img/java/concurrent/55.png)
 
 - 下一个节点不是 shared 了，因此不会继续唤醒 t4 所在节点
 
@@ -559,7 +559,7 @@ Sync 类的属性：
 
 - t4 在 acquireQueued 中 parkAndCheckInterrupt 处恢复运行，再次 for (;;) 这次自己是头节点的临节点，并且没有其他节点竞争，tryAcquire(1) 成功，修改头结点，流程结束
 
-  ![img](/img/java/concurrent/56.png)
+  ![An image](/img/java/concurrent/56.png)
 
 ## Stamped
 

@@ -140,7 +140,7 @@ public static void main(String[] args) {
 
   ------
 
-  ![img](/img/java/concurrent/58.png)
+  ![An image](/img/java/concurrent/58.png)
 
 - 这时 Thread-4 释放了 permits，状态如下
 
@@ -176,7 +176,7 @@ public static void main(String[] args) {
 
   ------
 
-  ![img](/img/java/concurrent/59.png)
+  ![An image](/img/java/concurrent/59.png)
 
 - 接下来 Thread-0 竞争成功，permits 再次设置为 0，设置自己为 head 节点，并且 unpark 接下来的共享状态的 Thread-3 节点，但由于 permits 是 0，因此 Thread-3 在尝试不成功后再次进入 park 状态
 

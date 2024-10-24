@@ -2,7 +2,7 @@
 
 Gradle 项目的生命周期分为三大阶段：`Initialization -> Configuration -> Execution`。
 
-![img](/img/java/build/gradle/06.png)
+![An image](/img/java/build/gradle/06.png)
 
 **Initialization阶段：**
 
@@ -22,11 +22,11 @@ Gradle 项目的生命周期分为三大阶段：`Initialization -> Configuratio
 
 所谓 "加载" 就是执行 `build.gradle` 中的语句， 根据脚本代码创建对应的 task， 最终根据所有 task 生成由 **Task组成的有向无环图**(Directed Acyclic Graphs)，如下：
 
-![img](/img/java/build/gradle/07.png)
+![An image](/img/java/build/gradle/07.png)
 
 从而构成如下**有向无环树**：
 
-![img](/img/java/build/gradle/08.png)
+![An image](/img/java/build/gradle/08.png)
 
 **Execution阶段：**
 
@@ -36,7 +36,7 @@ Gradle 项目的生命周期分为三大阶段：`Initialization -> Configuratio
 
 生命周期中的这些钩子函数都是由 gradle 自动回调完成的，利用这些钩子函数可以帮助我们实现一些我们想要的功能。
 
-![img](/img/java/build/gradle/09.png)
+![An image](/img/java/build/gradle/09.png)
 
 Gradle 在生命周期各个阶段都提供了用于回调的钩子函数：
 
@@ -72,7 +72,7 @@ Gradle 在生命周期各个阶段都提供了用于回调的钩子函数：
 
 **项目目录结构如下：**
 
-![img](/img/java/build/gradle/10.png)
+![An image](/img/java/build/gradle/10.png)
 
 在 `root project` 的 `settings.gradle` 文件中添加
 

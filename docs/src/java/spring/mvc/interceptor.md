@@ -8,13 +8,13 @@
 
   为了提高乘车效率，在乘客进入站台前统一检票
 
-  ![img](/img/java/spring/mvc/09.png)
+  ![An image](/img/java/spring/mvc/09.png)
 
 - 程序中
 
   在程序中，使用拦截器在请求到达具体 handler 方法前，统一执行检测
 
-  ![img](/img/java/spring/mvc/10.png)
+  ![An image](/img/java/spring/mvc/10.png)
 
 拦截器 Springmvc VS 过滤器 javaWeb：
 
@@ -37,7 +37,7 @@
 
 功能需要如果用 SpringMVC 的拦截器能够实现，就不使用过滤器。
 
-![img](/img/java/spring/mvc/11.png)
+![An image](/img/java/spring/mvc/11.png)
 
 ## 拦截器使用
 
@@ -76,7 +76,7 @@
 
    拦截器方法拦截位置：
 
-   ![img](/img/java/spring/mvc/12.png)
+   ![An image](/img/java/spring/mvc/12.png)
 
 2. 修改配置类添加拦截器
 

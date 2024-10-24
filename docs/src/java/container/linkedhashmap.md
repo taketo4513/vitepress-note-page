@@ -8,13 +8,13 @@
 
 ## 继承体系
 
-![img](/img/java/container/36.png)
+![An image](/img/java/container/36.png)
 
 `LinkedHashMap`继承`HashMap`，拥有`HashMap`的所有特性，并且额外增加了按一定顺序访问的特性。
 
 ## 存储结构
 
-![img](/img/java/container/37.png)
+![An image](/img/java/container/37.png)
 
 我们知道`HashMap`使用（数组 + 单链表/红黑树）的存储结构，那`LinkedHashMap`是怎么存储的呢？
 

@@ -4,7 +4,7 @@
 
 从`操作系统`层面来看，分为五种状态
 
-![img](/img/java/concurrent/01.png)
+![An image](/img/java/concurrent/01.png)
 
 - 【初始状态】仅是在语言层面创建了线程对象，还未与操作系统线程关联
 - 【可运行状态】（就绪状态）指该线程已经被创建（与操作系统线程关联），可以由 CPU 调度执行
@@ -20,7 +20,7 @@
 
 从 `Java API` 层面，根据 `Thread.State` 枚举，分为六种状态
 
-![img](/img/java/concurrent/02.png)
+![An image](/img/java/concurrent/02.png)
 
 - NEW：【初始状态】，线程被构建，但是还没有调用start()方法。
 - RUNNABLE：【可运行状态】，可运行状态可以包括：运行中状态和就绪状态。

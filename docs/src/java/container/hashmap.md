@@ -30,7 +30,7 @@ map.put(16^n + 1, 16^n + 1);
 
 先来看看`hashmap`的结构。
 
-![img](/img/java/container/09.png)
+![An image](/img/java/container/09.png)
 
 ### 属性
 
@@ -282,7 +282,7 @@ public static int index(Object key, Integer length) {
 
 假设当前`hashmap`桶个数即数组长度为`16`，现在插入一个元素`key`。
 
-![img](/img/java/container/10.png)
+![An image](/img/java/container/10.png)
 
 计算过程如上图所示。得到了桶的索引位置。在上面计算过程中，只有一步是比较难以理解的。也就是为什么不直接拿**key.hashcode() & (n - 1)** ，为什么要用**key.hashcode() ^ (key.hashcode() >>> 16)**为什么要多一步呢？后面问题总结会详细介绍。
 
@@ -576,17 +576,17 @@ Node<K, V> hiHead = null, hiTail = null; // 下标扩容两倍后的桶
 
 以下过程很烧脑，但是看懂了保证会收获很多。更会体会到**源码之美**。大致画一下图，如下所示。
 
-![img](/img/java/container/11.png)
+![An image](/img/java/container/11.png)
 
 `HashMap`的容量总是2的`n`次方(`n <= 32`)。
 
 假设扩容前桶个数为`16`。
 
-![img](/img/java/container/12.png)
+![An image](/img/java/container/12.png)
 
 看扩容前后的结果。观察扩容前后可以发现，唯一影响索引位的是`hash`的低第`5`位。所以分为两种情况`hash`低第`5`位为`0`或者`1`。
 
-![img](/img/java/container/13.png)
+![An image](/img/java/container/13.png)
 
 ```text
 当低第5位为0: newIndex = oldIndex
@@ -603,11 +603,11 @@ if ((e.hash & oldCap) == 0)
 
 我们先看一下**(e.hash & oldCap)**
 
-![img](/img/java/container/14.png)
+![An image](/img/java/container/14.png)
 
 看结果，如果判断**if((e.hash & oldCap) == 0)**成立，也就是说`hash`的低第5位为0。在上个问题我们推导桶中元素的两个去向的时候，发现低第`5`位的两种情况决定了该元素的去向。再观察上面问题推导中的`hash`的第一种情况当*为`0`；
 
-![img](/img/java/container/15.png)
+![An image](/img/java/container/15.png)
 
 当`hash`低`5`位为`0`时，其新索引为依然为`oldIndex`。当然了这一切巧妙的设计都是建立在`hashmap`桶的数量总是`2`的`n`次方。
 
@@ -665,7 +665,7 @@ void transfer(Entry[] newTable, boolean rehash) {
 
 `Jdk7`的`hashmap`采用的是头插法，也就是每`put`一个元素，总是插入到链表的头部。相对于`JDK8`尾插法，插入操作时间复杂度更低。看上面`transfer`方法。假设扩容前数组长度为`2`，扩容后即长度为`4`。过程如下。
 
-![img](/img/java/container/16.png)
+![An image](/img/java/container/16.png)
 
 第一步：处理节点`5`，`resize`后还在原来位置。
 第二步：处理节点`9`，`resize`后还在原来位置。头插，`node(9).next = node(5);`
@@ -675,7 +675,7 @@ void transfer(Entry[] newTable, boolean rehash) {
 
 假设此时有两个线程同时`put`并同时触发`resize`操作。
 
-![img](/img/java/container/17.png)
+![An image](/img/java/container/17.png)
 
 线程1执行到，只改变了旧的链表的链表头，使其指向下一个元素9，此时线程1因为分配的时间片已经用完了。
 
@@ -685,15 +685,15 @@ void transfer(Entry[] newTable, boolean rehash) {
 
 当线程2执行结束。线程1继续执行，`newTable[1]`位置是指向节点5的。如下图。
 
-![img](/img/java/container/18.png)
+![An image](/img/java/container/18.png)
 
 如上图线程1的第一次`while`循环结束后，注意**e = next**这行代码。经过第一次循环后，e指向9。如下图所示。
 
-![img](/img/java/container/19.png)
+![An image](/img/java/container/19.png)
 
 按理来说此时如果线程1也结束了也没啥事了，但是经过线程2的`resize`，9节点时指向5节点的，如上图。所以线程1按照代码逻辑来说，依然没有处理完。然后再将5节点插入到`newTable`中，5节点继续指向9节点，这层循环因为节点5.next==null，所以循环结束(自己看代码逻辑哦，e是在while之外的，所以这里不会死循环)。如下图所示，循环链表形成。
 
-![img](/img/java/container/20.png)
+![An image](/img/java/container/20.png)
 
 然后在你下一次进行`get`的时候，会进入死循环。
 最后想一下`JDK7`会出现死循环的根源在哪里？很重要哦这个问题，根源就在于`JDK7`用的是头插法，而`resize`又是从头开始`rehash`，也就是在老的`table`中本来是头的，到新`table`中便成为了尾，改变了节点的指向。`
@@ -732,11 +732,11 @@ if (hiTail != null) {
 
 假设两个线程，根据代码逻辑，线程1执行了4次循环让出时间片，如下图所示。
 
-![img](/img/java/container/21.png)
+![An image](/img/java/container/21.png)
 
 此时链表table索引1位置的桶如下所示
 
-![img](/img/java/container/22.png)
+![An image](/img/java/container/22.png)
 
 如果此时线程2也进行`resize`。此时线程2看到的`oldTab`是如上图所示的。很明显，接下来线程1执行完成，并顺利将两个链表放到了`newTab`中。
 
@@ -1048,7 +1048,7 @@ hash&(n - 1)
 
 其中`n`就是`hashmap`的容量也就是数组的长度。
 
-![img](/img/java/container/23.png)
+![An image](/img/java/container/23.png)
 
 假设`n`是奇数。则`n`-1就是偶数。偶数二进制中最后一位一定是0。所以如上图所示，**hash&(n - 1)** 最终结果二进制中最后一位一定是0，也就意味着结果一定是偶数。这会导致数组中只有偶数位被用了，而奇数位就白白浪费了。无形中浪费了内存，同样也增加了`hash`碰撞的概率。
 其中n是2的n次方保证了(两个n不一样哦，别较真)`hash`更加散列，节省了内存。

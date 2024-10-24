@@ -157,7 +157,7 @@ private void initialize() {
 
 可以看到，这里构造了跳跃表的头节点head，构造完成之后，大概如下：
 
-![img](/img/java/container/58.png)
+![An image](/img/java/container/58.png)
 
 ### 方法
 

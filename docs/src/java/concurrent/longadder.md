@@ -64,11 +64,11 @@ static final class Cell {
 
 Cell 是数组形式，**在内存中是连续存储的**，64 位系统中，一个 Cell 为 24 字节（16 字节的对象头和 8 字节的 value），每一个 cache line 为 64 字节，因此缓存行可以存下 2 个的 Cell 对象，当 Core-0 要修改 Cell[0]、Core-1 要修改 Cell[1]，无论谁修改成功都会导致当前缓存行失效，从而导致对方的数据失效，需要重新去主存获取，影响效率
 
-![img](/img/java/concurrent/21.png)
+![An image](/img/java/concurrent/21.png)
 
 `@sun.misc.Contended`：防止缓存行伪共享，在使用此注解的对象或字段的前后各增加 128 字节大小的 padding，使用 2 倍于大多数硬件缓存行让 CPU 将对象预读至缓存时**占用不同的缓存行**，这样就不会造成对方缓存行的失效
 
-![img](/img/java/concurrent/22.png)
+![An image](/img/java/concurrent/22.png)
 
 ## 源码解析
 
@@ -96,17 +96,17 @@ transient volatile int cellsBusy;
 
 add 流程图
 
-![img](/img/java/concurrent/23.png)
+![An image](/img/java/concurrent/23.png)
 
 longAccumulate 流程图
 
-![img](/img/java/concurrent/24.png)
+![An image](/img/java/concurrent/24.png)
 
-![img](/img/java/concurrent/25.png)
+![An image](/img/java/concurrent/25.png)
 
 每个线程刚进入 longAccumulate 时，会尝试对应一个 cell 对象（找到一个坑位）
 
-![img](/img/java/concurrent/26.png)
+![An image](/img/java/concurrent/26.png)
 
 源码分析：
 

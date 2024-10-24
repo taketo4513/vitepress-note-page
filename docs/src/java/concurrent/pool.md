@@ -78,7 +78,7 @@ public ThreadPoolExecutor(int corePoolSize,
 
 工作原理：
 
-![img](/img/java/concurrent/37.png)
+![An image](/img/java/concurrent/37.png)
 
 1. 创建线程池，这时没有创建线程（**懒惰**），等待提交过来的任务请求，调用 execute 方法才会创建线程
 2. 当调用 execute() 方法添加一个请求任务时，线程池会做如下判断：
@@ -147,7 +147,7 @@ public static ExecutorService newSingleThreadExecutor() {
 
 - Executors.newFixedThreadPool(1) 初始时为 1，可以修改。对外暴露的是 ThreadPoolExecutor 对象，可以强转后调用 setCorePoolSize 等方法进行修改
 
-![img](/img/java/concurrent/38.png)
+![An image](/img/java/concurrent/38.png)
 
 ### 开发要求
 

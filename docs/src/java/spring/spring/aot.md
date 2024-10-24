@@ -20,7 +20,7 @@ AOT 编译能直接将源代码转化为机器码，内存占用低，启动速�
 .java -> .class -> (使用jaotc编译工具) -> .so（程序函数库,即编译好的可以供其他程序使用的代码和数据）
 ```
 
-![img](/img/java/spring/spring/15.png)
+![An image](/img/java/spring/spring/15.png)
 
 **AOT的优点：**
 
@@ -157,8 +157,8 @@ drwx------ 14 zhangp zhangp 4.0K Jan  2 17:41 ..
 
 启动时间
 
-![img](/img/java/spring/spring/16.png)
+![An image](/img/java/spring/spring/16.png)
 
 内存占用
 
-![img](/img/java/spring/spring/17.png)
+![An image](/img/java/spring/spring/17.png)

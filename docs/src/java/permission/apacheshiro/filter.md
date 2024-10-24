@@ -4,7 +4,7 @@
 
 Shiro 使用了与 Servlet 一样的 Filter 接口进行扩展；
 
-![img](/img/java/permission/04.png)
+![An image](/img/java/permission/04.png)
 
 **NameableFilter:**
 

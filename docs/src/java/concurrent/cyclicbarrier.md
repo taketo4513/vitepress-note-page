@@ -101,7 +101,7 @@ public static void main(String[] args) {
 
   ------
 
- ![img](/img/java/concurrent/57.png)
+ ![An image](/img/java/concurrent/57.png)
 
 ### 成员方法
 

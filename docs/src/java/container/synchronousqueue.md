@@ -353,7 +353,7 @@ public class TestSynchronousQueue {
 
 修改断点只阻塞线程的方法，右击断点，选择`Thread`：
 
-![img](/img/java/container/59.png)
+![An image](/img/java/container/59.png)
 
 ## 总结
 

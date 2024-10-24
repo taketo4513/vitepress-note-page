@@ -83,7 +83,7 @@ ms     %     Task name
 
 ### 继承体系
 
-![img](/img/java/container/45.png)
+![An image](/img/java/container/45.png)
 
 `CopyOnWriteArrayList`实现了`List`, `RandomAccess`, `Cloneable`, `java.io.Serializable`等接口。提供了基础的添加、删除、遍历等操作，随机访问的能力，克隆，序列化。
 

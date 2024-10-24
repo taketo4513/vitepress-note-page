@@ -4,7 +4,7 @@
 
 ### 简介
 
-![img](/img/java/spring/mvc/07.png)
+![An image](/img/java/spring/mvc/07.png)
 
 RESTful（Representational State Transfer）是一种软件架构风格，用于设计网络应用程序和服务之间的通信。它是一种基于标准 HTTP 方法的简单和轻量级的通信协议，广泛应用于现代的Web服务开发。
 
@@ -12,7 +12,7 @@ RESTful（Representational State Transfer）是一种软件架构风格，用于
 
 总而言之，RESTful 是一种基于 HTTP 和标准化的设计原则的软件架构风格，用于设计和实现可靠、可扩展和易于集成的 Web 服务和应用程序！
 
-![img](/img/java/spring/mvc/08.png)
+![An image](/img/java/spring/mvc/08.png)
 
 学习RESTful设计原则可以帮助我们更好去设计HTTP协议的API接口！！
 

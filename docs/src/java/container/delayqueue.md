@@ -64,7 +64,7 @@ class Message implements Delayed {
 
 ### 继承体系
 
-![img](/img/java/container/62.png)
+![An image](/img/java/container/62.png)
 
 从继承体系可以看到，`DelayQueue`实现了`BlockingQueue`，所以它是一个阻塞队列。
 

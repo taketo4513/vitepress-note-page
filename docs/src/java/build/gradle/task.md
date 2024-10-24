@@ -303,11 +303,11 @@ gradle cT
 
 **gradle 默认各指令之间相互的依赖关系：**
 
-![img](/img/java/build/gradle/11.png)
+![An image](/img/java/build/gradle/11.png)
 
 **相关解释：**
 
-![img](/img/java/build/gradle/12.png)
+![An image](/img/java/build/gradle/12.png)
 
 ## 任务定义方式
 

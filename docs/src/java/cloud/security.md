@@ -8,21 +8,21 @@
 
 微服务中，服务间调用关系错综复杂，一个微服务往往依赖于多个其它微服务。
 
-![img](/img/java/cloud/17.png)
+![An image](/img/java/cloud/17.png)
 
 如图，如果 `服务提供者I` 发生了故障，当前的应用的部分业务因为依赖于 `服务I`，因此也会被阻塞。此时，其它不依赖于 `服务I` 的业务似乎不受影响。
 
- ![img](/img/java/cloud/18.png)
+ ![An image](/img/java/cloud/18.png)
 
 但是，依赖 `服务I` 的业务请求被阻塞，用户不会得到响应，则 `tomcat` 的这个线程不会释放，于是越来越多的用户请求到来，越来越多的线程会阻塞：
 
- ![img](/img/java/cloud/19.png)
+ ![An image](/img/java/cloud/19.png)
 
 服务器支持的线程和并发数有限，请求一直阻塞，会导致服务器资源耗尽，从而导致所有其它服务都不可用，那么当前服务也就不可用了。
 
 那么，依赖于当前服务的其它服务随着时间的推移，最终也都会变的不可用，形成级联失败，雪崩就发生了：
 
-![img](/img/java/cloud/20.png)
+![An image](/img/java/cloud/20.png)
 
 ## 解决方案
 
@@ -30,19 +30,19 @@
 
 超时处理：设定超时时间，请求超过一定时间没有响应就返回错误信息，不会无休止等待。
 
-![img](/img/java/cloud/21.png)
+![An image](/img/java/cloud/21.png)
 
 ### 仓壁模式
 
 仓壁模式来源于船舱的设计：
 
-![img](/img/java/cloud/22.png)
+![An image](/img/java/cloud/22.png)
 
 船舱都会被隔板分离为多个独立空间，当船体破损时，只会导致部分空间进入，将故障控制在一定范围内，避免整个船体都被淹没。
 
 于此类似，我们可以限定每个业务能使用的线程数，避免耗尽整个tomcat的资源，因此也叫线程隔离。
 
-![img](/img/java/cloud/23.png)
+![An image](/img/java/cloud/23.png)
 
 ### 断路器
 
@@ -50,17 +50,17 @@
 
 断路器会统计访问某个服务的请求数量，异常比例：
 
-![img](/img/java/cloud/24.png)
+![An image](/img/java/cloud/24.png)
 
 当发现访问服务D的请求异常比例过高时，认为服务D有导致雪崩的风险，会拦截访问服务D的一切请求，形成熔断：
 
-![img](/img/java/cloud/25.png)
+![An image](/img/java/cloud/25.png)
 
 ### 限流
 
 **流量控制**：限制业务访问的QPS，避免服务因流量的突增而故障。
 
-![img](/img/java/cloud/26.png)
+![An image](/img/java/cloud/26.png)
 
 ### 总结
 

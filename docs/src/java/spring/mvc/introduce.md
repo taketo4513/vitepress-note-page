@@ -58,7 +58,7 @@ public String login(@RequestParam("userName") String userName,Sting password){
 
 ## 主要作用
 
-![img](/img/java/spring/mvc/01.png)
+![An image](/img/java/spring/mvc/01.png)
 
 SSM框架构建起单体项目的技术栈需求！其中的SpringMVC负责表述层（控制层）实现简化！
 
@@ -90,7 +90,7 @@ Spring MVC与许多其他Web框架一样，是围绕前端控制器模式设计�
 
 **SpringMVC处理请求流程：**
 
-![img](/img/java/spring/mvc/02.png)
+![An image](/img/java/spring/mvc/02.png)
 
 **SpringMVC涉及组件理解：**
 

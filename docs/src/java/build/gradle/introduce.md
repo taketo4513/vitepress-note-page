@@ -8,7 +8,7 @@ Gradle 是一款 Google 推出的基于 JVM、通用灵活的项目构建工具�
 
 官网地址： [gradle.org](https://gradle.org/)
 
-![img](/img/java/build/gradle/01.png)
+![An image](/img/java/build/gradle/01.png)
 
 虽然目前市面上常见的项目构建工具有 Ant、Maven、Gradle，主流还是 Maven，但是未来趋势 Gradle。
 
@@ -35,6 +35,6 @@ Gradle 是一款 Google 推出的基于 JVM、通用灵活的项目构建工具�
 - 优点：集 Ant 脚本的灵活性+Maven 约定大于配置的项目目录优势，支持多种远程仓库和插件，侧重于大项目构建。
 - 缺点：学习成本高、资料少、脚本灵活、版本兼容性差等。
 
-![img](/img/java/build/gradle/02.png)
+![An image](/img/java/build/gradle/02.png)
 
 >无论哪种项目构建工具，都有自身的优势和劣势，所以选择一款最适合自己的就是最好的。

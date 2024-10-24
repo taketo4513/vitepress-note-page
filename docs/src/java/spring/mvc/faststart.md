@@ -179,13 +179,13 @@ public class Main implements WebApplicationInitializer {
 
 转为web项目
 
-![img](/img/java/spring/mvc/03.png)
+![An image](/img/java/spring/mvc/03.png)
 
 tomcat配置
 
-![img](/img/java/spring/mvc/04.png)
+![An image](/img/java/spring/mvc/04.png)
 
-![img](/img/java/spring/mvc/05.png)
+![An image](/img/java/spring/mvc/05.png)
 
 ### 启动测试
 

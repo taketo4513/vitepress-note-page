@@ -109,7 +109,7 @@ lock 前缀指令就相当于内存屏障，Memory Barrier（Memory Fence）
   }
   ```
 
-![img](/img/java/concurrent/16.png)
+![An image](/img/java/concurrent/16.png)
 
 - 全能屏障：mfence（modify/mix Barrier），兼具 sfence 和 lfence 的功能
 
@@ -137,7 +137,7 @@ i++ 反编译后的指令：
 2: iinc     1, 1    
 ```
 
-![img](/img/java/concurrent/17.png)
+![An image](/img/java/concurrent/17.png)
 
 ### 交互规则
 
@@ -223,7 +223,7 @@ getInstance 方法对应的字节码为：
 - 关键在于 0:getstatic 这行代码在 monitor 控制之外，可以越过 monitor 读取 INSTANCE 变量的值
 - 当其他线程访问 INSTANCE 不为 null 时，由于 INSTANCE 实例未必已初始化，那么 t2 拿到的是将是一个未初始化完毕的单例返回，这就造成了线程安全的问题
 
-![img](/img/java/concurrent/18.png)
+![An image](/img/java/concurrent/18.png)
 
 解决方法：
 

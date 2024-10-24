@@ -106,15 +106,15 @@ public boolean offer(E e) {
 
 图解入队：
 
-![img](/img/java/concurrent/60.png)
+![An image](/img/java/concurrent/60.png)
 
 ------
 
-![img](/img/java/concurrent/61.png)
+![An image](/img/java/concurrent/61.png)
 
 ------
 
-![img](/img/java/concurrent/62.png)
+![An image](/img/java/concurrent/62.png)
 
 当 tail 节点和尾节点的距离**大于等于 1** 时（每入队两次）更新 tail，可以减少 CAS 更新 tail 节点的次数，提高入队效率
 
@@ -171,15 +171,15 @@ final void updateHead(Node<E> h, Node<E> p) {
 
 在更新完 head 之后，会将旧的头结点 h 的 next 域指向为 h，图中所示的虚线也就表示这个节点的自引用，被移动的节点（item 为 null 的节点）会被 GC 回收
 
-![img](/img/java/concurrent/63.png)
+![An image](/img/java/concurrent/63.png)
 
 ------
 
-![img](/img/java/concurrent/64.png)
+![An image](/img/java/concurrent/64.png)
 
 ------
 
-![img](/img/java/concurrent/65.png)
+![An image](/img/java/concurrent/65.png)
 
 如果这时，有一个线程来添加元素，通过 tail 获取的 next 节点则仍然是它本身，这就出现了p == q 的情况，出现该种情况之后，则会触发执行 head 的更新，将 p 节点重新指向为 head
 

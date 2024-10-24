@@ -15,7 +15,7 @@ private static final int COUNT_BITS = Integer.SIZE - 3;
 private static final int CAPACITY   = (1 << COUNT_BITS) - 1;
 ```
 
-![img](/img/java/concurrent/39.png)
+![An image](/img/java/concurrent/39.png)
 
 ### 四种状态
 

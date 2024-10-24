@@ -20,7 +20,7 @@ Gradle 项目默认目录结构和 Maven 项目的目录结构一致，都是基
 
 其完整项目目录结构如下所示：
 
-![img](/img/java/build/gradle/03.png)
+![An image](/img/java/build/gradle/03.png)
 
 >只有war工程才有webapp目录，对于普通的jar工程并没有webapp目录。
 >

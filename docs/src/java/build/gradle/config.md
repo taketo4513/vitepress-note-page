@@ -66,7 +66,7 @@ include 'subject01:subproject012'
 
 build 文件中常见的属性和方法如下所示：
 
-![img](/img/java/build/gradle/13.png)
+![An image](/img/java/build/gradle/13.png)
 
 ### 常见属性代码
 

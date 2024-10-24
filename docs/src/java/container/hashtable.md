@@ -80,7 +80,7 @@ table is empty
 
 **Hashtable和Map之间关系图：**
 
-![img](/img/java/container/41.png)
+![An image](/img/java/container/41.png)
 
 Hashtable的定义如下：
 
@@ -227,15 +227,15 @@ private void addEntry(int hash, K key, V value, int index) {
 
 put方法的整个处理流程是：计算key的hash值，根据hash值获得key在table数组中的索引位置，然后迭代该key处的Entry链表，若该链表中存在一个这个的key对象，那么就直接替换其value值即可，否则在将改key-value节点插入该index索引位置处。如下：假设我们现在Hashtable的容量为5，已经存在了(5,5)，(13,13)，(16,16)，(17,17)，(21,21)这 5 个键值对，目前他们在Hashtable中的位置如下：
 
-![img](/img/java/container/42.png)
+![An image](/img/java/container/42.png)
 
 现在，我们插入一个新的键值对，put(16,22)，假设key=16的索引为1，但现在索引1的位置有两个Entry了，所以程序会对链表进行迭代。迭代的过程中，发现其中有一个Entry的key和我们要插入的键值对的key相同，所以现在会做的工作就是将newValue=22替换oldValue=16，然后返回oldValue=16.
 
-![img](/img/java/container/43.png)
+![An image](/img/java/container/43.png)
 
 然后我们现在再插入一个，put(33,33)，key=33的索引为3，并且在链表中也不存在key=33的Entry，所以将该节点插入链表的第一个位置。
 
-![img](/img/java/container/44.png)
+![An image](/img/java/container/44.png)
 
 #### 扩容
 

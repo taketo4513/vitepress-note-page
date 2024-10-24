@@ -6,7 +6,7 @@
 
 ## 继承体系
 
-![img](/img/java/container/60.png)
+![An image](/img/java/container/60.png)
 
 `LinkedTransferQueue`实现了`TransferQueue`接口，而`TransferQueue`接口是继承自`BlockingQueue`的，所以`LinkedTransferQueue`也是一个阻塞队列。
 
@@ -36,7 +36,7 @@ int getWaitingConsumerCount();
 
 用图形来表示就是下面这样：
 
-![img](/img/java/container/61.png)
+![An image](/img/java/container/61.png)
 
 不管是放元素还是取元素，都先跟头节点对比，如果二者模式不一样就匹配它们，如果二者模式一样，就入队。
 

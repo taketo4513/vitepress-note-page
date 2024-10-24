@@ -210,7 +210,7 @@ yield
 
 原理
 
-![img](/img/java/concurrent/03.png)
+![An image](/img/java/concurrent/03.png)
 
 - Owner中线程发现条件不满足，可以调用wait方法，即可进入WaitSet变为WAITING状态
 - BLOCKED和WAITING的线程都处于阻塞状态，不占用CPU时间片

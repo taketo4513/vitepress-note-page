@@ -219,7 +219,7 @@ InputStreamResource 是给定的输入流(InputStream)的Resource实现。它的
 
 上述Resource实现类与Resource顶级接口之间的关系可以用下面的UML关系模型来表示
 
-![img](/img/java/spring/spring/14.png)
+![An image](/img/java/spring/spring/14.png)
 
 ## ResourceLoader 接口
 

@@ -200,7 +200,7 @@ public void testLife(){
 
 ### 生命周期流程
 
-![img](/img/java/spring/spring/04.png)
+![An image](/img/java/spring/spring/04.png)
 
 Bean 生命周期的整个执行过程描述如下。
 

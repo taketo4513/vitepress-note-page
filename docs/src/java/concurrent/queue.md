@@ -93,7 +93,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E>
 
   ------
 
-  ![img](/img/java/concurrent/34.png)
+  ![An image](/img/java/concurrent/34.png)
 
 - 再来一个节点入队 `last = last.next = node`
 
@@ -121,11 +121,11 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E>
 
 - `h = head` → `first = h.next`
 
-  ![img](/img/java/concurrent/35.png)
+  ![An image](/img/java/concurrent/35.png)
 
 - `h.next = h` → `head = first`
 
-  ![img](/img/java/concurrent/36.png)
+  ![An image](/img/java/concurrent/36.png)
 
   - `first.item = null`：当前节点置为 Dummy 节点
 

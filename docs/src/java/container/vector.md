@@ -429,7 +429,7 @@ at java.lang.Thread.run(Thread.java:748)
 
 因为`deleteLast`方法，有可能被多个线程同时执行，当线程`2`通过`index()`获得索引值为`10`，在尝试通过`remove()`删除该索引位置的元素之前，线程1把该索引位置的值删除掉了，这时线程一在执行时便会抛出异常。
 
-![img](/img/java/container/40.png)
+![An image](/img/java/container/40.png)
 
 为了避免出现类似问题，可以尝试加锁：
 

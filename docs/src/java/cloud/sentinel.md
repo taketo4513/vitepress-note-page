@@ -70,7 +70,7 @@ spring:
 
 需要访问一次即可才可以触发sentinel
 
-![img](/img/java/cloud/27.png)
+![An image](/img/java/cloud/27.png)
 
 ## 流量控制
 
@@ -84,7 +84,7 @@ spring:
 
 例如，刚才访问的 `user-service` 中的 `UserController` 中的端点：`/user/get/{id}`
 
-![img](/img/java/cloud/28.png)
+![An image](/img/java/cloud/28.png)
 
 流控、熔断等都是针对簇点链路中的资源来设置的，因此我们可以点击对应资源后面的按钮来设置规则：
 
@@ -109,7 +109,7 @@ spring:
 
 限制 `/order/{orderId}` 这个资源的单机QPS为1，即每秒只允许1次请求，超出的请求会被拦截并报错。
 
-![img](/img/java/cloud/29.png)
+![An image](/img/java/cloud/29.png)
 
 #### 关联模式
 
@@ -119,7 +119,7 @@ spring:
 
 当 `/write` 资源访问量触发阈值时，就会对 `/read` 资源限流，避免影响 `/write` 资源。
 
-![img](/img/java/cloud/30.png)
+![An image](/img/java/cloud/30.png)
 
 满足以下条件可以使用关联模式：
 
@@ -140,7 +140,7 @@ spring:
 
 如果只希望统计从 `/test2` 进入到 `/common` 的请求，则可以这样配置：
 
-![img](/img/java/cloud/31.png)
+![An image](/img/java/cloud/31.png)
 
 **实战案例：**
 
@@ -224,13 +224,13 @@ spring:
 
 重启服务，访问 `/order/query` 和 `/order/save`，可以查看到sentinel的簇点链路规则中，出现了新的资源：
 
-![img](/img/java/cloud/32.png)
+![An image](/img/java/cloud/32.png)
 
 添加流控规则
 
 点击goods资源后面的流控按钮，在弹出的表单中填写下面信息：
 
-![img](/img/java/cloud/33.png)
+![An image](/img/java/cloud/33.png)
 
 只统计从/order/query进入/goods的资源，QPS阈值为2，超出则被限流。
 
@@ -238,7 +238,7 @@ spring:
 
 在流控的高级选项中，还有一个流控效果选项：
 
-![img](/img/java/cloud/34.png)
+![An image](/img/java/cloud/34.png)
 
 流控效果是指请求达到流控阈值时应该采取的措施，包括三种：
 
@@ -256,7 +256,7 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 例如，我设置QPS的 `maxThreshold` 为10，预热时间为5秒，那么初始阈值就是 `10 / 3` ，也就是3，然后在5秒后逐渐增长到10。
 
-![img](/img/java/cloud/35.png)
+![An image](/img/java/cloud/35.png)
 
 #### 排队等待
 
@@ -277,11 +277,11 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 现在，第1秒同时接收到10个请求，但第2秒只有1个请求，此时QPS的曲线这样的：
 
-![img](/img/java/cloud/36.png)
+![An image](/img/java/cloud/36.png)
 
 如果使用队列模式做流控，所有进入的请求都要排队，以固定的200ms的间隔执行，QPS会变的很平滑：
 
-![img](/img/java/cloud/37.png)
+![An image](/img/java/cloud/37.png)
 
 平滑的QPS曲线，对于服务器来说是更友好的。
 
@@ -293,17 +293,17 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 例如，一个根据id查询商品的接口：
 
-![img](/img/java/cloud/38.png)
+![An image](/img/java/cloud/38.png)
 
 访问 `/goods/{id}` 的请求中，id参数值会有变化，热点参数限流会根据参数值分别统计QPS，统计结果：
 
-![img](/img/java/cloud/39.png)
+![An image](/img/java/cloud/39.png)
 
 当id=1的请求触发阈值被限流时，id值不为1的请求不受影响。
 
 配置示例：
 
-![img](/img/java/cloud/40.png)
+![An image](/img/java/cloud/40.png)
 
 代表的含义是：对 `hot` 这个资源的0号参数（第一个参数）做统计，每1秒**相同参数值**的请求数不能超过5。
 
@@ -313,7 +313,7 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 而在实际开发中，可能部分商品是热点商品，例如秒杀商品，我们希望这部分商品的QPS限制与其它商品不一样，高一些。那就需要配置热点参数限流的高级选项了：
 
-![img](/img/java/cloud/41.png)
+![An image](/img/java/cloud/41.png)
 
 结合上一个配置，这里的含义是对0号的long类型参数限流，每1秒相同参数的QPS不能超过5，有两个例外：
 
@@ -339,18 +339,18 @@ warm up也叫**预热模式**，是应对服务冷启动的一种方案。请求
 
 给 `order-service` 中的 `OrderController` 中的 `/order/{orderId}` 资源添加注解：
 
-![img](/img/java/cloud/42.png)
+![An image](/img/java/cloud/42.png)
 
 热点参数限流规则
 
 访问该接口，可以看到我们标记的 `hot` 资源出现了：
 
-![img](/img/java/cloud/43.png)
+![An image](/img/java/cloud/43.png)
 
 点击左侧菜单中**热点规则**菜单：
 
-![img](/img/java/cloud/44.png)
+![An image](/img/java/cloud/44.png)
 
 点击新增，填写表单：
 
-![img](/img/java/cloud/45.png)
+![An image](/img/java/cloud/45.png)

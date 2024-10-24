@@ -85,7 +85,7 @@ a = A, a1 = A, b = B, b1 = B, c = C, c1 = C, d = D, i = I, e = E, h = H, h1 = H
 
 ### 继承体系
 
-![img](/img/java/container/38.png)
+![An image](/img/java/container/38.png)
 
 通过继承体系可以看，`ArrayDeque`实现了`Deque`接口，`Deque`接口继承自`Queue`接口，它是对`Queue`的一种增强。`Queue`是队列，而`Deque`是双端队列，也就是可以从前或者从后插入或者取出元素，也就是比队列存取更加方便一点，单向队列只能从一头插入，从另一头取出。
 
@@ -326,7 +326,7 @@ private void doubleCapacity() {
 
 扩容这里迁移元素可能有点绕，请看下面这张图来理解。
 
-![img](/img/java/container/39.png)
+![An image](/img/java/container/39.png)
 
 ### 出队
 

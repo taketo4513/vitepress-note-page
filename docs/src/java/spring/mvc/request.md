@@ -490,7 +490,7 @@ public String api(HttpSession session , HttpServletRequest request,
 
 共享域的作用是提供了方便实用的方式在同一 Web 应用程序的多个组件之间传递数据，并且可以将数据保存在不同的共享域中，根据需要进行选择和使用。
 
-![img](/img/java/spring/mvc/06.png)
+![An image](/img/java/spring/mvc/06.png)
 
 ### Request级别属性（共享）域
 

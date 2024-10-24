@@ -133,7 +133,7 @@ public void add(int index, E element) {
 
 如下图：
 
-![img](/img/java/container/03.png)
+![An image](/img/java/container/03.png)
 
 如果是在元素序列指定位置(假设该位置合理)插入，则情况稍微复杂一点，需要三个步骤：
 
@@ -143,7 +143,7 @@ public void add(int index, E element) {
 
 如下图：
 
-![img](/img/java/container/04.png)
+![An image](/img/java/container/04.png)
 
 从上图可以看出，将新元素插入至序列指定位置，需要先将该位置及其之后的元素都向后移动一位，为新元素腾出位置。这个操作的时间复杂度为O(N)，频繁移动元素可能会导致效率问题，特别是集合中元素数量较多时。在日常开发中，若非所需，我们应当尽量避免在大集合中调用第二个插入方法。
 
@@ -277,7 +277,7 @@ private void fastRemove(int index) {
 
 如下图：
 
-![img](/img/java/container/05.png)
+![An image](/img/java/container/05.png)
 
 上面就是删除指定位置元素的分析，并不是很复杂。
 
@@ -297,7 +297,7 @@ public void trimToSize() {
 
 通过上面的方法，我们可以手动触发`ArrayList`的缩容机制。这样就可以释放多余的空间，提高空间利用率。
 
-![img](/img/java/container/06.png)
+![An image](/img/java/container/06.png)
 
 ### 遍历
 
