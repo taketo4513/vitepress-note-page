@@ -46,300 +46,781 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'Go',
+                items: [
+                    {
+                        // 该部分的标题
+                        text: '入门',
+                        items: [
+                            { text: '基础语法', link: '/go/basic/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '进阶',
+                        items: [
+                        ]
+                    }
+                ]
+            },
+            {
                 text: 'JavaScript',
                 items: [
-                    { text: 'Java', link: '/java' },
+                    {
+                        // 该部分的标题
+                        text: '入门',
+                        items: [
+                            { text: '基础语法', link: '/javascript/basic/index' },
+                            { text: '深入理解', link: '/javascript/advance/index' },
+                            { text: '异步编程', link: '/javascript/async/index' },
+                            { text: '性能调优', link: '/javascript/perf/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '进阶',
+                        items: [
+                            { text: 'Vue2', link: '/javascript/vue2/index' }
+                        ]
+                    }
                 ]
             },
             {
                 text: 'Nodejs',
                 items: [
-                    { text: 'Java', link: '/java' },
+                    {
+                        // 该部分的标题
+                        text: '入门',
+                        items: [
+                            { text: '基础语法', link: '/nodejs/basic/index' },
+                            { text: '模块机制', link: '/nodejs/moudle/index' },
+                            { text: '异步编程', link: '/nodejs/async/index' },
+                            { text: '内存控制', link: '/nodejs/memory/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '进阶',
+                        items: [
+                            { text: 'Express', link: '/nodejs/express/index' }
+                        ]
+                    }
                 ]
             },
             {
                 text: 'Linux',
                 items: [
-                    { text: 'Java', link: '/java' },
+                    {
+                        // 该部分的标题
+                        text: '入门',
+                        items: [
+                            { text: 'Bash命令', link: '/linux/bash/index' },
+                            { text: 'Shell脚本', link: '/linux/shell/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '进阶',
+                        items: [
+                            { text: '应用实例', link: '/linux/instance/index' },
+                            { text: '虚机平台', link: '/linux/vm/index' },
+                            { text: '容器技术', link: '/linux/container/index' },
+                            { text: '容器编排', link: '/linux/management/index' },
+                            { text: '虚拟专网', link: '/linux/nat/index' },
+                            { text: '私服搭建', link: '/linux/dnf/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '其他',
+                        items: [
+                            { text: '问题总结', link: '/linux/instance/issues' }
+                        ]
+                    }
                 ]
             },
             {
                 text: 'Chain',
                 items: [
-                    { text: 'Java', link: '/java' },
+                    {
+                        // 该部分的标题
+                        text: '入门',
+                        items: [
+                            { text: '区块链基础', link: '/linux/bash/index' },
+                            { text: '共识算法', link: '/linux/shell/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '进阶',
+                        items: [
+                            { text: 'Ethereum', link: '/chain/instance/index' },
+                            { text: 'Eosio', link: '/chain/vm/index' },
+                            { text: 'Fabric', link: '/chain/fabric/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '其他',
+                        items: [
+                            { text: 'Caliper', link: '/chain/other/index' }
+                        ]
+                    }
                 ]
             },
             {
                 text: 'Dev',
                 items: [
-                    { text: 'Java', link: '/java' },
+                    {
+                        // 该部分的标题
+                        text: '开发工具',
+                        items: [
+                            { text: 'Git', link: '/dev/git/index' },
+                            { text: 'GitLab', link: '/dev/gitlab/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '数据存储',
+                        items: [
+                            { text: 'MySQL', link: '/dev/mysql/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: '消息队列',
+                        items: [
+                        ]
+                    }
                 ]
             },
             {
                 text: 'About',
                 items: [
-                    { text: 'Java', link: '/About' },
+                    { text: '导航', link: '/about/navigation' },
                 ]
             }
         ],
         // 侧边栏配置
-        sidebar: [
-            {
-                text: '基础语法',
-                collapsed: true,
+        sidebar: {
+            // 当用户位于 `java` 目录时，会显示此侧边栏
+            '/java/': [
+                {
+                    text: '基础语法',
+                    collapsed: true,
 
-                items: [
-                    { text: '简介概览', link: '/java/basic/introduce' },
-                    { text: '数据类型', link: '/java/basic/data' },
-                    { text: 'String', link: '/java/basic/string' },
-                    { text: '运算符', link: '/java/basic/operator' },
-                    { text: '流程控制', link: '/java/basic/controller' },
-                    { text: '面向对象', link: '/java/basic/objectoriented' },
-                    { text: '面向对象特性', link: '/java/basic/objectfeature' },
-                    { text: '关键字', link: '/java/basic/keys' },
-                    { text: 'Object', link: '/java/basic/object' },
-                    { text: '枚举', link: '/java/basic/enumerate' },
-                    { text: '接口', link: '/java/basic/interface' },
-                    { text: '内部类', link: '/java/basic/innerclass' },
-                    { text: '泛型', link: '/java/basic/generics' },
-                    { text: '异常', link: '/java/basic/error' },
-                    { text: '反射', link: '/java/basic/reflection' },
-                    { text: '注解', link: '/java/basic/annotation' }
-                ]
-            },
-            {
-                text: '集合框架',
-                collapsed: true,
+                    items: [
+                        { text: '简介概览', link: '/java/basic/introduce' },
+                        { text: '数据类型', link: '/java/basic/data' },
+                        { text: 'String', link: '/java/basic/string' },
+                        { text: '运算符', link: '/java/basic/operator' },
+                        { text: '流程控制', link: '/java/basic/controller' },
+                        { text: '面向对象', link: '/java/basic/objectoriented' },
+                        { text: '面向对象特性', link: '/java/basic/objectfeature' },
+                        { text: '关键字', link: '/java/basic/keys' },
+                        { text: 'Object', link: '/java/basic/object' },
+                        { text: '枚举', link: '/java/basic/enumerate' },
+                        { text: '接口', link: '/java/basic/interface' },
+                        { text: '内部类', link: '/java/basic/innerclass' },
+                        { text: '泛型', link: '/java/basic/generics' },
+                        { text: '异常', link: '/java/basic/error' },
+                        { text: '反射', link: '/java/basic/reflection' },
+                        { text: '注解', link: '/java/basic/annotation' }
+                    ]
+                },
+                {
+                    text: '集合框架',
+                    collapsed: true,
 
-                items: [
-                    { text: '简介概览', link: '/java/container/introduce' },
-                    { text: 'ArrayList', link: '/java/container/arrayList' },
-                    { text: 'LinkedList', link: '/java/container/linkedlist' },
-                    { text: 'HashSet', link: '/java/container/hashset' },
-                    { text: 'LinkedHashSet', link: '/java/container/linkedhashset' },
-                    { text: 'TreeSet', link: '/java/container/treeset' },
-                    { text: 'EnumSet', link: '/java/container/enumset' },
-                    { text: 'HashMap', link: '/java/container/hashmap' },
-                    { text: 'TreeMap', link: '/java/container/treemap' },
-                    { text: 'WeakHashMap', link: '/java/container/weakhashmap' },
-                    { text: 'LinkedHashMap', link: '/java/container/linkedhashmap' },
-                    { text: 'IdentityHashMap', link: '/java/container/identityhashmap' },
-                    { text: 'EnumMap', link: '/java/container/enummap' },
-                    { text: 'PriorityQueue', link: '/java/container/priorityqueue' },
-                    { text: 'ArrayDeque', link: '/java/container/arraydeque' },
-                    { text: 'Vector', link: '/java/container/vector' },
-                    { text: 'Stack', link: '/java/container/stack' },
-                    { text: 'Hashtable', link: '/java/container/hashtable' },
-                    { text: 'CopyOnWriteArrayList', link: '/java/container/copyonwritearraylist' },
-                    { text: 'ConcurrentSkipListMap', link: '/java/container/concurrentskiplistmap' },
-                    { text: 'ConcurrentSkipListSet', link: '/java/container/concurrentskiplistset' },
-                    { text: 'CopyOnWriteArraySet', link: '/java/container/copyonwritearrayset' },
-                    { text: 'LinkedBlockingDeque', link: '/java/container/linkedblockingdeque' },
-                    { text: 'ArrayBlockingQueue', link: '/java/container/arrayblockingqueue' },
-                    { text: 'LinkedBlockingQueue', link: '/java/container/linkedblockingqueue' },
-                    { text: 'SynchronousQueue', link: '/java/container/synchronousqueue' },
-                    { text: 'LinkedTransferQueue', link: '/java/container/linkedtransferqueue' },
-                    { text: 'PriorityBlockingQueue', link: '/java/container/priorityblockingqueue' },
-                    { text: 'DelayQueue', link: '/java/container/delayqueue' },
-                    { text: 'ConcurrentLinkedQueue', link: '/java/container/concurrentlinkedqueue' },
-                    { text: 'Iterator', link: '/java/container/iterator' },
-                    { text: 'Enumeration', link: '/java/container/enumeration' },
-                    { text: 'Fail-fast', link: '/java/container/failfast' },
-                    { text: 'Sort', link: '/java/container/sort' }
-                ]
-            },
-            {
-                text: '并发编程',
-                collapsed: true,
+                    items: [
+                        { text: '简介概览', link: '/java/container/introduce' },
+                        { text: 'ArrayList', link: '/java/container/arrayList' },
+                        { text: 'LinkedList', link: '/java/container/linkedlist' },
+                        { text: 'HashSet', link: '/java/container/hashset' },
+                        { text: 'LinkedHashSet', link: '/java/container/linkedhashset' },
+                        { text: 'TreeSet', link: '/java/container/treeset' },
+                        { text: 'EnumSet', link: '/java/container/enumset' },
+                        { text: 'HashMap', link: '/java/container/hashmap' },
+                        { text: 'TreeMap', link: '/java/container/treemap' },
+                        { text: 'WeakHashMap', link: '/java/container/weakhashmap' },
+                        { text: 'LinkedHashMap', link: '/java/container/linkedhashmap' },
+                        { text: 'IdentityHashMap', link: '/java/container/identityhashmap' },
+                        { text: 'EnumMap', link: '/java/container/enummap' },
+                        { text: 'PriorityQueue', link: '/java/container/priorityqueue' },
+                        { text: 'ArrayDeque', link: '/java/container/arraydeque' },
+                        { text: 'Vector', link: '/java/container/vector' },
+                        { text: 'Stack', link: '/java/container/stack' },
+                        { text: 'Hashtable', link: '/java/container/hashtable' },
+                        { text: 'CopyOnWriteArrayList', link: '/java/container/copyonwritearraylist' },
+                        { text: 'ConcurrentSkipListMap', link: '/java/container/concurrentskiplistmap' },
+                        { text: 'ConcurrentSkipListSet', link: '/java/container/concurrentskiplistset' },
+                        { text: 'CopyOnWriteArraySet', link: '/java/container/copyonwritearrayset' },
+                        { text: 'LinkedBlockingDeque', link: '/java/container/linkedblockingdeque' },
+                        { text: 'ArrayBlockingQueue', link: '/java/container/arrayblockingqueue' },
+                        { text: 'LinkedBlockingQueue', link: '/java/container/linkedblockingqueue' },
+                        { text: 'SynchronousQueue', link: '/java/container/synchronousqueue' },
+                        { text: 'LinkedTransferQueue', link: '/java/container/linkedtransferqueue' },
+                        { text: 'PriorityBlockingQueue', link: '/java/container/priorityblockingqueue' },
+                        { text: 'DelayQueue', link: '/java/container/delayqueue' },
+                        { text: 'ConcurrentLinkedQueue', link: '/java/container/concurrentlinkedqueue' },
+                        { text: 'Iterator', link: '/java/container/iterator' },
+                        { text: 'Enumeration', link: '/java/container/enumeration' },
+                        { text: 'Fail-fast', link: '/java/container/failfast' },
+                        { text: 'Sort', link: '/java/container/sort' }
+                    ]
+                },
+                {
+                    text: '并发编程',
+                    collapsed: true,
 
-                items: [
-                    { text: '基础概念', link: '/java/concurrent/base' },
-                    { text: 'Java线程', link: '/java/concurrent/thread' },
-                    { text: '线程安全', link: '/java/concurrent/secure' },
-                    { text: '线程状态', link: '/java/concurrent/status' },
-                    { text: 'Synchronized', link: '/java/concurrent/synchronized' },
-                    { text: 'ReentrantLock', link: '/java/concurrent/reentrantlock' },
-                    { text: '内存模型', link: '/java/concurrent/memorymodel' },
-                    { text: 'Volatile', link: '/java/concurrent/volatile' },
-                    { text: 'CompareAndSwap', link: '/java/concurrent/cas' },
-                    { text: '并发工具类', link: '/java/concurrent/util' },
-                    { text: 'LongAdder源码', link: '/java/concurrent/longadder' },
-                    { text: 'Unsafe', link: '/java/concurrent/unsafe' },
-                    { text: '不可变设计', link: '/java/concurrent/final' },
-                    { text: 'ThreadLocal', link: '/java/concurrent/threadlocal' },
-                    { text: '阻塞队列', link: '/java/concurrent/queue' },
-                    { text: '非阻塞队列', link: '/java/concurrent/noblocking' },
-                    { text: '线程池使用', link: '/java/concurrent/pool' },
-                    { text: '线程池原理', link: '/java/concurrent/principle' },
-                    { text: '线程池调度', link: '/java/concurrent/scheduled' },
-                    { text: '多线程任务拆分', link: '/java/concurrent/forkjoin' },
-                    { text: 'AQS', link: '/java/concurrent/aqs' },
-                    { text: 'ReentrantLock原理', link: '/java/concurrent/relock' },
-                    { text: 'ReadWrite', link: '/java/concurrent/readwrite' },
-                    { text: 'CountDown', link: '/java/concurrent/countdown' },
-                    { text: 'CyclicBarrier', link: '/java/concurrent/cyclicbarrier' },
-                    { text: 'Semaphore', link: '/java/concurrent/semaphore' },
-                    { text: 'Exchanger', link: '/java/concurrent/exchanger' }
-                ]
-            },
-            {
-                text: '读写操作',
-                collapsed: true,
+                    items: [
+                        { text: '基础概念', link: '/java/concurrent/base' },
+                        { text: 'Java线程', link: '/java/concurrent/thread' },
+                        { text: '线程安全', link: '/java/concurrent/secure' },
+                        { text: '线程状态', link: '/java/concurrent/status' },
+                        { text: 'Synchronized', link: '/java/concurrent/synchronized' },
+                        { text: 'ReentrantLock', link: '/java/concurrent/reentrantlock' },
+                        { text: '内存模型', link: '/java/concurrent/memorymodel' },
+                        { text: 'Volatile', link: '/java/concurrent/volatile' },
+                        { text: 'CompareAndSwap', link: '/java/concurrent/cas' },
+                        { text: '并发工具类', link: '/java/concurrent/util' },
+                        { text: 'LongAdder源码', link: '/java/concurrent/longadder' },
+                        { text: 'Unsafe', link: '/java/concurrent/unsafe' },
+                        { text: '不可变设计', link: '/java/concurrent/final' },
+                        { text: 'ThreadLocal', link: '/java/concurrent/threadlocal' },
+                        { text: '阻塞队列', link: '/java/concurrent/queue' },
+                        { text: '非阻塞队列', link: '/java/concurrent/noblocking' },
+                        { text: '线程池使用', link: '/java/concurrent/pool' },
+                        { text: '线程池原理', link: '/java/concurrent/principle' },
+                        { text: '线程池调度', link: '/java/concurrent/scheduled' },
+                        { text: '多线程任务拆分', link: '/java/concurrent/forkjoin' },
+                        { text: 'AQS', link: '/java/concurrent/aqs' },
+                        { text: 'ReentrantLock原理', link: '/java/concurrent/relock' },
+                        { text: 'ReadWrite', link: '/java/concurrent/readwrite' },
+                        { text: 'CountDown', link: '/java/concurrent/countdown' },
+                        { text: 'CyclicBarrier', link: '/java/concurrent/cyclicbarrier' },
+                        { text: 'Semaphore', link: '/java/concurrent/semaphore' },
+                        { text: 'Exchanger', link: '/java/concurrent/exchanger' }
+                    ]
+                },
+                {
+                    text: '读写操作',
+                    collapsed: true,
 
-                items: [
-                    { text: '磁盘操作', link: '/java/io/file' },
-                    { text: '字节操作', link: '/java/io/byte' },
-                    { text: '字符操作', link: '/java/io/char' },
-                    { text: '对象操作', link: '/java/io/obj' }
-                ]
-            },
-            {
-                text: 'Spring',
-                collapsed: true,
+                    items: [
+                        { text: '磁盘操作', link: '/java/io/file' },
+                        { text: '字节操作', link: '/java/io/byte' },
+                        { text: '字符操作', link: '/java/io/char' },
+                        { text: '对象操作', link: '/java/io/obj' }
+                    ]
+                },
+                {
+                    text: 'Spring',
+                    collapsed: true,
 
-                items: [
-                    {
-                        text: 'Spring',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/spring/spring/introduce' },
-                            { text: '快速开始', link: '/java/spring/spring/faststart' },
-                            { text: '控制反转', link: '/java/spring/spring/ioc' },
-                            { text: 'SpringBean', link: '/java/spring/spring/bean' },
-                            { text: '基于XML管理Bean', link: '/java/spring/spring/xml' },
-                            { text: '基于注解管理Bean', link: '/java/spring/spring/anno' },
-                            { text: 'SpringJDBC', link: '/java/spring/spring/jdbc' },
-                            { text: 'Spring事务', link: '/java/spring/spring/transaction' },
-                            { text: 'SpringResources', link: '/java/spring/spring/resources' },
-                            { text: 'SpringI18n', link: '/java/spring/spring/i18n' },
-                            { text: '参数校验', link: '/java/spring/spring/validator' },
-                            { text: '提前编译', link: '/java/spring/spring/aot' }
-                        ]
-                    },
-                    {
-                        text: 'SpringMVC',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/spring/mvc/introduce' },
-                            { text: '快速开始', link: '/java/spring/mvc/faststart' },
-                            { text: '请求参数', link: '/java/spring/mvc/request' },
-                            { text: '响应数据', link: '/java/spring/mvc/response' },
-                            { text: 'RestFul', link: '/java/spring/mvc/restful' },
-                            { text: '异常处理', link: '/java/spring/mvc/exception' },
-                            { text: '拦截器', link: '/java/spring/mvc/interceptor' },
-                            { text: '参数校验', link: '/java/spring/mvc/validator' }
-                        ]
-                    },
-                    {
-                        text: 'SpringBoot',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/spring/boot/introduce' },
-                            { text: '快速开始', link: '/java/spring/boot/faststart' },
-                            { text: '配置文件', link: '/java/spring/boot/config' },
-                            { text: '项目构建', link: '/java/spring/boot/build' },
-                            { text: '整合MVC', link: '/java/spring/boot/mvc' }
-                        ]
-                    }
-                ]
-            },
-            {
-                text: 'Spring Cloud',
-                collapsed: true,
+                    items: [
+                        {
+                            text: 'Spring',
+                            collapsed: true,
 
-                items: [
-                    { text: '简介概览', link: '/java/cloud/introduce' },
-                    { text: '服务拆分', link: '/java/cloud/split' },
-                    { text: '服务调用', link: '/java/cloud/call' },
-                    { text: '注册中心', link: '/java/cloud/center' },
-                    { text: 'Nacos', link: '/java/cloud/nacos' },
-                    { text: 'OpenFeign', link: '/java/cloud/feign' },
-                    { text: '网关路由', link: '/java/cloud/gateway' },
-                    { text: '服务保护', link: '/java/cloud/security' },
-                    { text: 'Sentinel', link: '/java/cloud/sentinel' }
-                ]
-            },
-            {
-                text: '日志框架',
-                collapsed: true,
+                            items: [
+                                { text: '简介概览', link: '/java/spring/spring/introduce' },
+                                { text: '快速开始', link: '/java/spring/spring/faststart' },
+                                { text: '控制反转', link: '/java/spring/spring/ioc' },
+                                { text: 'SpringBean', link: '/java/spring/spring/bean' },
+                                { text: '基于XML管理Bean', link: '/java/spring/spring/xml' },
+                                { text: '基于注解管理Bean', link: '/java/spring/spring/anno' },
+                                { text: 'SpringJDBC', link: '/java/spring/spring/jdbc' },
+                                { text: 'Spring事务', link: '/java/spring/spring/transaction' },
+                                { text: 'SpringResources', link: '/java/spring/spring/resources' },
+                                { text: 'SpringI18n', link: '/java/spring/spring/i18n' },
+                                { text: '参数校验', link: '/java/spring/spring/validator' },
+                                { text: '提前编译', link: '/java/spring/spring/aot' }
+                            ]
+                        },
+                        {
+                            text: 'SpringMVC',
+                            collapsed: true,
 
-                items: [
-                    { text: '简介概览', link: '/java/log/introduce' },
-                    { text: 'Log4j', link: '/java/log/log4j' },
-                    { text: 'SLF4J', link: '/java/log/slf4j' },
-                    { text: 'Logback', link: '/java/log/logback' },
-                    { text: 'Log4j2', link: '/java/log/log4j2' },
-                    { text: '应用实例', link: '/java/log/demo' }
-                ]
-            },
-            {
-                text: '认证授权',
-                collapsed: true,
+                            items: [
+                                { text: '简介概览', link: '/java/spring/mvc/introduce' },
+                                { text: '快速开始', link: '/java/spring/mvc/faststart' },
+                                { text: '请求参数', link: '/java/spring/mvc/request' },
+                                { text: '响应数据', link: '/java/spring/mvc/response' },
+                                { text: 'RestFul', link: '/java/spring/mvc/restful' },
+                                { text: '异常处理', link: '/java/spring/mvc/exception' },
+                                { text: '拦截器', link: '/java/spring/mvc/interceptor' },
+                                { text: '参数校验', link: '/java/spring/mvc/validator' }
+                            ]
+                        },
+                        {
+                            text: 'SpringBoot',
+                            collapsed: true,
 
-                items: [
-                    {
-                        text: 'ApacheShiro',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/permission/apacheshiro/introduce' },
-                            { text: '访问控制', link: '/java/permission/apacheshiro/access' },
-                            { text: '重要的类与方法', link: '/java/permission/apacheshiro/class' },
-                            { text: '过滤器', link: '/java/permission/apacheshiro/filter' },
-                            { text: 'Shiro整合JWT', link: '/java/permission/apacheshiro/jwt' }
-                        ]
-                    },
-                    {
-                        text: 'SpringSecurity',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/permission/springsecurity/introduce' },
-                            { text: '整体架构', link: '/java/permission/springsecurity/architecture' }
-                        ]
-                    }
-                ]
-            },
-            {
-                text: '程序构建',
-                collapsed: true,
+                            items: [
+                                { text: '简介概览', link: '/java/spring/boot/introduce' },
+                                { text: '快速开始', link: '/java/spring/boot/faststart' },
+                                { text: '配置文件', link: '/java/spring/boot/config' },
+                                { text: '项目构建', link: '/java/spring/boot/build' },
+                                { text: '整合MVC', link: '/java/spring/boot/mvc' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Spring Cloud',
+                    collapsed: true,
 
-                items: [
-                    {
-                        text: 'Maven',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/build/maven/introduce' },
-                            { text: '快速开始', link: '/java/build/maven/faststart' },
-                            { text: '依赖管理', link: '/java/build/maven/manage' },
-                            { text: '依赖传递与冲突', link: '/java/build/maven/conflict' },
-                            { text: '工程继承与聚合', link: '/java/build/maven/extend' }
-                        ]
-                    },
-                    {
-                        text: 'Gradle',
-                        collapsed: true,
-        
-                        items: [
-                            { text: '简介概览', link: '/java/build/gradle/introduce' },
-                            { text: '快速开始', link: '/java/build/gradle/faststart' },
-                            { text: 'GradleWrapper', link: '/java/build/gradle/wrapper' },
-                            { text: 'Groovy', link: '/java/build/gradle/groovy' },
-                            { text: '生命周期', link: '/java/build/gradle/cycle' },
-                            { text: 'Task', link: '/java/build/gradle/task' },
-                            { text: '配置解析', link: '/java/build/gradle/config' },
-                            { text: '文件操作', link: '/java/build/gradle/file' },
-                            { text: 'Dependencies', link: '/java/build/gradle/depend' },
-                            { text: 'Plugin', link: '/java/build/gradle/plugin' }
-                        ]
-                    },
-                ]
-            },
-        ],
+                    items: [
+                        { text: '简介概览', link: '/java/cloud/introduce' },
+                        { text: '服务拆分', link: '/java/cloud/split' },
+                        { text: '服务调用', link: '/java/cloud/call' },
+                        { text: '注册中心', link: '/java/cloud/center' },
+                        { text: 'Nacos', link: '/java/cloud/nacos' },
+                        { text: 'OpenFeign', link: '/java/cloud/feign' },
+                        { text: '网关路由', link: '/java/cloud/gateway' },
+                        { text: '服务保护', link: '/java/cloud/security' },
+                        { text: 'Sentinel', link: '/java/cloud/sentinel' }
+                    ]
+                },
+                {
+                    text: '日志框架',
+                    collapsed: true,
+
+                    items: [
+                        { text: '简介概览', link: '/java/log/introduce' },
+                        { text: 'Log4j', link: '/java/log/log4j' },
+                        { text: 'SLF4J', link: '/java/log/slf4j' },
+                        { text: 'Logback', link: '/java/log/logback' },
+                        { text: 'Log4j2', link: '/java/log/log4j2' },
+                        { text: '应用实例', link: '/java/log/demo' }
+                    ]
+                },
+                {
+                    text: '认证授权',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: 'ApacheShiro',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/java/permission/apacheshiro/introduce' },
+                                { text: '访问控制', link: '/java/permission/apacheshiro/access' },
+                                { text: '重要的类与方法', link: '/java/permission/apacheshiro/class' },
+                                { text: '过滤器', link: '/java/permission/apacheshiro/filter' },
+                                { text: 'Shiro整合JWT', link: '/java/permission/apacheshiro/jwt' }
+                            ]
+                        },
+                        {
+                            text: 'SpringSecurity',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/java/permission/springsecurity/introduce' },
+                                { text: '整体架构', link: '/java/permission/springsecurity/architecture' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: '程序构建',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: 'Maven',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/java/build/maven/introduce' },
+                                { text: '快速开始', link: '/java/build/maven/faststart' },
+                                { text: '依赖管理', link: '/java/build/maven/manage' },
+                                { text: '依赖传递与冲突', link: '/java/build/maven/conflict' },
+                                { text: '工程继承与聚合', link: '/java/build/maven/extend' }
+                            ]
+                        },
+                        {
+                            text: 'Gradle',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/java/build/gradle/introduce' },
+                                { text: '快速开始', link: '/java/build/gradle/faststart' },
+                                { text: 'GradleWrapper', link: '/java/build/gradle/wrapper' },
+                                { text: 'Groovy', link: '/java/build/gradle/groovy' },
+                                { text: '生命周期', link: '/java/build/gradle/cycle' },
+                                { text: 'Task', link: '/java/build/gradle/task' },
+                                { text: '配置解析', link: '/java/build/gradle/config' },
+                                { text: '文件操作', link: '/java/build/gradle/file' },
+                                { text: 'Dependencies', link: '/java/build/gradle/depend' },
+                                { text: 'Plugin', link: '/java/build/gradle/plugin' }
+                            ]
+                        },
+                    ]
+                }
+            ],
+            '/go/': [
+                {
+                    text: '基础语法',
+                    collapsed: true,
+
+                    items: [
+                        { text: '简介概览', link: '/go/basic/introduce' },
+                        { text: '语言特性', link: '/go/basic/feature' },
+                        { text: '关键字及标识符', link: '/go/basic/package' },
+                        { text: '包管理工具', link: '/go/basic/operator' },
+                        { text: '基本结构', link: '/go/basic/structure' },
+                        { text: '常量和变量', link: '/go/basic/constandvar' },
+                        { text: '数据类型', link: '/go/basic/type' },
+                        { text: '运算符', link: '/go/basic/operator' },
+                        { text: '控制结构', link: '/go/basic/control' },
+                        { text: '函数', link: '/go/basic/function' },
+                        { text: '闭包', link: '/go/basic/closure' },
+                        { text: '数组', link: '/go/basic/array' }
+                    ]
+                }
+            ],
+            '/javascript/': [
+                {
+                    text: '基础语法',
+                    collapsed: true,
+
+                    items: [
+                        { text: '简介概览', link: '/javascript/basic/introduce' },
+                        { text: '作用域', link: '/javascript/basic/scpoe' },
+                        { text: '闭包', link: '/javascript/basic/closure' },
+                        { text: '函数上下文', link: '/javascript/basic/context' },
+                        { text: '数组', link: '/javascript/basic/array' },
+                        { text: '对象', link: '/javascript/basic/object' },
+                        { text: '数据类型', link: '/javascript/basic/type' },
+                        { text: '原型', link: '/javascript/basic/prototype' },
+                        { text: 'DOM', link: '/javascript/basic/dom' },
+                        { text: 'BOM', link: '/javascript/basic/bom' },
+                        { text: '事件模型', link: '/javascript/basic/eventmoudle' },
+                        { text: '事件循环', link: '/javascript/basic/eventloop' }
+                    ]
+                },
+                {
+                    text: '深入理解',
+                    collapsed: true,
+
+                    items: [
+                        { text: '模块化', link: '/javascript/advance/moudle' },
+                        { text: '代码解析与执行', link: '/javascript/advance/engine' },
+                        { text: '垃圾回收机制', link: '/javascript/advance/gc' },
+                        { text: 'WeakMap', link: '/javascript/advance/weakmap' },
+                        { text: 'WeakSet', link: '/javascript/advance/weakset' },
+                        { text: 'Class', link: '/javascript/advance/class' },
+                        { text: '函数式编程', link: '/javascript/advance/functioncode' },
+                        { text: '迭代器', link: '/javascript/advance/iterator' },
+                        { text: 'Proxy', link: '/javascript/advance/proxy' },
+                        { text: '深拷贝与浅拷贝', link: '/javascript/advance/copy' },
+                        { text: 'Stringify', link: '/javascript/advance/stringify' },
+                        { text: '网页存储', link: '/javascript/advance/webstorage' },
+                        { text: '装饰器', link: '/javascript/advance/decorator' },
+                        { text: '跨页面通信', link: '/javascript/advance/crosspage' },
+                        { text: 'ShadowDOM', link: '/javascript/advance/shadow' },
+                        { text: 'Date', link: '/javascript/advance/data' },
+                        { text: '正则表达式', link: '/javascript/advance/regexp' },
+                        { text: '异常处理', link: '/javascript/advance/error' }
+                    ]
+                },
+                {
+                    text: '异步编程',
+                    collapsed: true,
+
+                    items: [
+                        { text: '异步编程', link: '/javascript/async/code' },
+                        { text: '异步与回调', link: '/javascript/async/async' },
+                        { text: 'Promise', link: '/javascript/async/promise' },
+                        { text: '实现PromiseA+规范', link: '/javascript/async/promisea' },
+                        { text: 'Generator', link: '/javascript/async/generator' },
+                        { text: 'async与await', link: '/javascript/async/asyncandawait' }
+                    ]
+                },
+                {
+                    text: '性能调优',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'MutationObserver', link: '/javascript/perf/mutation' },
+                        { text: 'requestAnimationFrame', link: '/javascript/perf/request' },
+                        { text: 'Performance API', link: '/javascript/perf/performance' },
+                        { text: '页面生命周期', link: '/javascript/perf/load' }
+                    ]
+                },
+                {
+                    text: 'Vue2',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'Vue2简介', link: '/javascript/vue2/introduce' }
+                    ]
+                }
+            ],
+            '/nodejs/': [
+                {
+                    text: '基础语法',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'Node简介', link: '/nodejs/basic/introduce' },
+                        { text: 'Node特点', link: '/nodejs/basic/features' },
+                        { text: 'Node模块', link: '/nodejs/basic/moudle' },
+                        { text: 'NPM使用', link: '/nodejs/basic/usenpm' },
+                        { text: 'Path模块', link: '/nodejs/basic/path' },
+                        { text: 'Fs模块', link: '/nodejs/basic/fs' },
+                        { text: 'Stream模块', link: '/nodejs/basic/stream' },
+                        { text: 'Buffer模块', link: '/nodejs/basic/buf' },
+                        { text: 'Buffer探究', link: '/nodejs/basic/buffer' },
+                        { text: 'Event模块', link: '/nodejs/basic/event' },
+                        { text: 'Event源码', link: '/nodejs/basic/source' },
+                        { text: '事件循环', link: '/nodejs/basic/eventloop' },
+                        { text: '进程与线程', link: '/nodejs/basic/process' },
+                        { text: '多进程使用', link: '/nodejs/basic/useprocess' }
+                    ]
+                },
+                {
+                    text: '模块机制',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'CommonJS规范', link: '/nodejs/moudle/commonjs' },
+                        { text: 'Node的模块实现', link: '/nodejs/moudle/nodemoudle' },
+                        { text: '核心模块', link: '/nodejs/moudle/core' },
+                        { text: '扩展模块', link: '/nodejs/moudle/expand' },
+                        { text: '调用模块栈', link: '/nodejs/moudle/stack' },
+                        { text: '包与NPM', link: '/nodejs/moudle/npm' },
+                        { text: '前后端共用模块', link: '/nodejs/moudle/common' }
+                    ]
+                },
+                {
+                    text: '异步编程',
+                    collapsed: true,
+
+                    items: [
+                        { text: '异步IO与非阻塞IO', link: '/nodejs/async/io' },
+                        { text: 'Node异步IO', link: '/nodejs/async/nodeio' },
+                        { text: '非IO的异步API', link: '/nodejs/async/api' },
+                        { text: '事件驱动与高性能服务器', link: '/nodejs/async/event' },
+                        { text: '函数式编程', link: '/nodejs/async/functional' },
+                        { text: '异步编程的优势与难点', link: '/nodejs/async/advantage' },
+                        { text: '异步编程解决方案', link: '/nodejs/async/solve' }
+                    ]
+                },
+                {
+                    text: '内存控制',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'V8内存限制', link: '/nodejs/memory/v8' },
+                        { text: 'V8垃圾回收机制', link: '/nodejs/memory/recycle' },
+                        { text: '高效使用内存', link: '/nodejs/memory/use' },
+                        { text: '内存指标', link: '/nodejs/memory/standard' },
+                        { text: '内存泄漏', link: '/nodejs/memory/error' },
+                        { text: '处理大文件', link: '/nodejs/memory/big' }
+                    ]
+                },
+                {
+                    text: 'Express',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'Express简介', link: '/nodejs/express/introduce' },
+                        { text: '快速开始', link: '/nodejs/express/fastuse' }
+                    ]
+                }
+            ],
+            '/linux/': [
+                {
+                    text: 'Bash命令',
+                    collapsed: true,
+
+                    items: [
+                        { text: '基础命令', link: '/linux/bash/base' },
+                        { text: '常用命令', link: '/linux/bash/advanced' },
+                        { text: '环境变量', link: '/linux/bash/env' },
+                        { text: '文件权限', link: '/linux/bash/permissions' },
+                        { text: '文件系统', link: '/linux/bash/filesys' },
+                        { text: '路由配置', link: '/linux/bash/route' }
+                    ]
+                },
+                {
+                    text: 'Shell脚本',
+                    collapsed: true,
+
+                    items: [
+                        { text: '基础语法', link: '/linux/shell/base' },
+                        { text: '结构化语法(上)', link: '/linux/shell/structure1' },
+                        { text: '结构化语法(下)', link: '/linux/shell/structure2' },
+                        { text: '输入处理', link: '/linux/shell/input' },
+                        { text: '数据呈现', link: '/linux/shell/data' },
+                        { text: '脚本控制', link: '/linux/shell/control' },
+                        { text: '函数创建', link: '/linux/shell/function' },
+                        { text: '文本处理', link: '/linux/shell/text' },
+                        { text: '正则表达式', link: '/linux/shell/reg' },
+                        { text: 'Sed高级用法', link: '/linux/shell/sed' },
+                        { text: 'Gawk高级用法', link: '/linux/shell/gawk' },
+                        { text: '应用示例', link: '/linux/shell/sample' }
+                    ]
+                },
+                {
+                    text: '应用实例',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'CentOS', link: '/linux/instance/centos' },
+                        { text: 'Ubuntu', link: '/nodejs/async/ubuntu' },
+                        { text: 'Debian', link: '/nodejs/async/debian' },
+                        { text: '局域网唤醒', link: '/nodejs/async/wol' },
+                        { text: 'WOL唤醒脚本', link: '/nodejs/async/wolshell' },
+                        { text: '服务自启动', link: '/nodejs/async/systemctl' },
+                        { text: '硬盘分区', link: '/nodejs/async/partition' },
+                        { text: '逻辑卷管理', link: '/nodejs/async/lvm' },
+                        { text: '文本过滤', link: '/nodejs/async/filter' },
+                        { text: '密钥登录', link: '/nodejs/async/keylogin' }
+                    ]
+                },
+                {
+                    text: '虚机平台',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: 'Multipass',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/linux/vm/multipass/multipass' },
+                                { text: '快速开始', link: '/linux/vm/multipass/multipassuse' }
+                            ]
+                        },
+                        {
+                            text: 'WSL',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/linux/vm/wsl/wsl' },
+                                { text: '环境安装', link: '/linux/vm/wsl/wslinstall' },
+                                { text: '基本使用', link: '/linux/vm/wsl/wsluse' }
+                            ]
+                        },
+                        {
+                            text: 'Proxmox VE',
+                            collapsed: true,
+
+                            items: [
+                                { text: '简介概览', link: '/linux/vm/proxmoxve/proxmoxve' },
+                                { text: '系统安装', link: '/linux/vm/proxmoxve/veinstall' },
+                                { text: '配置优化', link: '/linux/vm/proxmoxve/veoptimize' },
+                                { text: '系统管理', link: '/linux/vm/proxmoxve/vemanage' },
+                                { text: '虚机安装', link: '/linux/vm/proxmoxve/vminstall' },
+                                { text: '虚机管理', link: '/linux/vm/proxmoxve/vmmanage' },
+                                { text: '硬件直通', link: '/linux/vm/proxmoxve/pcie' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: '容器技术',
+                    collapsed: true,
+
+                    items: [
+                    ]
+                },
+                {
+                    text: '容器编排',
+                    collapsed: true,
+
+                    items: [
+                        { text: '简介概览', link: '/linux/management/kubernetes' },
+                        { text: '系统架构', link: '/linux/management/arch' },
+                        { text: 'Minikube', link: '/linux/management/minikube' },
+                        { text: 'K3s', link: '/linux/management/k3s' },
+                        { text: '集群搭建', link: '/linux/management/build' },
+                        { text: '管理工具', link: '/linux/management/kubectl' },
+                        { text: '资源编排', link: '/linux/management/layout' },
+                        { text: '命名空间', link: '/linux/management/namespace' },
+                        { text: 'Pod', link: '/linux/management/pod' },
+                        { text: '资源调度', link: '/linux/management/scheduler' },
+                        { text: '工作负载资源', link: '/linux/management/resource' },
+                        { text: 'ReplicaSet', link: '/linux/management/replicaset' },
+                        { text: 'Deployment', link: '/linux/management/deployment' },
+                        { text: 'HorizontalPodAutoscaler', link: '/linux/management/hpa' },
+                        { text: 'DaemonSet', link: '/linux/management/daemonset' },
+                        { text: 'Job', link: '/linux/management/job' },
+                        { text: 'CronJob', link: '/linux/management/cronjob' },
+                        { text: 'Service', link: '/linux/management/service' },
+                        { text: 'Ingress', link: '/linux/management/ingress' },
+                        { text: '临时存储', link: '/linux/management/ephemeral' },
+                        { text: '持久存储', link: '/linux/management/persistent' },
+                        { text: '配置存储', link: '/linux/management/configstorage' },
+                        { text: '安全认证', link: '/linux/management/security' },
+                        { text: 'Dashboard', link: '/linux/management/dashboard' },
+                        { text: 'Helm', link: '/linux/management/helm' }
+                    ]
+                },
+                {
+                    text: '虚拟专网',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: '01.组网工具',
+                            collapsed: true,
+
+                            items: [
+                                { text: 'VPN', link: '/linux/nat/vpn' },
+                                { text: 'Shadowsocks', link: '/linux/nat/ss' },
+                                { text: 'Frp', link: '/linux/nat/frp' },
+                                { text: 'SoftEtherVPN', link: '/linux/nat/softether' },
+                                { text: 'SoftEtherVPN源码编译', link: '/linux/nat/softethermake' },
+                                { text: 'SoftEtherVPN隧道拆分', link: '/linux/nat/softetherroute' }
+                            ]
+                        },
+                        {
+                            text: 'NAT穿透',
+                            collapsed: true,
+
+                            items: [
+                                { text: 'NAT穿透的工作原理', link: '/linux/nat/breakdown' }
+                            ]
+                        },
+                        {
+                            text: '组网方案',
+                            collapsed: true,
+
+                            items: [
+                                { text: '异地组网方案', link: '/linux/nat/softfrp' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: '私服搭建',
+                    collapsed: true,
+
+                    items: [
+                        { text: '基本概述', link: '/linux/dnf/overview' },
+                        { text: '私服搭建', link: '/linux/dnf/build' },
+                        { text: '网页GM搭建', link: '/linux/dnf/gm' },
+                    ]
+                },
+                {
+                    text: '问题总结',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'Docker权限异常(Permission denied)', link: '/linux/issues/001' },
+                        { text: 'Centos启动网络服务异常', link: '/linux/issues/002' },
+                        { text: 'Ubuntu配置禁止密码登录无效', link: '/linux/issues/003' },
+                        { text: 'Linux Too many open files 报错', link: '/linux/issues/004' }
+                    ]
+                }
+            ],
+        },
         // 在导航栏中展示带有图标的社交帐户链接
         socialLinks: [
             { icon: 'github', link: 'https://github.com/taketo4513' }
