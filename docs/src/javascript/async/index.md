@@ -8,7 +8,7 @@ next: false
 
 ## 目录
 
-1. [Vue2简介](/javascript/vue2/introduce)
+1. [异步编程](/javascript/async/code)
 2. [异步与回调](/javascript/async/async)
 3. [Promise](/javascript/async/promise)
 4. [实现PromiseA+规范](/javascript/async/promisea)
