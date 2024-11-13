@@ -1007,7 +1007,7 @@ export default defineConfig({
                         { text: '多表查询', link: '/dev/mysql/multi' },
                         { text: '事务操作', link: '/dev/mysql/transaction' },
                         { text: '存储引擎', link: '/dev/mysql/engine' },
-                        { text: '索引概述', link: '/dev/mysql/index' },
+                        { text: '索引概述', link: '/dev/mysql/indexes' },
                         { text: '索引结构', link: '/dev/mysql/structure' },
                         { text: '索引语法', link: '/dev/mysql/grammar' },
                         { text: '索引失效', link: '/dev/mysql/invalid' },
