@@ -134,7 +134,7 @@ export default defineConfig({
                         // 该部分的标题
                         text: '其他',
                         items: [
-                            { text: '问题总结', link: '/linux/instance/issues' }
+                            { text: '问题总结', link: '/linux/issues/index' }
                         ]
                     }
                 ]
@@ -155,7 +155,7 @@ export default defineConfig({
                         text: '进阶',
                         items: [
                             { text: 'Ethereum', link: '/chain/eth/index' },
-                            { text: 'Eosio', link: '/chain/eos/index' },
+                            { text: 'Eosio', link: '/chain/eosio/index' },
                             { text: 'Fabric', link: '/chain/fabric/index' }
                         ]
                     },
@@ -197,7 +197,7 @@ export default defineConfig({
             {
                 text: 'About',
                 items: [
-                    { text: '资源分享', link: '/about/resource/index' },
+                    { text: '资源分享', link: '/about/resource/navigation' },
                 ]
             }
         ],
