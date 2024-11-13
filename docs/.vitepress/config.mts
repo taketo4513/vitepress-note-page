@@ -196,7 +196,10 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'Share', link: '/share/navigation'
+                text: 'Share',
+                items: [
+                    { text: '网页导航', link: '/share/navigation' },
+                ]
             }
         ],
         // 侧边栏配置
@@ -1021,16 +1024,6 @@ export default defineConfig({
                         { text: '全局锁', link: '/dev/mysql/globallock' },
                         { text: '表级锁', link: '/dev/mysql/tablelock' },
                         { text: '行级锁', link: '/dev/mysql/linelock' }
-                    ]
-                }
-            ],
-            '/share/': [
-                {
-                    text: '资源分享',
-                    collapsed: true,
-
-                    items: [
-                        { text: '网页导航', link: '/share/navigation' }
                     ]
                 }
             ]
