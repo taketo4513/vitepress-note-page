@@ -8,11 +8,11 @@ hero:
   tagline: Online knowledge base
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 快速开始
+      link: /java/basic/index
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 资源库
+      link: /share/navigation
 
 features:
   - title: Feature A
