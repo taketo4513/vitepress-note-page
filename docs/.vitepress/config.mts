@@ -146,16 +146,16 @@ export default defineConfig({
                         // 该部分的标题
                         text: '入门',
                         items: [
-                            { text: '区块链基础', link: '/linux/bash/index' },
-                            { text: '共识算法', link: '/linux/shell/index' }
+                            { text: '区块链基础', link: '/chain/basic/index' },
+                            { text: '共识算法', link: '/chain/consensus/index' }
                         ]
                     },
                     {
                         // 该部分的标题
                         text: '进阶',
                         items: [
-                            { text: 'Ethereum', link: '/chain/instance/index' },
-                            { text: 'Eosio', link: '/chain/vm/index' },
+                            { text: 'Ethereum', link: '/chain/eth/index' },
+                            { text: 'Eosio', link: '/chain/eos/index' },
                             { text: 'Fabric', link: '/chain/fabric/index' }
                         ]
                     },
@@ -197,7 +197,7 @@ export default defineConfig({
             {
                 text: 'About',
                 items: [
-                    { text: '导航', link: '/about/navigation' },
+                    { text: '资源分享', link: '/about/resource/index' },
                 ]
             }
         ],
@@ -768,7 +768,7 @@ export default defineConfig({
 
                     items: [
                         {
-                            text: '01.组网工具',
+                            text: '组网工具',
                             collapsed: true,
 
                             items: [
@@ -820,6 +820,222 @@ export default defineConfig({
                     ]
                 }
             ],
+            '/chain/': [
+                {
+                    text: '区块链基础',
+                    collapsed: true,
+
+                    items: [
+                    ]
+                },
+                {
+                    text: '共识算法',
+                    collapsed: true,
+
+                    items: [
+                    ]
+                },
+                {
+                    text: 'Ethereum',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: 'Basic',
+                            collapsed: true,
+
+                            items: [
+                                { text: '什么是以太坊', link: '/chain/eth/introduce' },
+                                { text: '以太坊架构', link: '/chain/eth/architecture' },
+                                { text: '什么是DApp', link: '/chain/eth/dapp' },
+                                { text: '区块的定义', link: '/chain/eth/block' },
+                                { text: '以太坊地址', link: '/chain/eth/address' },
+                                { text: 'Nonce的作用', link: '/chain/eth/nonce' },
+                                { text: 'Gas燃料费', link: '/chain/eth/gas' },
+                                { text: '叔块', link: '/chain/eth/uncle' },
+                                { text: '挖矿奖励', link: '/chain/eth/award' },
+                                { text: '数据结构', link: '/chain/eth/data' },
+                                { text: 'MPT树', link: '/chain/eth/mpt' },
+                                { text: '账户模型', link: '/chain/eth/accountmodle' },
+                                { text: 'Ghost协议', link: '/chain/eth/ghost' },
+                                { text: 'Casper共识机制', link: '/chain/eth/casper' },
+                                { text: '智能合约', link: '/chain/eth/contract' },
+                                { text: '合约标准', link: '/chain/eth/standard' },
+                                { text: '以太坊交易', link: '/chain/eth/transction' },
+                                { text: '代币', link: '/chain/eth/token' },
+                                { text: '以太坊零地址', link: '/chain/eth/zero' }
+                            ]
+                        },
+                        {
+                            text: 'Operate',
+                            collapsed: true,
+
+                            items: [
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Eosio',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: 'Basic',
+                            collapsed: true,
+
+                            items: [
+                                { text: '基本介绍', link: '/chain/eosio/introduce' },
+                                { text: '共识机制(BFT-DPoS)', link: '/chain/eosio/bftdpos' },
+                                { text: '账户体系', link: '/chain/eosio/account' },
+                                { text: '网络资源', link: '/chain/eosio/netresource' },
+                                { text: '节点治理', link: '/chain/eosio/governance' },
+                                { text: '脚本与虚拟机', link: '/chain/eosio/vm' }
+                            ]
+                        },
+                        {
+                            text: 'Operate',
+                            collapsed: true,
+
+                            items: [
+                                { text: '快速开始', link: '/chain/eosio/start' },
+                                { text: '源码编译', link: '/chain/eosio/source' },
+                                { text: '多节点环境部署', link: '/chain/eosio/multi' },
+                                { text: 'RPC接口上链', link: '/chain/eosio/rpc' },
+                                { text: '账户体系', link: '/chain/eosio/access' },
+                                { text: 'History-Tools', link: '/chain/eosio/history-tools' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Fabric',
+                    collapsed: true,
+
+                    items: [
+                        {
+                            text: 'Basic',
+                            collapsed: true,
+
+                            items: [
+                                { text: '架构概览', link: '/chain/fabric/architecture' },
+                                { text: '核心概念与组件', link: '/chain/fabric/component' },
+                                { text: 'Raft共识算法', link: '/chain/fabric/raft' },
+                                { text: '消息协议', link: '/chain/fabric/message' },
+                                { text: '数据传播协议', link: '/chain/fabric/gossip' },
+                                { text: '访问控制', link: '/chain/fabric/access' },
+                                { text: '隐私保护', link: '/chain/fabric/privacy' },
+                                { text: '读写集语义', link: '/chain/fabric/semantics' },
+                                { text: '网络发现', link: '/chain/fabric/discover' },
+                                { text: '管理链码', link: '/chain/fabric/lifecycle' },
+                                { text: '读写集语义', link: '/chain/fabric/semantics' },
+                                { text: '配置解析—组织身份文件', link: '/chain/fabric/config1' },
+                                { text: '配置解析—通道配置文件', link: '/chain/fabric/config2' },
+                                { text: '配置解析—Order配置文件', link: '/chain/fabric/config3' },
+                                { text: '配置解析—Peer配置文件', link: '/chain/fabric/config4' },
+                                { text: '链码开发', link: '/chain/fabric/dev' }
+                            ]
+                        },
+                        {
+                            text: 'Operate',
+                            collapsed: true,
+
+                            items: [
+                                { text: 'Fabric 1.4.6 环境搭建', link: '/chain/fabric/build1' },
+                                { text: 'Fabric 1.4.6 多机部署', link: '/chain/fabric/multi1' },
+                                { text: 'Fabric 2.2.5 环境搭建', link: '/chain/fabric/build2' },
+                                { text: 'Fabric 2.2.5 多机部署', link: '/chain/fabric/multi2' },
+                                { text: 'Fabric 1.4.6 链码操作', link: '/chain/fabric/chaincode1' },
+                                { text: 'Fabric 2.4.7 链码操作', link: '/chain/fabric/chaincode2' },
+                                { text: '生产网络—生成身份文件', link: '/chain/fabric/production1' },
+                                { text: '生产网络—部署 Orderer 节点', link: '/chain/fabric/production2' },
+                                { text: '生产网络—部署 Peer 节点', link: '/chain/fabric/production3' },
+                                { text: '生产网络—部署合约并调用', link: '/chain/fabric/production4' }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: '其他',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'Hyperledger-Caliper', link: '/chain/other/caliper' }
+                    ]
+                }
+            ],
+            '/dev/': [
+                {
+                    text: 'Git',
+                    collapsed: true,
+
+                    items: [
+                        { text: '基础概念', link: '/dev/git/base' },
+                        { text: '常用操作', link: '/dev/git/opt' },
+                        { text: '操作文件', link: '/dev/git/file' },
+                        { text: '操作分支', link: '/dev/git/branch' },
+                        { text: '操作历史', link: '/dev/git/history' },
+                        { text: '远程版本库操作', link: '/dev/git/remote' },
+                        { text: '更多操作', link: '/dev/git/more' },
+                        { text: '应用示例', link: '/dev/git/instance' }
+                    ]
+                },
+                {
+                    text: 'GitLab',
+                    collapsed: true,
+
+                    items: [
+                        { text: '环境搭建', link: '/dev/gitlab/envbuild' },
+                        { text: '备份恢复', link: '/dev/gitlab/backup' },
+                        { text: '版本升级', link: '/dev/gitlab/upgrade' },
+                        { text: '系统优化', link: '/dev/gitlab/set' },
+                        { text: '系统迁移升级问题', link: '/dev/gitlab/problem' }
+                    ]
+                },
+                {
+                    text: 'MySQL',
+                    collapsed: true,
+
+                    items: [
+                        { text: '基础概述', link: '/dev/mysql/base' },
+                        { text: '数据定义语言', link: '/dev/mysql/ddl' },
+                        { text: '数据操作语言', link: '/dev/mysql/dml' },
+                        { text: '数据查询语言', link: '/dev/mysql/dql' },
+                        { text: '数据控制语言', link: '/dev/mysql/dcl' },
+                        { text: '常用函数', link: '/dev/mysql/function' },
+                        { text: '常用约束', link: '/dev/mysql/constraint' },
+                        { text: '多表查询', link: '/dev/mysql/multi' },
+                        { text: '事务操作', link: '/dev/mysql/transaction' },
+                        { text: '存储引擎', link: '/dev/mysql/engine' },
+                        { text: '索引概述', link: '/dev/mysql/index' },
+                        { text: '索引结构', link: '/dev/mysql/structure' },
+                        { text: '索引语法', link: '/dev/mysql/grammar' },
+                        { text: '索引失效', link: '/dev/mysql/invalid' },
+                        { text: '索引使用', link: '/dev/mysql/use' },
+                        { text: '性能分析', link: '/dev/mysql/profile' },
+                        { text: 'SQL优化', link: '/dev/mysql/sqloptimization' },
+                        { text: '视图', link: '/dev/mysql/view' },
+                        { text: '存储过程', link: '/dev/mysql/stored' },
+                        { text: '过程语法', link: '/dev/mysql/storedgrammar' },
+                        { text: '游标', link: '/dev/mysql/cursor' },
+                        { text: '存储函数', link: '/dev/mysql/storedfunction' },
+                        { text: '触发器', link: '/dev/mysql/trigger' },
+                        { text: '全局锁', link: '/dev/mysql/globallock' },
+                        { text: '表级锁', link: '/dev/mysql/tablelock' },
+                        { text: '行级锁', link: '/dev/mysql/linelock' }
+                    ]
+                }
+            ],
+            '/about/': [
+                {
+                    text: '资源分享',
+                    collapsed: true,
+
+                    items: [
+                        { text: '网页导航', link: '/dev/resource/navigation' }
+                    ]
+                }
+            ]
         },
         // 在导航栏中展示带有图标的社交帐户链接
         socialLinks: [
