@@ -1212,7 +1212,7 @@ private final void transfer(Node<K,V>[] tab, Node<K,V>[] nextTab) {
 
 在代码的有一个判断`else if ((f = tabAt(tab, i)) == null)`，如果遍历到的节点是`forward`节点，就向后继续遍历，再加上给节点上锁的机制，就完成了多线程的控制。多线程遍历节点，处理了一个节点，就把对应点的值`set`为`forward`，另一个线程看到`forward`，就向后遍历。这样交叉就完成了复制工作。而且还很好的解决了线程安全的问题。
 
-![An image](/img/java/container/47.png)
+![An image](/img/java/container/47.jpg)
 
 #### 扩容过程图解
 
