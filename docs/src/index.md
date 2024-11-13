@@ -6,12 +6,15 @@ hero:
   name: "Take To"
   text: "在线知识库"
   tagline: Online knowledge base
+  image:
+    src: /img/logo.gif
+    alt: VitePress
   actions:
     - theme: brand
       text: 快速开始
       link: /java/basic/index
     - theme: alt
-      text: 资源库
+      text: 资源推荐
       link: /share/navigation
 
 features:
