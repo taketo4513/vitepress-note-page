@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     title: "Take To",
     description: "Online knowledge base",
+    head: [['link', { rel: 'icon', href: '/img/favicon.ico' }]],
     srcDir: 'src',
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
@@ -195,10 +196,7 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'About',
-                items: [
-                    { text: '资源分享', link: '/about/resource/navigation' },
-                ]
+                text: 'Share', link: '/share/navigation'
             }
         ],
         // 侧边栏配置
@@ -1026,13 +1024,13 @@ export default defineConfig({
                     ]
                 }
             ],
-            '/about/': [
+            '/share/': [
                 {
                     text: '资源分享',
                     collapsed: true,
 
                     items: [
-                        { text: '网页导航', link: '/dev/resource/navigation' }
+                        { text: '网页导航', link: '/share/navigation' }
                     ]
                 }
             ]
@@ -1040,6 +1038,10 @@ export default defineConfig({
         // 在导航栏中展示带有图标的社交帐户链接
         socialLinks: [
             { icon: 'github', link: 'https://github.com/taketo4513' }
-        ]
+        ],
+        // 本地搜索
+        search: {
+            provider: 'local'
+        }
     }
 })
