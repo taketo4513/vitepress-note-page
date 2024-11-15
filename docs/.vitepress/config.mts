@@ -673,15 +673,15 @@ export default defineConfig({
 
                     items: [
                         { text: 'CentOS', link: '/linux/instance/centos' },
-                        { text: 'Ubuntu', link: '/nodejs/async/ubuntu' },
-                        { text: 'Debian', link: '/nodejs/async/debian' },
-                        { text: '局域网唤醒', link: '/nodejs/async/wol' },
-                        { text: 'WOL唤醒脚本', link: '/nodejs/async/wolshell' },
-                        { text: '服务自启动', link: '/nodejs/async/systemctl' },
-                        { text: '硬盘分区', link: '/nodejs/async/partition' },
-                        { text: '逻辑卷管理', link: '/nodejs/async/lvm' },
-                        { text: '文本过滤', link: '/nodejs/async/filter' },
-                        { text: '密钥登录', link: '/nodejs/async/keylogin' }
+                        { text: 'Ubuntu', link: '/linux/instance/ubuntu' },
+                        { text: 'Debian', link: '/linux/instance/debian' },
+                        { text: '局域网唤醒', link: '/linux/instance/wol' },
+                        { text: 'WOL唤醒脚本', link: '/linux/instance/wolshell' },
+                        { text: '服务自启动', link: '/linux/instance/systemctl' },
+                        { text: '硬盘分区', link: '/linux/instance/partition' },
+                        { text: '逻辑卷管理', link: '/linux/instance/lvm' },
+                        { text: '文本过滤', link: '/linux/instance/filter' },
+                        { text: '密钥登录', link: '/linux/instance/keylogin' }
                     ]
                 },
                 {
