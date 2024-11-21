@@ -134,6 +134,4 @@ etherwake 目标机器的MAC地址
 
 ## 6. 一键唤醒脚本
 
-::: center
-[WOL唤醒脚本](/pages/app/instance/wolshell/)
-:::
+[WOL唤醒脚本](/linux/instance/wolshell)

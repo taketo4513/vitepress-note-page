@@ -125,3 +125,49 @@ deb http://mirrors.ustc.edu.cn/debian stable-updates main contrib non-free non-f
 ```
 
 > 从 Debian 12 (bookworm) 开始，仓库添加了非自由固件组件 non-free-firmware。 如果正在使用 bookworm, testing 或 sid，并且需要使> 用非自由固件，则在编辑配置时需要添加 non-free-firmware。 其中以上参考配置已经添加。
+
+## 禁止默认休眠
+
+```sh
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+
+## 关闭合盖休眠
+
+```sh{19,21,25,28}
+vim /etc/systemd/logind.conf
+
+[Login]
+#NAutoVTs=6
+#ReserveVT=6
+#KillUserProcesses=no
+#KillOnlyUsers=
+#KillExcludeUsers=root
+#InhibitDelayMaxSec=5
+#UserStopDelaySec=10
+#HandlePowerKey=poweroff
+#HandlePowerKeyLongPress=ignore
+#HandleRebootKey=reboot
+#HandleRebootKeyLongPress=poweroff
+#HandleSuspendKey=suspend
+#HandleSuspendKeyLongPress=hibernate
+#HandleHibernateKey=hibernate
+#HandleHibernateKeyLongPress=ignore
+HandleLidSwitch=ignore
+#HandleLidSwitchExternalPower=suspend
+HandleLidSwitchDocked=ignore
+#PowerKeyIgnoreInhibited=no
+#SuspendKeyIgnoreInhibited=no
+#HibernateKeyIgnoreInhibited=no
+LidSwitchIgnoreInhibited=yes
+#RebootKeyIgnoreInhibited=no
+#HoldoffTimeoutSec=30s
+IdleAction=ignore
+#IdleActionSec=30min
+#RuntimeDirectorySize=10%
+#RuntimeDirectoryInodesMax=
+#RemoveIPC=yes
+#InhibitorsMax=8192
+#SessionsMax=8192
+#StopIdleSessionSec=infinity
+```
