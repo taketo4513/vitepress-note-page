@@ -786,7 +786,9 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: 'NAT穿透的工作原理', link: '/linux/nat/breakdown' }
+                                { text: 'NAT - 网络地址转换', link: '/linux/nat/nat' },
+                                { text: 'NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale）', link: '/linux/nat/nat-traversal' },
+                                { text: '基于角色的访问控制（RBAC）：演进历史、设计理念及简洁实现（Tailscale）', link: '/linux/nat/tailscale-rbac' }
                             ]
                         },
                         {

@@ -19,7 +19,9 @@ next: false
 
 ### NAT穿透
 
-1. [NAT穿透的工作原理](/linux/nat/breakdown)
+1. [NAT - 网络地址转换](/linux/nat/nat.md)
+2. [NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale）](/linux/nat/nat-traversal.md)
+3. [基于角色的访问控制（RBAC）：演进历史、设计理念及简洁实现（Tailscale）](/linux/nat/tailscale-rbac.md)
 
 ### 组网方案
 
