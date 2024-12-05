@@ -40,11 +40,11 @@
 
 NAT类型主要影响UDP协议的通信性能和稳定性。特别是在需要低延迟和高实时性的应用中，例如在线游戏、VoIP和视频通话。
 
-**游戏的影响：**玩主机游戏的影响很大，如果你有PS、Xbox、NS 等主机，可以在网络状态里看到 NAT类型；对网络游戏会影响延迟和丢包率，以及匹配系统的效率和成功率。
+**游戏的影响**：玩主机游戏的影响很大，如果你有PS、Xbox、NS 等主机，可以在网络状态里看到 NAT类型；对网络游戏会影响延迟和丢包率，以及匹配系统的效率和成功率。
 
-**语音视频的影响：**你可能遇到过微信视频提示网络质量不好，但WiFi信号满格的状况，这种情况很有可能是NAT4类型，导致无法P2P连接成功导致的。
+**语音视频的影响**：你可能遇到过微信视频提示网络质量不好，但WiFi信号满格的状况，这种情况很有可能是NAT4类型，导致无法P2P连接成功导致的。
 
-**BT下载的影响：**P2P下载等应用，最为开放的NAT类型，可以连接到更多的资源数，加快下载的速度。
+**BT下载的影响**：P2P下载等应用，最为开放的NAT类型，可以连接到更多的资源数，加快下载的速度。
 
 开放性：NAT1>NAT2>NAT3>NAT4
 
@@ -185,7 +185,7 @@ pipx install pystun3
 # 若报错
 #⚠️  Note: '/home/taketo/.local/bin' is not on your PATH environment variable. These apps will not be globally accessible until your PATH is
 #    updated. Run `pipx ensurepath` to automatically add it, or manually modify your PATH in your shell's config file (i.e. ~/.bashrc).
-echo 'export PATH=$PATH:~/.local/bin' ~/.bashrc
+echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
 
