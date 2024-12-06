@@ -211,8 +211,8 @@ systemctl enable dnf
 
 登录页
 
-![An image](/img/linux/dnf/03.png)
+![An image](/img/linux/nas/003.png)
 
 首页
 
-![An image](/img/linux/dnf/04.png)
+![An image](/img/linux/nas/004.png)

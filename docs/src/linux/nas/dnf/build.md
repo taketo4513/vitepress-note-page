@@ -269,11 +269,11 @@ PVFPath=/home/neople/game/
 
 用户注册
 
-![An image](/img/linux/dnf/01.png)
+![An image](/img/linux/nas/001.png)
 
 登录游戏
 
-![An image](/img/linux/dnf/02.png)
+![An image](/img/linux/nas/002.png)
 
 ## 问题解决
 

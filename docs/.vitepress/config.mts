@@ -128,7 +128,7 @@ export default defineConfig({
                             { text: '容器技术', link: '/linux/container/index' },
                             { text: '容器编排', link: '/linux/management/index' },
                             { text: '虚拟专网', link: '/linux/nat/index' },
-                            { text: '私服搭建', link: '/linux/dnf/index' }
+                            { text: '智能家居', link: '/linux/nas/index' }
                         ]
                     },
                     {
@@ -803,13 +803,36 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: '私服搭建',
+                    text: '智能家居',
                     collapsed: true,
 
                     items: [
-                        { text: '基本概述', link: '/linux/dnf/overview' },
-                        { text: '私服搭建', link: '/linux/dnf/build' },
-                        { text: '网页GM搭建', link: '/linux/dnf/gm' },
+                        {
+                            text: '家庭自动化',
+                            collapsed: true,
+
+                            items: [
+                            ]
+                        },
+                        {
+                            text: '密码管理',
+                            collapsed: true,
+
+                            items: [
+                                { text: 'vaultwarden', link: '/linux/nas/pwd/vaultwarden' },
+                                { text: 'vaultwarden-backup', link: '/linux/nas/pwd/vaultwarden-backup' }
+                            ]
+                        },
+                        {
+                            text: '私服搭建',
+                            collapsed: true,
+
+                            items: [
+                                { text: '基本概述', link: '/linux/nas/dnf/overview' },
+                                { text: '私服搭建', link: '/linux/nas/dnf/build' },
+                                { text: '网页GM搭建', link: '/linux/nas/dnf/gm' }
+                            ]
+                        }
                     ]
                 },
                 {
