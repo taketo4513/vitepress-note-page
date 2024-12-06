@@ -1,4 +1,4 @@
-# vaultwarden-backup
+# Vaultwarden-backup
 
 **Vaultwarden Backup** 是一个用于备份 Vaultwarden 数据的过程或工具，确保密码和其他敏感数据的安全性和可恢复性。由于 Vaultwarden 是一个自托管的服务，备份数据是用户的责任，以防止意外数据丢失或服务中断。
 

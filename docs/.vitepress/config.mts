@@ -819,8 +819,8 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: 'vaultwarden', link: '/linux/nas/pwd/vaultwarden' },
-                                { text: 'vaultwarden-backup', link: '/linux/nas/pwd/vaultwarden-backup' }
+                                { text: 'Vaultwarden', link: '/linux/nas/pwd/vaultwarden' },
+                                { text: 'Vaultwarden-backup', link: '/linux/nas/pwd/vaultwarden-backup' }
                             ]
                         },
                         {
