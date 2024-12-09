@@ -127,7 +127,7 @@ export default defineConfig({
                             { text: '虚机平台', link: '/linux/vm/index' },
                             { text: '容器技术', link: '/linux/container/index' },
                             { text: '容器编排', link: '/linux/management/index' },
-                            { text: '虚拟专网', link: '/linux/nat/index' },
+                            { text: '异地组网', link: '/linux/nat/index' },
                             { text: '智能家居', link: '/linux/nas/index' }
                         ]
                     },
@@ -764,7 +764,7 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: '虚拟专网',
+                    text: '异地组网',
                     collapsed: true,
 
                     items: [
@@ -797,7 +797,7 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: '异地组网方案', link: '/linux/nat/softfrp' }
+                                { text: 'SoftEther + Frp', link: '/linux/nat/softfrp' }
                             ]
                         }
                     ]

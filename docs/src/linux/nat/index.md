@@ -4,7 +4,7 @@ prev: false
 next: false
 ---  
 
-# 虚拟专网
+# 异地组网
 
 ## 目录
 
@@ -26,4 +26,4 @@ next: false
 
 ### 组网方案
 
-1. [异地组网方案](/linux/nat/softfrp)
+1. [SoftEther + Frp](/linux/nat/softfrp)

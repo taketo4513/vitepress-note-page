@@ -1,4 +1,4 @@
-# 异地组网方案
+# SoftEther + Frp
 
 ## 概览
 
@@ -28,11 +28,9 @@ SoftEtherVPN创建VPN服务，通过frp做端口映射，实现内网穿透。
 
     具体步骤可以参考
 
-    ::: center
-    [SoftEtherVPN 安装及配置](/pages/linux/nat/softether/)
+    [SoftEtherVPN 安装及配置](/linux/nat/softether/)
 
-    [SoftEtherVPN 隧道拆分](/pages/linux/nat/softetherroute/)
-    :::
+    [SoftEtherVPN 隧道拆分](/linux/nat/softetherroute/)
 
     > 不配置隧道拆分会导致终端访问的所有流量都经过外网服务器转发，从而导致外网服务器压力过大
 
@@ -40,9 +38,7 @@ SoftEtherVPN创建VPN服务，通过frp做端口映射，实现内网穿透。
 
     具体步骤可以参考
 
-    ::: center
-    [Frp 安装及配置](/pages/linux/nat/frp/)
-    :::
+    [Frp 安装及配置](/linux/nat/frp/)
 
     服务端配置文件
 
