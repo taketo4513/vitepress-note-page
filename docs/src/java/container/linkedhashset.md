@@ -72,7 +72,7 @@ HashSet(int initialCapacity, float loadFactor, boolean dummy) {
 
 ## 拓展
 
-通过源码，我们知道`LinkedHashSet`底层使用`LinkedHashMap`存储元素，而`LinkedHashMap`是支持按元素访问顺序遍历元素的，也就是可以用来实现`LRU`的，实现方法请参考[LinkedHashMap](/pages/java/container/linkedhashmap/)
+通过源码，我们知道`LinkedHashSet`底层使用`LinkedHashMap`存储元素，而`LinkedHashMap`是支持按元素访问顺序遍历元素的，也就是可以用来实现`LRU`的，实现方法请参考[LinkedHashMap](/java/container/linkedhashmap/)
 
 那么，`LinkedHashSet`支持按元素访问顺序排序吗？
 

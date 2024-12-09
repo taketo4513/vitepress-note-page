@@ -103,7 +103,7 @@ static class Node<K, V> implements Map.Entry<K, V> {
 
 #### 红黑树结构TreeNode
 
-继承自`LinkedHashMap`中的`Entry`类，关于`LinkedHashMap.Entry`请参考[LinkedHashMap](/pages/java/container/linkedhashmap/)。
+继承自`LinkedHashMap`中的`Entry`类，关于`LinkedHashMap.Entry`请参考[LinkedHashMap](/java/container/linkedhashmap/)。
 
 `TreeNode`是一个典型的树型节点，其中，`prev`是链表中的节点，用于在删除元素的时候可以快速找到它的前置节点。
 

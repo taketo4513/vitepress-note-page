@@ -252,7 +252,7 @@ private static int calculateSize(int numElements) {
 
 通过构造方法，我们知道默认初始容量是`16`，最小容量是`8`。
 
-`calculateSize`扩容算法和[`HashMap`](/pages/java/container/hashmap/)的构造中`tableSizeFor`算法相似。
+`calculateSize`扩容算法和[`HashMap`](/java/container/hashmap/)的构造中`tableSizeFor`算法相似。
 
 ### 入队
 

@@ -129,9 +129,7 @@ systemctl enable frps
 
 参考官方文档
 
-::: center
 [Frp 官方配置文档](https://gofrp.org/docs/reference/server-configures/)
-:::
 
 ## 通过 SSH 访问内网机器
 

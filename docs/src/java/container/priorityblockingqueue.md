@@ -4,7 +4,7 @@
 
 `PriorityBlockingQueue`是`java`并发包下的优先级阻塞队列，它是线程安全的，如果让你来实现你会怎么实现它呢？
 
-还记得我们前面介绍过的`PriorityQueue`吗？点击链接直达[PriorityQueue](/pages/java/container/priorityqueue/)
+还记得我们前面介绍过的`PriorityQueue`吗？点击链接直达[PriorityQueue](/java/container/priorityqueue/)
 
 ## 源码分析
 

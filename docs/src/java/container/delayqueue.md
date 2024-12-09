@@ -98,7 +98,7 @@ private final Condition available = lock.newCondition();
 
 因为优先级队列是无界的，所以这里只需要一个条件就可以了。
 
-关于优先级队列，请参考[PriorityQueue](/pages/java/container/priorityqueue/)
+关于优先级队列，请参考[PriorityQueue](/java/container/priorityqueue/)
 
 ### 构造方法
 

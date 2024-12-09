@@ -34,9 +34,7 @@ Split Tunneling （拆分隧道），是SoftEther-VPN中比较强悍的一个功
 
 但是对于Softether VPN来说，拆分隧道功能并不适合官方下载的版本，从网上查到的信息，某些地区不可以使用该功能在内的一部分功能(当然仅限于官方下载的编译好的版本，对于自己进行源码编译是不限制的)
 
-::: center
-[Softether VPN破除限制参考](/pages/linux/nat/softethermake/)
-:::
+[Softether VPN破除限制参考](/linux/nat/softethermake/)
 
 ### 配置SecureNAT
 

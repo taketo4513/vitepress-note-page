@@ -323,6 +323,4 @@ public class ShiroExceptionHandler {
 
 ## 完整代码示例
 
-::: center
 [SpringBoot+Shiro+Redis+JWT](https://gitee.com/take_to/springboot-shiro-demo.git)
-:::

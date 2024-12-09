@@ -16,7 +16,7 @@
 - `Cronjob`：它创建的Pod负责周期性任务控制，不需要持续后台运行
 - `StatefulSet`：管理有状态应用
 
-## [ReplicaSet](/pages/linux/management/replicaset/)
+## [ReplicaSet](/linux/management/replicaset/)
 
 **ReplicaSet**（副本集）是一个Pod的集合。
 
@@ -24,7 +24,7 @@ ReplicaSet的主要作用是保证一定数量的pod正常运行，它会持续�
 
 ![An image](/img/linux/management/13.png)
 
-## [Deployment](/pages/linux/management/deployment/)
+## [Deployment](/linux/management/deployment/)
 
 **Deployment**是对ReplicaSet和Pod更高级的抽象。
 
@@ -38,7 +38,7 @@ Deployment主要功能
 
 ![An image](/img/linux/management/14.png)
 
-## [Horizontal Pod Autoscaler](/pages/linux/management/hpa/)
+## [Horizontal Pod Autoscaler](/linux/management/hpa/)
 
 Kubernetes期望可以实现通过监测Pod的使用情况，实现pod数量的自动调整，于是就产生了Horizontal Pod Autoscaler（HPA）。
 
@@ -46,7 +46,7 @@ Horizontal Pod Autoscaler可以获取每个Pod利用率，然后和HPA中定义�
 
 ![An image](/img/linux/management/15.png)
 
-## [DaemonSet](/pages/linux/management/daemonset/)
+## [DaemonSet](/linux/management/daemonset/)
 
 DaemonSet类型的控制器可以保证在集群中的每一台（或指定）节点上都运行一个副本。一般适用于日志收集、节点监控等场景。也就是说，如果一个Pod提供的功能是节点级别的（每个节点都需要且只需要一个），那么这类Pod就适合使用DaemonSet类型的控制器创建。
 
@@ -57,7 +57,7 @@ DaemonSet的特点
 
 ![An image](/img/linux/management/16.png)
 
-## [Job](/pages/linux/management/job/)
+## [Job](/linux/management/job/)
 
 Job，主要用于负责批量处理（一次要处理指定数量任务）短暂的一次性（每个任务仅运行一次就结束）任务。
 
@@ -68,7 +68,7 @@ Job的特点
 
 ![An image](/img/linux/management/17.png)
 
-## [Cronjob](/pages/linux/management/cronjob/)
+## [Cronjob](/linux/management/cronjob/)
 
 CronJob控制器以 Job控制器资源为其管控对象，并借助它管理pod资源对象，Job控制器定义的作业任务在其控制器资源创建之后便会立即执行，但CronJob可以以类似于Linux操作系统的周期性任务作业计划的方式控制其运行时间点及重复运行的方式。也就是说，CronJob可以在特定的时间点(反复的)去运行job任务。
 
