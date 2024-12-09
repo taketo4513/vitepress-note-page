@@ -83,6 +83,9 @@ version: '3.8'
 services:
   vaultwarden_backup:
     image: ttionya/vaultwarden-backup:latest
+    # 解决time64 兼容性问题
+    security_opt:
+      - seccomp=unconfined
     container_name: vaultwarden_backup
     restart: always
     volumes:
@@ -302,6 +305,9 @@ version: '3.8'
 services:
   vaultwarden_backup:
     image: ttionya/vaultwarden-backup:latest
+    # 解决time64 兼容性问题
+    security_opt:
+      - seccomp=unconfined
     container_name: vaultwarden_backup
     restart: always
     volumes:
