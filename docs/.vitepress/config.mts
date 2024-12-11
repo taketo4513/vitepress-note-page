@@ -824,6 +824,15 @@ export default defineConfig({
                             ]
                         },
                         {
+                            text: '文件共享',
+                            collapsed: true,
+
+                            items: [
+                                { text: 'FTP', link: '/linux/nas/share/ftp' },
+                                { text: 'NFS', link: '/linux/nas/share/nfs' }
+                            ]
+                        },
+                        {
                             text: '私服搭建',
                             collapsed: true,
 

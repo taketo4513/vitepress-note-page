@@ -2,11 +2,11 @@
 
 ## systemctl 实现开机自启服务
 
-### 0. 概述
+### 概述
 
 ​**systemctl**是LINUX的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。可以使用它永久性或只在当前会话中启用/禁用服务。
 
-### 1. 后台服务配置文件
+### 后台服务配置文件
 
 一般系统管理员手工创建的单元文件建议存放在/etc/systemd/system/目录下面。
 
@@ -88,7 +88,7 @@ WantedBy=multi-user.target    #表示多用户命令行状态
 
 - DefaultInstance：实例单元的限制，这个选项指定如果单元被允许运行默认的实例
 
-### 2. systemctl命令
+### systemctl命令
 
 - 系统重新加载服务
 
@@ -180,7 +180,7 @@ systemctl list-unit-files | grep enable
 systemctl list-unit-files | grep sshd 
 ```
 
-### 3. 示例
+### 示例
 
 #### redis
 

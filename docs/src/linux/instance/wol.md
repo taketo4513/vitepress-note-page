@@ -1,10 +1,10 @@
 # 局域网唤醒
 
-## 1. 准备工作
+## 准备工作
 
 开启bios远程唤醒功能和PCI启动
 
-## 2. 安装ethtool
+## 安装ethtool
 
 通过SHELL或者SSH安装 ethtool 工具，安装命令：
 
@@ -12,7 +12,7 @@
 apt-get install ethtool
 ```
 
-## 3. 查看网卡信息
+## 查看网卡信息
 
 用ethtool工具查看网卡信息，如果是多网卡的话，需要先搞清楚哪个是链接外网的管理口,举例网卡为enp3s0。
 
@@ -22,7 +22,7 @@ ethtool enp3s0
 
 找到网卡信息中的supports wake-on和wake-on两个参数，如果supports值为pumbg，表示网卡支持远程唤醒,wake-on的值d表示禁用、g表示开启，默认为d。
 
-## 4. 开启网卡唤醒
+## 开启网卡唤醒
 
 用ethtool开启网卡远程唤醒，把wake-on值改为g
 
@@ -122,7 +122,7 @@ exit 0
 sudo chmod +x /etc/rc.local
 ```
 
-## 5. 发送魔术包唤醒
+## 发送魔术包唤醒
 
 在linux系统中可以使用`wakeonlan`、`etherwake`等工具
 
@@ -132,6 +132,6 @@ wakeonlan 目标机器的MAC地址
 etherwake 目标机器的MAC地址
 ```
 
-## 6. 一键唤醒脚本
+## 一键唤醒脚本
 
 [WOL唤醒脚本](/linux/instance/wolshell)
