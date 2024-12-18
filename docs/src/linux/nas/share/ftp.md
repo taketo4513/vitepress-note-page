@@ -46,6 +46,7 @@ anonymous_enable=NO
 
 # 将用户限制在其主目录
 chroot_local_user=YES
+allow_writeable_chroot=YES
 
 # 启用被动模式（防火墙友好）
 pasv_enable=YES
