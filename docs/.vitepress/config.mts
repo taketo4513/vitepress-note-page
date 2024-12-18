@@ -1070,6 +1070,10 @@ export default defineConfig({
         // 本地搜索
         search: {
             provider: 'local'
+        },
+        // 页脚配置
+        footer: {
+            message: 'TakeTo | <a href="https://beian.miit.gov.cn/" target="_blank">ICP备2022037467号</a> | <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32081202000334">公网安备 32081202000334号</a>',
         }
     },
     // 图片懒加载
