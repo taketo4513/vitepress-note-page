@@ -881,25 +881,25 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: '什么是以太坊', link: '/chain/eth/introduce' },
-                                { text: '以太坊架构', link: '/chain/eth/architecture' },
-                                { text: '什么是DApp', link: '/chain/eth/dapp' },
-                                { text: '区块的定义', link: '/chain/eth/block' },
-                                { text: '以太坊地址', link: '/chain/eth/address' },
-                                { text: 'Nonce的作用', link: '/chain/eth/nonce' },
-                                { text: 'Gas燃料费', link: '/chain/eth/gas' },
-                                { text: '叔块', link: '/chain/eth/uncle' },
-                                { text: '挖矿奖励', link: '/chain/eth/award' },
-                                { text: '数据结构', link: '/chain/eth/data' },
-                                { text: 'MPT树', link: '/chain/eth/mpt' },
-                                { text: '账户模型', link: '/chain/eth/accountmodle' },
-                                { text: 'Ghost协议', link: '/chain/eth/ghost' },
-                                { text: 'Casper共识机制', link: '/chain/eth/casper' },
-                                { text: '智能合约', link: '/chain/eth/contract' },
-                                { text: '合约标准', link: '/chain/eth/standard' },
-                                { text: '以太坊交易', link: '/chain/eth/transction' },
-                                { text: '代币', link: '/chain/eth/token' },
-                                { text: '以太坊零地址', link: '/chain/eth/zero' }
+                                { text: '什么是以太坊', link: '/chain/eth/basic/introduce' },
+                                { text: '以太坊架构', link: '/chain/eth/basic/architecture' },
+                                { text: '什么是DApp', link: '/chain/eth/basic/dapp' },
+                                { text: '区块的定义', link: '/chain/eth/basic/block' },
+                                { text: '以太坊地址', link: '/chain/eth/basic/address' },
+                                { text: 'Nonce的作用', link: '/chain/eth/basic/nonce' },
+                                { text: 'Gas燃料费', link: '/chain/eth/basic/gas' },
+                                { text: '叔块', link: '/chain/eth/basic/uncle' },
+                                { text: '挖矿奖励', link: '/chain/eth/basic/award' },
+                                { text: '数据结构', link: '/chain/eth/basic/data' },
+                                { text: 'MPT树', link: '/chain/eth/basic/mpt' },
+                                { text: '账户模型', link: '/chain/eth/basic/accountmodle' },
+                                { text: 'Ghost协议', link: '/chain/eth/basic/ghost' },
+                                { text: 'Casper共识机制', link: '/chain/eth/basic/casper' },
+                                { text: '智能合约', link: '/chain/eth/basic/contract' },
+                                { text: '合约标准', link: '/chain/eth/basic/standard' },
+                                { text: '以太坊交易', link: '/chain/eth/basic/transction' },
+                                { text: '代币', link: '/chain/eth/basic/token' },
+                                { text: '以太坊零地址', link: '/chain/eth/basic/zero' }
                             ]
                         },
                         {
@@ -921,12 +921,12 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: '基本介绍', link: '/chain/eosio/introduce' },
-                                { text: '共识机制(BFT-DPoS)', link: '/chain/eosio/bftdpos' },
-                                { text: '账户体系', link: '/chain/eosio/account' },
-                                { text: '网络资源', link: '/chain/eosio/netresource' },
-                                { text: '节点治理', link: '/chain/eosio/governance' },
-                                { text: '脚本与虚拟机', link: '/chain/eosio/vm' }
+                                { text: '基本介绍', link: '/chain/eosio/basic/introduce' },
+                                { text: '共识机制(BFT-DPoS)', link: '/chain/eosio/basic/bftdpos' },
+                                { text: '账户体系', link: '/chain/eosio/basic/account' },
+                                { text: '网络资源', link: '/chain/eosio/basic/netresource' },
+                                { text: '节点治理', link: '/chain/eosio/basic/governance' },
+                                { text: '脚本与虚拟机', link: '/chain/eosio/basic/vm' }
                             ]
                         },
                         {
@@ -934,12 +934,12 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: '快速开始', link: '/chain/eosio/start' },
-                                { text: '源码编译', link: '/chain/eosio/source' },
-                                { text: '多节点环境部署', link: '/chain/eosio/multi' },
-                                { text: 'RPC接口上链', link: '/chain/eosio/rpc' },
-                                { text: '账户体系', link: '/chain/eosio/access' },
-                                { text: 'History-Tools', link: '/chain/eosio/history-tools' }
+                                { text: '快速开始', link: '/chain/eosio/operate/start' },
+                                { text: '源码编译', link: '/chain/eosio/operate/source' },
+                                { text: '多节点环境部署', link: '/chain/eosio/operate/multi' },
+                                { text: 'RPC接口上链', link: '/chain/eosio/operate/rpc' },
+                                { text: '账户体系', link: '/chain/eosio/operate/access' },
+                                { text: 'History-Tools', link: '/chain/eosio/operate/history-tools' }
                             ]
                         }
                     ]
@@ -954,22 +954,22 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: '架构概览', link: '/chain/fabric/architecture' },
-                                { text: '核心概念与组件', link: '/chain/fabric/component' },
-                                { text: 'Raft共识算法', link: '/chain/fabric/raft' },
-                                { text: '消息协议', link: '/chain/fabric/message' },
-                                { text: '数据传播协议', link: '/chain/fabric/gossip' },
-                                { text: '访问控制', link: '/chain/fabric/access' },
-                                { text: '隐私保护', link: '/chain/fabric/privacy' },
-                                { text: '读写集语义', link: '/chain/fabric/semantics' },
-                                { text: '网络发现', link: '/chain/fabric/discover' },
-                                { text: '管理链码', link: '/chain/fabric/lifecycle' },
-                                { text: '读写集语义', link: '/chain/fabric/semantics' },
-                                { text: '配置解析—组织身份文件', link: '/chain/fabric/config1' },
-                                { text: '配置解析—通道配置文件', link: '/chain/fabric/config2' },
-                                { text: '配置解析—Order配置文件', link: '/chain/fabric/config3' },
-                                { text: '配置解析—Peer配置文件', link: '/chain/fabric/config4' },
-                                { text: '链码开发', link: '/chain/fabric/dev' }
+                                { text: '架构概览', link: '/chain/fabric/basic/architecture' },
+                                { text: '核心概念与组件', link: '/chain/fabric/basic/component' },
+                                { text: 'Raft共识算法', link: '/chain/fabric/basic/raft' },
+                                { text: '消息协议', link: '/chain/fabric/basic/message' },
+                                { text: '数据传播协议', link: '/chain/fabric/basic/gossip' },
+                                { text: '访问控制', link: '/chain/fabric/basic/access' },
+                                { text: '隐私保护', link: '/chain/fabric/basic/privacy' },
+                                { text: '读写集语义', link: '/chain/fabric/basic/semantics' },
+                                { text: '网络发现', link: '/chain/fabric/basic/discover' },
+                                { text: '管理链码', link: '/chain/fabric/basic/lifecycle' },
+                                { text: '读写集语义', link: '/chain/fabric/basic/semantics' },
+                                { text: '配置解析—组织身份文件', link: '/chain/fabric/basic/config1' },
+                                { text: '配置解析—通道配置文件', link: '/chain/fabric/basic/config2' },
+                                { text: '配置解析—Order配置文件', link: '/chain/fabric/basic/config3' },
+                                { text: '配置解析—Peer配置文件', link: '/chain/fabric/basic/config4' },
+                                { text: '链码开发', link: '/chain/fabric/basic/dev' }
                             ]
                         },
                         {
@@ -977,16 +977,16 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
-                                { text: 'Fabric 1.4.6 环境搭建', link: '/chain/fabric/build1' },
-                                { text: 'Fabric 1.4.6 多机部署', link: '/chain/fabric/multi1' },
-                                { text: 'Fabric 2.2.5 环境搭建', link: '/chain/fabric/build2' },
-                                { text: 'Fabric 2.2.5 多机部署', link: '/chain/fabric/multi2' },
-                                { text: 'Fabric 1.4.6 链码操作', link: '/chain/fabric/chaincode1' },
-                                { text: 'Fabric 2.4.7 链码操作', link: '/chain/fabric/chaincode2' },
-                                { text: '生产网络—生成身份文件', link: '/chain/fabric/production1' },
-                                { text: '生产网络—部署 Orderer 节点', link: '/chain/fabric/production2' },
-                                { text: '生产网络—部署 Peer 节点', link: '/chain/fabric/production3' },
-                                { text: '生产网络—部署合约并调用', link: '/chain/fabric/production4' }
+                                { text: 'Fabric 1.4.6 环境搭建', link: '/chain/fabric/operate/build1' },
+                                { text: 'Fabric 1.4.6 多机部署', link: '/chain/fabric/operate/multi1' },
+                                { text: 'Fabric 2.2.5 环境搭建', link: '/chain/fabric/operate/build2' },
+                                { text: 'Fabric 2.2.5 多机部署', link: '/chain/fabric/operate/multi2' },
+                                { text: 'Fabric 1.4.6 链码操作', link: '/chain/fabric/operate/chaincode1' },
+                                { text: 'Fabric 2.4.7 链码操作', link: '/chain/fabric/operate/chaincode2' },
+                                { text: '生产网络—生成身份文件', link: '/chain/fabric/operate/production1' },
+                                { text: '生产网络—部署 Orderer 节点', link: '/chain/fabric/operate/production2' },
+                                { text: '生产网络—部署 Peer 节点', link: '/chain/fabric/operate/production3' },
+                                { text: '生产网络—部署合约并调用', link: '/chain/fabric/operate/production4' }
                             ]
                         }
                     ]

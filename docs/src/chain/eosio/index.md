@@ -10,19 +10,18 @@ next: false
 
 ### Basic
 
-1. [简介概览](/linux/vm/multipass/multipass)
-2. [基本介绍](/chain/eosio/introduce)
-3. [共识机制(BFT-DPoS)](/chain/eosio/bftdpos)
-4. [账户体系](/chain/eosio/account)
-5. [网络资源](/chain/eosio/netresource)
-6. [节点治理](/chain/eosio/governance)
-7. [脚本与虚拟机](/chain/eosio/vm)
+1. [基本介绍](/chain/eosio/basic/introduce)
+2. [共识机制(BFT-DPoS)](/chain/eosio/basic/bftdpos)
+3. [账户体系](/chain/eosio/basic/account)
+4. [网络资源](/chain/eosio/basic/netresource)
+5. [节点治理](/chain/eosio/basic/governance)
+6. [脚本与虚拟机](/chain/eosio/basic/vm)
 
 ### Operate
 
-1. [快速开始](/chain/eosio/start)
-2. [源码编译](/chain/eosio/source)
-3. [多节点环境部署](/chain/eosio/multi)
-4. [RPC接口上链](/chain/eosio/rpc)
-5. [账户体系](/chain/eosio/access)
-6. [History-Tools](/chain/eosio/history-tools)
+1. [快速开始](/chain/eosio/operate/start)
+2. [源码编译](/chain/eosio/operate/source)
+3. [多节点环境部署](/chain/eosio/operate/multi)
+4. [RPC接口上链](/chain/eosio/operate/rpc)
+5. [账户体系](/chain/eosio/operate/access)
+6. [History-Tools](/chain/eosio/operate/history-tools)
