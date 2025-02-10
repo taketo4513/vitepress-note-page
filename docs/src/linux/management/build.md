@@ -338,6 +338,29 @@ http://192.168.31.120:31803
 
 ## 问题汇总
 
+### 普通用户无权限
+
+报错信息
+
+```sh
+# 报错信息
+WARN[0000] Unable to read /etc/rancher/k3s/k3s.yaml, please start server with --write-kubeconfig-mode or --write-kubeconfig-group to modify kube config permissions 
+error: error loading config file "/etc/rancher/k3s/k3s.yaml": open /etc/rancher/k3s/k3s.yaml: permission denied
+```
+
+解决方法
+
+```sh
+# 创建配置目录
+mkdir -p $HOME/.kube
+
+# 将 K3s 的配置文件复制到该目录
+sudo cp /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
+
+# 修改文件权限，确保当前用户可以访问
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
 ### 初始化超时
 
 报错信息
