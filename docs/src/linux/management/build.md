@@ -351,6 +351,9 @@ error: error loading config file "/etc/rancher/k3s/k3s.yaml": open /etc/rancher/
 解决方法
 
 ```sh
+# 声明环境变量
+export KUBECONFIG=$HOME/.kube/config
+
 # 创建配置目录
 mkdir -p $HOME/.kube
 
