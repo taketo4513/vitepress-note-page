@@ -65,11 +65,19 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'JavaScript',
+                text: 'Page',
                 items: [
                     {
                         // 该部分的标题
-                        text: '入门',
+                        text: 'HTML/CSS',
+                        items: [
+                            { text: 'HTML', link: '/htmlcss/html/index' },
+                            { text: 'CSS', link: '/htmlcss/css/index' }
+                        ]
+                    },
+                    {
+                        // 该部分的标题
+                        text: 'Javascript',
                         items: [
                             { text: '基础语法', link: '/javascript/basic/index' },
                             { text: '深入理解', link: '/javascript/advance/index' },
@@ -79,30 +87,18 @@ export default defineConfig({
                     },
                     {
                         // 该部分的标题
-                        text: '进阶',
+                        text: 'Vue',
                         items: [
                             { text: 'Vue2', link: '/javascript/vue2/index' }
                         ]
-                    }
-                ]
-            },
-            {
-                text: 'Nodejs',
-                items: [
+                    },
                     {
-                        // 该部分的标题
-                        text: '入门',
+                        text: 'Nodejs',
                         items: [
                             { text: '基础语法', link: '/nodejs/basic/index' },
                             { text: '模块机制', link: '/nodejs/moudle/index' },
                             { text: '异步编程', link: '/nodejs/async/index' },
-                            { text: '内存控制', link: '/nodejs/memory/index' }
-                        ]
-                    },
-                    {
-                        // 该部分的标题
-                        text: '进阶',
-                        items: [
+                            { text: '内存控制', link: '/nodejs/memory/index' },
                             { text: 'Express', link: '/nodejs/express/index' }
                         ]
                     }
