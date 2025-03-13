@@ -123,3 +123,204 @@ tailscale set --accept-dns=false
 ```
 
 `tailscale version`：查看 Tailscale 客户端版本。
+
+## 访问权限控制
+
+Tailscale/Headscale 的默认访问规则是 default deny，也就是黑名单模式，只有在访问规则明确允许的情况下设备之间才能通信。所以 Tailscale/Headscale 默认会使用 allowall 访问策略进行初始化，该策略允许加入到 Tailscale 网络的所有设备之间可以相互访问。
+
+Tailscale/Headscale 通过使用 group 这种概念，可以只用非常少的规则就能表达大部分安全策略。除了 group 之外，还可以为设备打 tag 来进一步扩展访问策略。结合 group 和 tag 就可以构建出强大的基于角色的访问控制（RBAC）策略。
+
+### ACL语法
+
+Tailscale ACL 需要保存为 HuJSON 格式，也就是 human JSON。HuJSON 是 JSON 的超集，允许添加注释以及结尾处添加逗号。这种格式更易于维护，对人类和机器都很友好。
+
+Headscale 的 ACL 策略主要包含以下几个部分：
+
+- `acls`：ACL 策略定义。
+- `groups`：用户的集合。Tailscale 官方控制器的“用户”指的是登录名，必须是邮箱格式。而 Headscale 的用户就是 namesapce。
+- `hosts`：定义 IP 地址或者 CIDR 的别名。
+- `tagOwners`：指定哪些用户有权限给设备打 tag。
+- `autoApprovers`：允许哪些用户不需要控制端确认就可以宣告 Subnet 路由和 Exit Node。
+
+#### ACL规则
+
+acls 部分是 ACL 规则主体，每个规则都是一个 HuJSON 对象，它授予从一组访问来源到一组访问目标的访问权限。
+
+所有的 ACL 规则最终表示的都是允许从特定源 IP 地址到特定目标 IP 地址和端口的流量。虽然可以直接使用 IP 地址来编写 ACL 规则，但为了可读性以及方便维护，建议使用用户、Group 以及 tag 来编写规则，Tailscale 最终会将其转换为具体的 IP 地址和端口。
+
+每一个 ACL 访问规则长这个样子：
+
+```yaml
+  - action: accept
+    src:
+      - xxx
+      - xxx
+      - ...
+    dst:
+      - xxx
+      - xxx
+      - ...
+    proto: protocol # 可选参数
+
+```
+
+Tailscale/Headscale 的默认访问规则是 default deny，也就是黑名单模式，只有在访问规则明确允许的情况下设备之间才能通信。所以 ACL 规则中的 action 值一般都写 accept，毕竟默认是 deny 嘛。
+
+`src` 字段表示访问来源列表，该字段可以填的值都在这个表格里：
+
+| 类型                                                                                                               | 示例                | 含义                         |
+| ---------------------------------------------------------------------------------------------------------------- | ----------------- | -------------------------- |
+| Any                                                                                                              | *                 | 无限制（即所有来源）                 |
+| 用户(Namespace)                                                                                                    | dev1              | Headscale namespace 中的所有设备 |
+| Group [(ref)](https://tailscale.com/kb/1018/acls#groups)       | group:example     | Group 中的所有用户               |
+| Tailscale IP                                                                                                     | 100.101.102.103   | 拥有给定 Tailscale IP 的设备      |
+| Subnet CIDR [(ref)](https://tailscale.com/kb/1019/subnets) | 192.168.1.0/24    | CIDR 中的任意 IP               |
+| Hosts [(ref)](https://tailscale.com/kb/1018/acls#hosts)     | my-host           | `hosts` 字段中定义的任意 IP        |
+| Tags [(ref)](https://tailscale.com/kb/1068/tags)          | tag:production    | 分配指定 tag 的所有设备             |
+| Tailnet members                                                                                                  | autogroup:members | Tailscale 网络中的任意成员（设备）     |
+
+proto 字段是可选的，指定允许访问的协议。如歌不指定，默认可以访问所有 TCP 和 UDP 流量。
+
+proto 可以指定为 IANA IP 协议编号 1-255（例如 16）或以下命名别名之一（例如 sctp）：
+
+| 协议  | proto | IANA 协议编号 |
+| --- | --- | --- |
+| Internet Group Management (IGMP) | igmp | 2   |
+| IPv4 encapsulation | ipv4, ip-in-ip | 4   |
+| Transmission Control (TCP) | tcp | 6   |
+| Exterior Gateway Protocol (EGP) | egp | 8   |
+| Any private interior gateway | igp | 9   |
+| User Datagram (UDP) | udp | 17  |
+| Generic Routing Encapsulation (GRE) | gre | 47  |
+| Encap Security Payload (ESP) | esp | 50  |
+| Authentication Header (AH) | ah  | 51  |
+| Stream Control Transmission Protocol (SCTP) | sctp | 132 |
+
+只有 TCP、UDP 和 SCTP 流量支持指定端口，其他协议的端口必须指定为 `*`。
+
+dst 字段表示访问目标列表，列表中的每个元素都用 `hosts:ports` 来表示。hosts 的取值范围如下：
+
+| 类型  | 示例  | 含义  |
+| --- | --- | --- |
+| Any | *   | 无限制（即所有访问目标） |
+| 用户（Namespace） | dev1 | Headscale namespace 中的所有设备 |
+| Group [(ref)](https://tailscale.com/kb/1018/acls#groups) | group:example | Group 中的所有用户 |
+| Tailscale IP | 100.101.102.103 | 拥有给定 Tailscale IP 的设备 |
+| Hosts [(ref)](https://tailscale.com/kb/1018/acls/#hosts) | my-host | `hosts` 字段中定义的任意 IP |
+| Subnet CIDR [(ref)](https://tailscale.com/kb/1019/subnets) | 192.168.1.0/24 | CIDR 中的任意 IP |
+| Tags [(ref)](https://tailscale.com/kb/1068/acl-tags) | tag:production | 分配指定 tag 的所有设备 |
+| Internet access [(ref)](https://tailscale.com/kb/1103/exit-nodes) | autogroup:internet | 通过 Exit Node 访问互联网 |
+| Own devices | autogroup:self | 允许 src 中定义的来源访问自己（不包含分配了 tag 的设备） |
+| Tailnet devices | autogroup:members | Tailscale 网络中的任意成员（设备） |
+
+`ports` 的取值范围：
+
+| 类型  | 示例  |
+| --- | --- |
+| Any | *   |
+| Single | 22  |
+| Multiple | 80,443 |
+| Range | 1000-2000 |
+
+### Groups
+
+### groups 定义了一组用户的集合，YAML 格式示例配置如下
+
+```yaml
+groups:
+  group:admin:
+    - "admin1"
+  group:dev:
+    - "dev1"
+    - "dev2"
+```
+
+huJSON 格式：
+
+```json
+"groups": {
+  "group:admin": ["admin1"],
+  "group:dev": ["dev1", "dev2"],
+},
+```
+
+每个 Group 必须以 `group:` 开头，Group 之间也不能相互嵌套。
+
+### Autogroups
+
+autogroup 是一个特殊的 group，它自动包含具有相同属性的用户或者访问目标，可以在 ACL 规则中调用 autogroup。
+
+| Autogroup | 允许在 ACL 的哪个字段调用 | 含义  |
+| --- | --- | --- |
+| autogroup:internet | dst | 用来允许任何用户通过任意 Exit Node 访问你的 Tailscale 网络 |
+| autogroup:members | src 或者 dst | 用来允许 Tailscale 网络中的任意成员（设备）访问别人或者被访问 |
+| autogroup:self | dst | 用来允许 src 中定义的来源访问自己 |
+
+示例配置：
+
+```yaml
+acls:
+  # 允许所有员工访问自己的设备
+  - action: accept
+    src:
+      - "autogroup:members"
+    dst:
+      - "autogroup:self:*"
+  # 允许所有员工访问打了标签 tag:corp 的设备
+  - action: accept
+    src:
+      - "autogroup:members"
+    dst:
+      - "tag:corp:*"
+```
+
+### Hosts
+
+Hosts 用来定义 IP 地址或者 CIDR 的别名，使 ACL 可读性更强。示例配置：
+
+```yaml
+hosts:
+  example-host-1: "100.100.100.100"
+  example-network-1: "100.100.101.100/24
+```
+
+### Tag Owners
+
+`tagOwners` 定义了哪些用户有权限给设备分配指定的 tag。示例配置：
+
+```yaml
+tagOwners:
+  tag:webserver:
+    - group:engineering
+  tag:secure-server:
+    - group:security-admins
+    - dev1
+  tag:corp:
+    - autogroup:members
+```
+
+这里表示的是允许 Group `group:engineering` 给设备添加 tag `tag:webserver`；允许 Group `group:security-admins` 和用户（也就是 namespace）dev1 给设备添加 tag `tag:secure-server`；允许 Tailscale 网络中的任意成员（设备）给设备添加 tag `tag:corp`。
+
+每个 tag 名称必须以 `tag:` 开头，每个 tag 的所有者可以是用户、Group 或者 `autogroup:members`。
+
+### Auto Approvers
+
+`autoApprovers` 定义了**无需 Headscale 控制端批准即可执行某些操作**的用户列表，包括宣告特定的子网路由或者 Exit Node。
+
+当然了，即使可以通过 `autoApprovers` 自动批准，Headscale 控制端仍然可以禁用路由或者 Exit Node，但不推荐这种做法，因为控制端只能临时修改，`autoApprovers` 中定义的用户列表仍然可以继续宣告路由或 Exit Node，所以正确的做法应该是修改 `autoApprovers` 中的用户列表来控制宣告的路由或者 Exit Node。
+
+autoApprovers 示例配置：
+
+```yaml
+autoApprovers:
+  exitNode:
+    - "default"
+    - "tag:bar"
+  routes:
+    "10.0.0.0/24":
+      - "group:engineering"
+      - "dev1"
+      - "tag:foo"
+```
+
+这里表示允许 `default` namespace 中的设备（以及打上标签 `tag:bar` 的设备）将自己宣告为 Exit Node；允许 Group `group:engineering` 中的设备（以及 dev1 namespace 中的设备和打上标签 `tag:foo` 的设备）宣告子网 `10.0.0.0/24` 的路由。

@@ -774,7 +774,9 @@ export default defineConfig({
                                 { text: 'Frp', link: '/linux/nat/frp' },
                                 { text: 'SoftEtherVPN', link: '/linux/nat/softether' },
                                 { text: 'SoftEtherVPN源码编译', link: '/linux/nat/softethermake' },
-                                { text: 'SoftEtherVPN隧道拆分', link: '/linux/nat/softetherroute' }
+                                { text: 'SoftEtherVPN隧道拆分', link: '/linux/nat/softetherroute' },
+                                { text: 'Tailscale', link: '/linux/nat/tailscale' },
+                                { text: 'Headscale', link: '/linux/nat/headscale' }
                             ]
                         },
                         {

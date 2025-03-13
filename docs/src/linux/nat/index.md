@@ -17,6 +17,7 @@ next: false
 5. [SoftEtherVPN源码编译](/linux/nat/softethermake)
 6. [SoftEtherVPN隧道拆分](/linux/nat/softetherroute)
 7. [Tailscale](/linux/nat/tailscale)
+8. [Headscale](/linux/nat/headscale)
 
 ### NAT穿透
 
