@@ -8,7 +8,7 @@ next: false
 
 ## 目录
 
-1. [基础概念](/dev/git/base)
+1. [基础概念](/dev/git/basic)
 2. [常用操作](/dev/git/opt)
 3. [操作文件](/dev/git/file)
 4. [操作分支](/dev/git/branch)

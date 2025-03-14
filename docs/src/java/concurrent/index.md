@@ -8,7 +8,7 @@ next: false
 
 ## 目录
 
-1. [基础概念](/java/concurrent/base)
+1. [基础概念](/java/concurrent/basic)
 2. [Java线程](/java/concurrent/thread)
 3. [线程安全](/java/concurrent/secure)
 4. [线程状态](/java/concurrent/status)

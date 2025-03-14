@@ -8,7 +8,7 @@ next: false
 
 ## 目录
 
-1. [基础语法](/linux/shell/base)
+1. [基础语法](/linux/shell/basic)
 2. [结构化语法(上)](/linux/shell/structure1)
 3. [结构化语法(下)](/linux/shell/structure2)
 4. [输入处理](/linux/shell/input)

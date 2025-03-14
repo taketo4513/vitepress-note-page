@@ -331,7 +331,7 @@ Report:
       - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
 ```
 
-2、Derper启动参数中 `DERP_VERIFY_CLIENTS` 改为` true`
+2、Derper启动参数中 `DERP_VERIFY_CLIENTS` 改为`true`
 
 ```yaml
       # verify clients to this DERP server through a local tailscaled instance

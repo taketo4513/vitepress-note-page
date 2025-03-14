@@ -187,6 +187,7 @@ export default defineConfig({
                         // 该部分的标题
                         text: '消息队列',
                         items: [
+                            { text: 'Kafka', link: '/dev/kafka/index' }
                         ]
                     }
                 ]
@@ -271,7 +272,7 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '基础概念', link: '/java/concurrent/base' },
+                        { text: '基础概念', link: '/java/concurrent/basic' },
                         { text: 'Java线程', link: '/java/concurrent/thread' },
                         { text: '线程安全', link: '/java/concurrent/secure' },
                         { text: '线程状态', link: '/java/concurrent/status' },
@@ -636,7 +637,7 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '基础命令', link: '/linux/bash/base' },
+                        { text: '基础命令', link: '/linux/bash/basic' },
                         { text: '常用命令', link: '/linux/bash/advanced' },
                         { text: '环境变量', link: '/linux/bash/env' },
                         { text: '文件权限', link: '/linux/bash/permissions' },
@@ -649,7 +650,7 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '基础语法', link: '/linux/shell/base' },
+                        { text: '基础语法', link: '/linux/shell/basic' },
                         { text: '结构化语法(上)', link: '/linux/shell/structure1' },
                         { text: '结构化语法(下)', link: '/linux/shell/structure2' },
                         { text: '输入处理', link: '/linux/shell/input' },
@@ -1005,7 +1006,7 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '基础概念', link: '/dev/git/base' },
+                        { text: '基础概念', link: '/dev/git/basic' },
                         { text: '常用操作', link: '/dev/git/opt' },
                         { text: '操作文件', link: '/dev/git/file' },
                         { text: '操作分支', link: '/dev/git/branch' },
@@ -1032,7 +1033,7 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '基础概述', link: '/dev/mysql/base' },
+                        { text: '基础概述', link: '/dev/mysql/basic' },
                         { text: '数据定义语言', link: '/dev/mysql/ddl' },
                         { text: '数据操作语言', link: '/dev/mysql/dml' },
                         { text: '数据查询语言', link: '/dev/mysql/dql' },
@@ -1058,6 +1059,15 @@ export default defineConfig({
                         { text: '全局锁', link: '/dev/mysql/globallock' },
                         { text: '表级锁', link: '/dev/mysql/tablelock' },
                         { text: '行级锁', link: '/dev/mysql/linelock' }
+                    ]
+                },
+                {
+                    text: 'Kafka',
+                    collapsed: true,
+
+                    items: [
+                        { text: '简介概览', link: '/dev/kafka/basic' },
+                        { text: '环境搭建', link: '/dev/kafka/operate' }
                     ]
                 }
             ]

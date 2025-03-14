@@ -8,7 +8,7 @@ next: false
 
 ## 目录
 
-1. [基础命令](/linux/bash/base)
+1. [基础命令](/linux/bash/basic)
 2. [常用命令](/linux/bash/advanced)
 3. [环境变量](/linux/bash/env)
 4. [文件权限](/linux/bash/permissions)

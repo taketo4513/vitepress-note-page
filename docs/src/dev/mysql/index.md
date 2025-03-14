@@ -8,7 +8,7 @@ next: false
 
 ## 目录
 
-1. [基础概述](/dev/mysql/base)
+1. [基础概述](/dev/mysql/basic)
 2. [数据定义语言](/dev/mysql/ddl)
 3. [数据操作语言](/dev/mysql/dml)
 4. [数据查询语言](/dev/mysql/dql)
