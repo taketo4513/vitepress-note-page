@@ -1,6 +1,6 @@
 # 非IO的异步API
 
-## 概览
+## 介绍
 
 尽管我们在介绍Node的时候，多数情况下都会提到异步I/O，但是Node中其实还存在一些与I/O无关的异步API，这一部分也值得略微关注一下，它们分别是`setTimeout()`、`setInterval()`、`setImmediate()`和`process.nextTick()`。
 
