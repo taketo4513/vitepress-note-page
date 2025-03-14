@@ -324,3 +324,43 @@ autoApprovers:
 ```
 
 这里表示允许 `default` namespace 中的设备（以及打上标签 `tag:bar` 的设备）将自己宣告为 Exit Node；允许 Group `group:engineering` 中的设备（以及 dev1 namespace 中的设备和打上标签 `tag:foo` 的设备）宣告子网 `10.0.0.0/24` 的路由。
+
+## 反向代理
+
+### Nginx
+
+```json
+map $http_upgrade $connection_upgrade {
+    default      keep-alive;
+    'websocket'  upgrade;
+    ''           close;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+
+    listen 443      ssl;
+    listen [::]:443 ssl;
+
+    server_name xxx.xxx.xxx;
+
+    ssl_certificate /usr/local/nginx/cert/xxx.xxx.xxx.crt;
+    ssl_certificate_key /usr/local/nginx/cert/xxx.xxx.xxx.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $server_name;
+        proxy_redirect http:// https://;
+        proxy_buffering off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+        add_header Strict-Transport-Security "max-age=15552000; includeSubDomains" always;
+    }
+}
+```
