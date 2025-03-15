@@ -1067,7 +1067,10 @@ export default defineConfig({
 
                     items: [
                         { text: '简介概览', link: '/dev/kafka/basic' },
-                        { text: '环境搭建', link: '/dev/kafka/operate' }
+                        { text: '环境搭建', link: '/dev/kafka/operate' },
+                        { text: '生产消息', link: '/dev/kafka/producer' },
+                        { text: '消息存储', link: '/dev/kafka/storage' },
+                        { text: '消息同步', link: '/dev/kafka/sync' }
                     ]
                 }
             ]

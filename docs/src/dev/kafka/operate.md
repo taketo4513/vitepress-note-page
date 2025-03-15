@@ -231,6 +231,32 @@ services:
       - ./kafka_data:/bitnami/kafka
 ```
 
+#### env
+
+```tex
+BROKER_IP=
+CONTROLLER1_IP=
+CONTROLLER2_IP=
+SERVER_IP=
+```
+
+### kafka-ui
+
+```yaml
+version: "3.8"
+
+services:
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 9090:8080
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=kafkaCluster
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=ip:9092,ip:9092,ip:9092
+      - DYNAMIC_CONFIG_ENABLED=true
+```
+
 ### 关于LISTENERS和ADVERTISED_LISTENERS配置项
 
 #### 概念理解
