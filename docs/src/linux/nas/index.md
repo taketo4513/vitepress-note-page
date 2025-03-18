@@ -10,10 +10,13 @@ next: false
 
 ### 家庭自动化
 
+1. [HomeAssistant](/linux/nas/ha/ha)
+2. [HACS](/linux/nas/ha/hacs)
+
 ### 密码管理
 
 1. [Vaultwarden](/linux/nas/pwd/vaultwarden)
-2. [Vaultwarden-backup](/linux/nas/pwd/vaultwarden-backup)
+2. [VaultwardenBackup](/linux/nas/pwd/vaultwarden-backup)
 
 ### 文件共享
 

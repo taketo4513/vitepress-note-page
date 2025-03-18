@@ -812,6 +812,8 @@ export default defineConfig({
                             collapsed: true,
 
                             items: [
+                                { text: 'HomeAssistant', link: '/linux/nas/ha/ha' },
+                                { text: 'HACS', link: '/linux/nas/ha/hacs' }
                             ]
                         },
                         {
@@ -820,7 +822,7 @@ export default defineConfig({
 
                             items: [
                                 { text: 'Vaultwarden', link: '/linux/nas/pwd/vaultwarden' },
-                                { text: 'Vaultwarden-backup', link: '/linux/nas/pwd/vaultwarden-backup' }
+                                { text: 'VaultwardenBackup', link: '/linux/nas/pwd/vaultwarden-backup' }
                             ]
                         },
                         {
