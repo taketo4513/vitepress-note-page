@@ -1072,7 +1072,10 @@ export default defineConfig({
                         { text: '环境搭建', link: '/dev/kafka/operate' },
                         { text: '生产消息', link: '/dev/kafka/producer' },
                         { text: '消息存储', link: '/dev/kafka/storage' },
-                        { text: '消息同步', link: '/dev/kafka/sync' }
+                        { text: '消息同步', link: '/dev/kafka/sync' },
+                        { text: '消费消息', link: '/dev/kafka/consumer' },
+                        { text: '核心机制', link: '/dev/kafka/core' },
+                        { text: '性能优化', link: '/dev/kafka/optimize' }
                     ]
                 }
             ]

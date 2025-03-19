@@ -191,27 +191,27 @@ drwxr-xr-x 37 taketo taketo     4096 Mar 14 14:41 ..
 
 | 数据项               | 含义                                                         |
 | -------------------- | ------------------------------------------------------------ |
-| baseOffset           | 当前batch中第一条消息的位移                                  |
-| lastOffset           | 最新消息的位移相对于第一条消息的唯一增量                     |
-| count                | 当前batch有的数据数量，kafka在进行消息遍历的时候，可以通过该字段快速的跳跃到下一个batch进行数据读取 |
-| partitionLeaderEpoch | 记录了当前消息所在分区的 leader 的服务器版本（纪元），主要用于进行一些数据版本的校验和转换工作 |
-| crc                  | 当前整个batch的数据crc校验码，主要用于对数据进行差错校验的   |
-| compresscode         | 数据压缩格式，主要有GZIP、LZ4、Snappy、zstd四种              |
-| baseSequence         | 当前批次中的基础序列号                                       |
-| lastSequence         | 当前批次中的最后一个序列号                                   |
-| producerId           | 生产者ID                                                     |
-| producerEpoch        | 记录了当前消息所在分区的Producer的服务器版本（纪元）         |
-| isTransactional      | 是否开启事务                                                 |
-| magic                | 魔数（Kafka服务程序协议版本号）                              |
-| CreateTime（data）   | 数据创建的时间戳                                             |
-| isControl            | 控制类数据（produce的数据为false，事务Marker为true）         |
-| compresscodec        | 压缩格式，默认无                                             |
-| isvalid              | 数据是否有效                                                 |
-| offset               | 数据偏移量，从0开始                                          |
-| key                  | 数据key                                                      |
-| payload              | 数据value                                                    |
-| sequence             | 当前批次中数据的序列号                                       |
-| CreateTime（header） | 当前批次中最后一条数据的创建时间戳                           |
+| **baseOffset**           | 当前batch中第一条消息的位移                                  |
+| **lastOffset**           | 最新消息的位移相对于第一条消息的唯一增量                     |
+| **count**                | 当前batch有的数据数量，kafka在进行消息遍历的时候，可以通过该字段快速的跳跃到下一个batch进行数据读取 |
+| **partitionLeaderEpoch** | 记录了当前消息所在分区的 leader 的服务器版本（纪元），主要用于进行一些数据版本的校验和转换工作 |
+| **crc**                  | 当前整个batch的数据crc校验码，主要用于对数据进行差错校验的   |
+| **compresscode**         | 数据压缩格式，主要有GZIP、LZ4、Snappy、zstd四种              |
+| **baseSequence**         | 当前批次中的基础序列号                                       |
+| **lastSequence**         | 当前批次中的最后一个序列号                                   |
+| **producerId**           | 生产者ID                                                     |
+| **producerEpoch**        | 记录了当前消息所在分区的Producer的服务器版本（纪元）         |
+| **isTransactional**      | 是否开启事务                                                 |
+| **magic**                | 魔数（Kafka服务程序协议版本号）                              |
+| **CreateTime（data）**   | 数据创建的时间戳                                             |
+| **isControl**            | 控制类数据（produce的数据为false，事务Marker为true）         |
+| **compresscodec**        | 压缩格式，默认无                                             |
+| **isvalid**              | 数据是否有效                                                 |
+| **offset**               | 数据偏移量，从0开始                                          |
+| **key**                  | 数据key                                                      |
+| **payload**              | 数据value                                                    |
+| **sequence**             | 当前批次中数据的序列号                                       |
+| **CreateTime（header）** | 当前批次中最后一条数据的创建时间戳                           |
 
 ### 数据索引文件
 
