@@ -71,25 +71,24 @@ export default defineConfig({
                         // 该部分的标题
                         text: 'HTML/CSS',
                         items: [
-                            { text: 'HTML', link: '/htmlcss/html/index' },
-                            { text: 'CSS', link: '/htmlcss/css/index' }
+                            { text: 'HTML/CSS', link: '/page/htmlcss/index' }
                         ]
                     },
                     {
                         // 该部分的标题
                         text: 'Javascript',
                         items: [
-                            { text: '基础语法', link: '/javascript/basic/index' },
-                            { text: '深入理解', link: '/javascript/advance/index' },
-                            { text: '异步编程', link: '/javascript/async/index' },
-                            { text: '性能调优', link: '/javascript/perf/index' }
+                            { text: '基础语法', link: '/page/basic/index' },
+                            { text: '深入理解', link: '/page/advance/index' },
+                            { text: '异步编程', link: '/page/async/index' },
+                            { text: '性能调优', link: '/page/perf/index' }
                         ]
                     },
                     {
                         // 该部分的标题
                         text: 'Vue',
                         items: [
-                            { text: 'Vue2', link: '/javascript/vue2/index' }
+                            { text: 'Vue2', link: '/page/vue2/index' }
                         ]
                     },
                     {
@@ -480,24 +479,35 @@ export default defineConfig({
                     ]
                 }
             ],
-            '/javascript/': [
+            '/page/': [
+                {
+                    text: 'HTML/CSS',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'HTML4', link: '/page/htmlcss/html4' },
+                        { text: 'HTML5', link: '/page/htmlcss/html5' },
+                        { text: 'CSS2', link: '/page/htmlcss/css2' },
+                        { text: 'CSS3', link: '/page/htmlcss/css3' }
+                    ]
+                },
                 {
                     text: '基础语法',
                     collapsed: true,
 
                     items: [
-                        { text: '简介概览', link: '/javascript/basic/introduce' },
-                        { text: '作用域', link: '/javascript/basic/scpoe' },
-                        { text: '闭包', link: '/javascript/basic/closure' },
-                        { text: '函数上下文', link: '/javascript/basic/context' },
-                        { text: '数组', link: '/javascript/basic/array' },
-                        { text: '对象', link: '/javascript/basic/object' },
-                        { text: '数据类型', link: '/javascript/basic/type' },
-                        { text: '原型', link: '/javascript/basic/prototype' },
-                        { text: 'DOM', link: '/javascript/basic/dom' },
-                        { text: 'BOM', link: '/javascript/basic/bom' },
-                        { text: '事件模型', link: '/javascript/basic/eventmoudle' },
-                        { text: '事件循环', link: '/javascript/basic/eventloop' }
+                        { text: '简介概览', link: '/page/basic/introduce' },
+                        { text: '作用域', link: '/page/basic/scpoe' },
+                        { text: '闭包', link: '/page/basic/closure' },
+                        { text: '函数上下文', link: '/page/basic/context' },
+                        { text: '数组', link: '/page/basic/array' },
+                        { text: '对象', link: '/page/basic/object' },
+                        { text: '数据类型', link: '/page/basic/type' },
+                        { text: '原型', link: '/page/basic/prototype' },
+                        { text: 'DOM', link: '/page/basic/dom' },
+                        { text: 'BOM', link: '/page/basic/bom' },
+                        { text: '事件模型', link: '/page/basic/eventmoudle' },
+                        { text: '事件循环', link: '/page/basic/eventloop' }
                     ]
                 },
                 {
@@ -505,24 +515,24 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '模块化', link: '/javascript/advance/moudle' },
-                        { text: '代码解析与执行', link: '/javascript/advance/engine' },
-                        { text: '垃圾回收机制', link: '/javascript/advance/gc' },
-                        { text: 'WeakMap', link: '/javascript/advance/weakmap' },
-                        { text: 'WeakSet', link: '/javascript/advance/weakset' },
-                        { text: 'Class', link: '/javascript/advance/class' },
-                        { text: '函数式编程', link: '/javascript/advance/functioncode' },
-                        { text: '迭代器', link: '/javascript/advance/iterator' },
-                        { text: 'Proxy', link: '/javascript/advance/proxy' },
-                        { text: '深拷贝与浅拷贝', link: '/javascript/advance/copy' },
-                        { text: 'Stringify', link: '/javascript/advance/stringify' },
-                        { text: '网页存储', link: '/javascript/advance/webstorage' },
-                        { text: '装饰器', link: '/javascript/advance/decorator' },
-                        { text: '跨页面通信', link: '/javascript/advance/crosspage' },
-                        { text: 'ShadowDOM', link: '/javascript/advance/shadow' },
-                        { text: 'Date', link: '/javascript/advance/data' },
-                        { text: '正则表达式', link: '/javascript/advance/regexp' },
-                        { text: '异常处理', link: '/javascript/advance/error' }
+                        { text: '模块化', link: '/page/advance/moudle' },
+                        { text: '代码解析与执行', link: '/page/advance/engine' },
+                        { text: '垃圾回收机制', link: '/page/advance/gc' },
+                        { text: 'WeakMap', link: '/page/advance/weakmap' },
+                        { text: 'WeakSet', link: '/page/advance/weakset' },
+                        { text: 'Class', link: '/page/advance/class' },
+                        { text: '函数式编程', link: '/page/advance/functioncode' },
+                        { text: '迭代器', link: '/page/advance/iterator' },
+                        { text: 'Proxy', link: '/page/advance/proxy' },
+                        { text: '深拷贝与浅拷贝', link: '/page/advance/copy' },
+                        { text: 'Stringify', link: '/page/advance/stringify' },
+                        { text: '网页存储', link: '/page/advance/webstorage' },
+                        { text: '装饰器', link: '/page/advance/decorator' },
+                        { text: '跨页面通信', link: '/page/advance/crosspage' },
+                        { text: 'ShadowDOM', link: '/page/advance/shadow' },
+                        { text: 'Date', link: '/page/advance/data' },
+                        { text: '正则表达式', link: '/page/advance/regexp' },
+                        { text: '异常处理', link: '/page/advance/error' }
                     ]
                 },
                 {
@@ -530,12 +540,12 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: '异步编程', link: '/javascript/async/code' },
-                        { text: '异步与回调', link: '/javascript/async/async' },
-                        { text: 'Promise', link: '/javascript/async/promise' },
-                        { text: '实现PromiseA+规范', link: '/javascript/async/promisea' },
-                        { text: 'Generator', link: '/javascript/async/generator' },
-                        { text: 'async与await', link: '/javascript/async/asyncandawait' }
+                        { text: '异步编程', link: '/page/async/code' },
+                        { text: '异步与回调', link: '/page/async/async' },
+                        { text: 'Promise', link: '/page/async/promise' },
+                        { text: '实现PromiseA+规范', link: '/page/async/promisea' },
+                        { text: 'Generator', link: '/page/async/generator' },
+                        { text: 'async与await', link: '/page/async/asyncandawait' }
                     ]
                 },
                 {
@@ -543,10 +553,10 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: 'MutationObserver', link: '/javascript/perf/mutation' },
-                        { text: 'requestAnimationFrame', link: '/javascript/perf/request' },
-                        { text: 'Performance API', link: '/javascript/perf/performance' },
-                        { text: '页面生命周期', link: '/javascript/perf/load' }
+                        { text: 'MutationObserver', link: '/page/perf/mutation' },
+                        { text: 'requestAnimationFrame', link: '/page/perf/request' },
+                        { text: 'Performance API', link: '/page/perf/performance' },
+                        { text: '页面生命周期', link: '/page/perf/load' }
                     ]
                 },
                 {
@@ -554,7 +564,7 @@ export default defineConfig({
                     collapsed: true,
 
                     items: [
-                        { text: 'Vue2简介', link: '/javascript/vue2/introduce' }
+                        { text: 'Vue2简介', link: '/page/vue2/introduce' }
                     ]
                 }
             ],

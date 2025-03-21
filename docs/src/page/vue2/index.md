@@ -8,4 +8,4 @@ next: false
 
 ## 目录
 
-1. [Vue2简介](/javascript/vue2/introduce)
+1. [Vue2简介](/page/vue2/introduce)
