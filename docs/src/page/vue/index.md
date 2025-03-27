@@ -4,8 +4,8 @@ prev: false
 next: false
 ---  
 
-# Vue2
+# Vue
 
 ## 目录
 
-1. [Vue2简介](/page/vue2/introduce)
+1. [Vue2](/page/vue/vue2)

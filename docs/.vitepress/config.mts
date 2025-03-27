@@ -71,7 +71,8 @@ export default defineConfig({
                         // 该部分的标题
                         text: 'HTML/CSS',
                         items: [
-                            { text: 'HTML/CSS', link: '/page/htmlcss/index' }
+                            { text: 'HTML', link: '/page/html/index' },
+                            { text: 'CSS', link: '/page/css/index' }
                         ]
                     },
                     {
@@ -88,7 +89,7 @@ export default defineConfig({
                         // 该部分的标题
                         text: 'Vue',
                         items: [
-                            { text: 'Vue2', link: '/page/vue2/index' }
+                            { text: 'Vue', link: '/page/vue/index' }
                         ]
                     },
                     {
@@ -481,14 +482,21 @@ export default defineConfig({
             ],
             '/page/': [
                 {
-                    text: 'HTML/CSS',
+                    text: 'HTML',
                     collapsed: true,
 
                     items: [
-                        { text: 'HTML4', link: '/page/htmlcss/html4' },
-                        { text: 'HTML5', link: '/page/htmlcss/html5' },
-                        { text: 'CSS2', link: '/page/htmlcss/css2' },
-                        { text: 'CSS3', link: '/page/htmlcss/css3' }
+                        { text: 'HTML4', link: '/page/html/html4' },
+                        { text: 'HTML5', link: '/page/html/html5' },
+                    ]
+                },
+                {
+                    text: 'CSS',
+                    collapsed: true,
+
+                    items: [
+                        { text: 'CSS2', link: '/page/css/css2' },
+                        { text: 'CSS3', link: '/page/css/css3' }
                     ]
                 },
                 {
@@ -560,11 +568,11 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: 'Vue2',
+                    text: 'Vue',
                     collapsed: true,
 
                     items: [
-                        { text: 'Vue2简介', link: '/page/vue2/introduce' }
+                        { text: 'Vue2', link: '/page/vue/introduce' }
                     ]
                 }
             ],
