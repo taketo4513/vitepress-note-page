@@ -89,7 +89,7 @@ export default defineConfig({
                         // 该部分的标题
                         text: 'Vue',
                         items: [
-                            { text: 'Vue', link: '/page/vue/index' }
+                            { text: 'Vue2', link: '/page/vue2/index' }
                         ]
                     },
                     {
@@ -568,11 +568,12 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: 'Vue',
+                    text: 'Vue2',
                     collapsed: true,
 
                     items: [
-                        { text: 'Vue2', link: '/page/vue/introduce' }
+                        { text: 'Vue核心', link: '/page/vue2/vue2' },
+                        { text: '组件化编程', link: '/page/vue2/component' }
                     ]
                 }
             ],
