@@ -446,6 +446,8 @@ const MyComponent = Vue.extend({
 - 只要是对象，身上就有`__proto__`属性
 - 实例的隐式原型属性永远指向自己缔造者【实例的构造函数】的原型对象
 
+![An image](/img/javascript/vue/002.png)
+
 - 一个重要的内置关系：`VueComponent.prototype.__ proto__ === Vue.prototype`
   Vue让VueComponent原型对象的隐式原型属性指向了Vue的原型对象，也就是说，VueComponent原型对象的原型对象就是Vue的原型对象
 - 为什么要有这个关系：让组件实例对象（vc）可以访问到 Vue原型上的属性、方法。
