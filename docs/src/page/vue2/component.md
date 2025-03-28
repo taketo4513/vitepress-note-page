@@ -583,9 +583,9 @@ import { ComponentA, ComponentB } from './components/main';
 
 ### 完整示例
 
-`School.vue`
+::: code-group
 
-```vue
+```vue [School.vue]
 <template>
     <!-- 组件的结构 -->
     <div class="demo">
@@ -644,9 +644,7 @@ import { ComponentA, ComponentB } from './components/main';
 </style>
 ```
 
-`Student.vue`
-
-```vue
+```vue [Student.vue]
 <template>
     <!-- 组件的结构 -->
     <div class="student">
@@ -679,9 +677,7 @@ import { ComponentA, ComponentB } from './components/main';
 </style> -->
 ```
 
-`App.vue`
-
-```vue
+```vue [App.vue]
 <template>
   <div>
     <School></School>
@@ -702,9 +698,7 @@ import Student from './Student.vue';
 </script>
 ```
 
-`main.js`
-
-```javascript
+```javascript [main.js]
 import App from "./App.vue"
 
 new Vue({
@@ -716,9 +710,7 @@ new Vue({
 })
 ```
 
-`index.html`
-
-```html
+```html [index.html]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -735,6 +727,8 @@ new Vue({
 </body>
 </html>
 ```
+
+:::
 
 >直接运行是会报错，浏览器不能直接支持ES6的模块化语法
 
@@ -979,9 +973,9 @@ module.exports = {
 
 示例：
 
-`Student.vue`
+::: code-group
 
-```vue
+```vue [Student.vue]
 <template>
 <!-- 组件的结构 -->
 <div class="student">
@@ -1043,9 +1037,7 @@ module.exports = {
 </script>
 ```
 
-`App.vue`
-
-```vue
+```vue [App.vue]
 <template>
 <div id="app">
     <!-- <Student studentName="废废" studentAge="20"/> -->
@@ -1074,6 +1066,8 @@ module.exports = {
     }
 </script>
 ```
+
+:::
 
 ### mixin
 
@@ -1203,9 +1197,9 @@ Vue.use()
 
 示例
 
-`plugin.js`
+::: code-group
 
-```javascript
+```javascript [plugin.js]
 // 插件是个对象，但要包括install函数
 export default {
     install(Vue,x,y,z){
@@ -1249,13 +1243,13 @@ export default {
 }
 ```
 
-`mian.js`
-
-```javascript
+```javascript [mian.js]
 // 引入并应用插件
 import plugin from './plugin'
 Vue.use(plugin,1,2,3)//允许传参
 ```
+
+:::
 
 ### scoped 样式
 

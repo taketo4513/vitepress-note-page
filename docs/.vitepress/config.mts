@@ -960,7 +960,7 @@ export default defineConfig({
                                 { text: '多节点环境部署', link: '/chain/eosio/operate/multi' },
                                 { text: 'RPC接口上链', link: '/chain/eosio/operate/rpc' },
                                 { text: '账户体系', link: '/chain/eosio/operate/access' },
-                                { text: 'History-Tools', link: '/chain/eosio/operate/history-tools' }
+                                { text: 'History-Tools', link: '/chain/eosio/operate/history' }
                             ]
                         }
                     ]

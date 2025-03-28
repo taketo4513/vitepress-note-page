@@ -24,4 +24,4 @@ next: false
 3. [多节点环境部署](/chain/eosio/operate/multi)
 4. [RPC接口上链](/chain/eosio/operate/rpc)
 5. [账户体系](/chain/eosio/operate/access)
-6. [History-Tools](/chain/eosio/operate/history-tools)
+6. [History-Tools](/chain/eosio/operate/history)
