@@ -573,7 +573,10 @@ export default defineConfig({
 
                     items: [
                         { text: 'Vue核心', link: '/page/vue2/vue2' },
-                        { text: '组件化编程', link: '/page/vue2/component' }
+                        { text: '组件化编程', link: '/page/vue2/component' },
+                        { text: 'Ajax', link: '/page/vue2/ajax' },
+                        { text: 'Vuex', link: '/page/vue2/vuex' },
+                        { text: 'Vue-Router', link: '/page/vue2/route' }
                     ]
                 }
             ],
