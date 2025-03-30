@@ -41,6 +41,7 @@ export default defineConfig({
                             { text: 'Cloud', link: '/java/cloud/index' },
                             { text: '日志框架', link: '/java/log/index' },
                             { text: '认证授权', link: '/java/permission/index' },
+                            { text: '分库分表', link: '/java/sharding/index' },
                             { text: '程序构建', link: '/java/build/index' }
                         ]
                     }
@@ -576,7 +577,7 @@ export default defineConfig({
                         { text: '组件化编程', link: '/page/vue2/component' },
                         { text: 'Ajax', link: '/page/vue2/ajax' },
                         { text: 'Vuex', link: '/page/vue2/vuex' },
-                        { text: 'Vue-Router', link: '/page/vue2/route' }
+                        { text: 'Vue-Router', link: '/page/vue2/router' }
                     ]
                 }
             ],
