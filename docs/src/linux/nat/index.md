@@ -14,11 +14,9 @@ next: false
 2. [Shadowsocks](/linux/nat/ss)
 3. [Frp](/linux/nat/frp)
 4. [SoftEtherVPN](/linux/nat/softether)
-5. [SoftEtherVPN源码编译](/linux/nat/softethermake)
-6. [SoftEtherVPN隧道拆分](/linux/nat/softetherroute)
-7. [Tailscale](/linux/nat/tailscale)
-8. [Headscale](/linux/nat/headscale)
-9. [Derper](/linux/nat/derper)
+5. [Tailscale](/linux/nat/tailscale)
+6. [Headscale](/linux/nat/headscale)
+7. [Derper](/linux/nat/derper)
 
 ### NAT穿透
 

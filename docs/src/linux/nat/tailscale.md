@@ -168,63 +168,63 @@ Tailscale/Headscale 的默认访问规则是 default deny，也就是黑名单�
 
 `src` 字段表示访问来源列表，该字段可以填的值都在这个表格里：
 
-| 类型                                                                                                               | 示例                | 含义                         |
-| ---------------------------------------------------------------------------------------------------------------- | ----------------- | -------------------------- |
-| Any                                                                                                              | *                 | 无限制（即所有来源）                 |
-| 用户(Namespace)                                                                                                    | dev1              | Headscale namespace 中的所有设备 |
-| Group [(ref)](https://tailscale.com/kb/1018/acls#groups)       | group:example     | Group 中的所有用户               |
-| Tailscale IP                                                                                                     | 100.101.102.103   | 拥有给定 Tailscale IP 的设备      |
-| Subnet CIDR [(ref)](https://tailscale.com/kb/1019/subnets) | 192.168.1.0/24    | CIDR 中的任意 IP               |
-| Hosts [(ref)](https://tailscale.com/kb/1018/acls#hosts)     | my-host           | `hosts` 字段中定义的任意 IP        |
-| Tags [(ref)](https://tailscale.com/kb/1068/tags)          | tag:production    | 分配指定 tag 的所有设备             |
-| Tailnet members                                                                                                  | autogroup:members | Tailscale 网络中的任意成员（设备）     |
+| 类型                                                       | 示例              | 含义                               |
+| ---------------------------------------------------------- | ----------------- | ---------------------------------- |
+| Any                                                        | *                 | 无限制（即所有来源）               |
+| 用户(Namespace)                                            | dev1              | Headscale namespace 中的所有设备   |
+| Group [(ref)](https://tailscale.com/kb/1018/acls#groups)   | group:example     | Group 中的所有用户                 |
+| Tailscale IP                                               | 100.101.102.103   | 拥有给定 Tailscale IP 的设备       |
+| Subnet CIDR [(ref)](https://tailscale.com/kb/1019/subnets) | 192.168.1.0/24    | CIDR 中的任意 IP                   |
+| Hosts [(ref)](https://tailscale.com/kb/1018/acls#hosts)    | my-host           | `hosts` 字段中定义的任意 IP        |
+| Tags [(ref)](https://tailscale.com/kb/1068/tags)           | tag:production    | 分配指定 tag 的所有设备            |
+| Tailnet members                                            | autogroup:members | Tailscale 网络中的任意成员（设备） |
 
 proto 字段是可选的，指定允许访问的协议。如歌不指定，默认可以访问所有 TCP 和 UDP 流量。
 
 proto 可以指定为 IANA IP 协议编号 1-255（例如 16）或以下命名别名之一（例如 sctp）：
 
-| 协议  | proto | IANA 协议编号 |
-| --- | --- | --- |
-| Internet Group Management (IGMP) | igmp | 2   |
-| IPv4 encapsulation | ipv4, ip-in-ip | 4   |
-| Transmission Control (TCP) | tcp | 6   |
-| Exterior Gateway Protocol (EGP) | egp | 8   |
-| Any private interior gateway | igp | 9   |
-| User Datagram (UDP) | udp | 17  |
-| Generic Routing Encapsulation (GRE) | gre | 47  |
-| Encap Security Payload (ESP) | esp | 50  |
-| Authentication Header (AH) | ah  | 51  |
-| Stream Control Transmission Protocol (SCTP) | sctp | 132 |
+| 协议                                        | proto          | IANA 协议编号 |
+| ------------------------------------------- | -------------- | ------------- |
+| Internet Group Management (IGMP)            | igmp           | 2             |
+| IPv4 encapsulation                          | ipv4, ip-in-ip | 4             |
+| Transmission Control (TCP)                  | tcp            | 6             |
+| Exterior Gateway Protocol (EGP)             | egp            | 8             |
+| Any private interior gateway                | igp            | 9             |
+| User Datagram (UDP)                         | udp            | 17            |
+| Generic Routing Encapsulation (GRE)         | gre            | 47            |
+| Encap Security Payload (ESP)                | esp            | 50            |
+| Authentication Header (AH)                  | ah             | 51            |
+| Stream Control Transmission Protocol (SCTP) | sctp           | 132           |
 
-只有 TCP、UDP 和 SCTP 流量支持指定端口，其他协议的端口必须指定为 `*`。
+只有 TCP、UDP 和 SCTP 流量支持指定端口，其他协议的端口必须指定为 `*`。
 
-dst 字段表示访问目标列表，列表中的每个元素都用 `hosts:ports` 来表示。hosts 的取值范围如下：
+dst 字段表示访问目标列表，列表中的每个元素都用 `hosts:ports` 来表示。hosts 的取值范围如下：
 
-| 类型  | 示例  | 含义  |
-| --- | --- | --- |
-| Any | *   | 无限制（即所有访问目标） |
-| 用户（Namespace） | dev1 | Headscale namespace 中的所有设备 |
-| Group [(ref)](https://tailscale.com/kb/1018/acls#groups) | group:example | Group 中的所有用户 |
-| Tailscale IP | 100.101.102.103 | 拥有给定 Tailscale IP 的设备 |
-| Hosts [(ref)](https://tailscale.com/kb/1018/acls/#hosts) | my-host | `hosts` 字段中定义的任意 IP |
-| Subnet CIDR [(ref)](https://tailscale.com/kb/1019/subnets) | 192.168.1.0/24 | CIDR 中的任意 IP |
-| Tags [(ref)](https://tailscale.com/kb/1068/acl-tags) | tag:production | 分配指定 tag 的所有设备 |
-| Internet access [(ref)](https://tailscale.com/kb/1103/exit-nodes) | autogroup:internet | 通过 Exit Node 访问互联网 |
-| Own devices | autogroup:self | 允许 src 中定义的来源访问自己（不包含分配了 tag 的设备） |
-| Tailnet devices | autogroup:members | Tailscale 网络中的任意成员（设备） |
+| 类型                                                         | 示例               | 含义                                                     |
+| ------------------------------------------------------------ | ------------------ | -------------------------------------------------------- |
+| Any                                                          | *                  | 无限制（即所有访问目标）                                 |
+| 用户（Namespace）                                            | dev1               | Headscale namespace 中的所有设备                         |
+| Group [(ref)](https://tailscale.com/kb/1018/acls#groups)     | group:example      | Group 中的所有用户                                       |
+| Tailscale IP                                                 | 100.101.102.103    | 拥有给定 Tailscale IP 的设备                             |
+| Hosts [(ref)](https://tailscale.com/kb/1018/acls/#hosts)     | my-host            | `hosts` 字段中定义的任意 IP                              |
+| Subnet CIDR [(ref)](https://tailscale.com/kb/1019/subnets)   | 192.168.1.0/24     | CIDR 中的任意 IP                                         |
+| Tags [(ref)](https://tailscale.com/kb/1068/acl-tags)         | tag:production     | 分配指定 tag 的所有设备                                  |
+| Internet access [(ref)](https://tailscale.com/kb/1103/exit-nodes) | autogroup:internet | 通过 Exit Node 访问互联网                                |
+| Own devices                                                  | autogroup:self     | 允许 src 中定义的来源访问自己（不包含分配了 tag 的设备） |
+| Tailnet devices                                              | autogroup:members  | Tailscale 网络中的任意成员（设备）                       |
 
-`ports` 的取值范围：
+`ports` 的取值范围：
 
-| 类型  | 示例  |
-| --- | --- |
-| Any | *   |
-| Single | 22  |
-| Multiple | 80,443 |
-| Range | 1000-2000 |
+| 类型     | 示例      |
+| -------- | --------- |
+| Any      | *         |
+| Single   | 22        |
+| Multiple | 80,443    |
+| Range    | 1000-2000 |
 
 ### Groups
 
-### groups 定义了一组用户的集合，YAML 格式示例配置如下
+groups 定义了一组用户的集合，YAML 格式示例配置如下
 
 ```yaml
 groups:
@@ -244,17 +244,17 @@ huJSON 格式：
 },
 ```
 
-每个 Group 必须以 `group:` 开头，Group 之间也不能相互嵌套。
+每个 Group 必须以 `group:` 开头，Group 之间也不能相互嵌套。
 
 ### Autogroups
 
 autogroup 是一个特殊的 group，它自动包含具有相同属性的用户或者访问目标，可以在 ACL 规则中调用 autogroup。
 
-| Autogroup | 允许在 ACL 的哪个字段调用 | 含义  |
-| --- | --- | --- |
-| autogroup:internet | dst | 用来允许任何用户通过任意 Exit Node 访问你的 Tailscale 网络 |
-| autogroup:members | src 或者 dst | 用来允许 Tailscale 网络中的任意成员（设备）访问别人或者被访问 |
-| autogroup:self | dst | 用来允许 src 中定义的来源访问自己 |
+| Autogroup          | 允许在 ACL 的哪个字段调用 | 含义                                                         |
+| ------------------ | ------------------------- | ------------------------------------------------------------ |
+| autogroup:internet | dst                       | 用来允许任何用户通过任意 Exit Node 访问你的 Tailscale 网络   |
+| autogroup:members  | src 或者 dst              | 用来允许 Tailscale 网络中的任意成员（设备）访问别人或者被访问 |
+| autogroup:self     | dst                       | 用来允许 src 中定义的来源访问自己                            |
 
 示例配置：
 
@@ -286,7 +286,7 @@ hosts:
 
 ### Tag Owners
 
-`tagOwners` 定义了哪些用户有权限给设备分配指定的 tag。示例配置：
+`tagOwners` 定义了哪些用户有权限给设备分配指定的 tag。示例配置：
 
 ```yaml
 tagOwners:
@@ -299,15 +299,15 @@ tagOwners:
     - autogroup:members
 ```
 
-这里表示的是允许 Group `group:engineering` 给设备添加 tag `tag:webserver`；允许 Group `group:security-admins` 和用户（也就是 namespace）dev1 给设备添加 tag `tag:secure-server`；允许 Tailscale 网络中的任意成员（设备）给设备添加 tag `tag:corp`。
+这里表示的是允许 Group `group:engineering` 给设备添加 tag `tag:webserver`；允许 Group `group:security-admins` 和用户（也就是 namespace）dev1 给设备添加 tag `tag:secure-server`；允许 Tailscale 网络中的任意成员（设备）给设备添加 tag `tag:corp`。
 
-每个 tag 名称必须以 `tag:` 开头，每个 tag 的所有者可以是用户、Group 或者 `autogroup:members`。
+每个 tag 名称必须以 `tag:` 开头，每个 tag 的所有者可以是用户、Group 或者 `autogroup:members`。
 
 ### Auto Approvers
 
-`autoApprovers` 定义了**无需 Headscale 控制端批准即可执行某些操作**的用户列表，包括宣告特定的子网路由或者 Exit Node。
+`autoApprovers` 定义了**无需 Headscale 控制端批准即可执行某些操作**的用户列表，包括宣告特定的子网路由或者 Exit Node。
 
-当然了，即使可以通过 `autoApprovers` 自动批准，Headscale 控制端仍然可以禁用路由或者 Exit Node，但不推荐这种做法，因为控制端只能临时修改，`autoApprovers` 中定义的用户列表仍然可以继续宣告路由或 Exit Node，所以正确的做法应该是修改 `autoApprovers` 中的用户列表来控制宣告的路由或者 Exit Node。
+当然了，即使可以通过 `autoApprovers` 自动批准，Headscale 控制端仍然可以禁用路由或者 Exit Node，但不推荐这种做法，因为控制端只能临时修改，`autoApprovers` 中定义的用户列表仍然可以继续宣告路由或 Exit Node，所以正确的做法应该是修改 `autoApprovers` 中的用户列表来控制宣告的路由或者 Exit Node。
 
 autoApprovers 示例配置：
 
@@ -323,13 +323,13 @@ autoApprovers:
       - "tag:foo"
 ```
 
-这里表示允许 `default` namespace 中的设备（以及打上标签 `tag:bar` 的设备）将自己宣告为 Exit Node；允许 Group `group:engineering` 中的设备（以及 dev1 namespace 中的设备和打上标签 `tag:foo` 的设备）宣告子网 `10.0.0.0/24` 的路由。
+这里表示允许 `default` namespace 中的设备（以及打上标签 `tag:bar` 的设备）将自己宣告为 Exit Node；允许 Group `group:engineering` 中的设备（以及 dev1 namespace 中的设备和打上标签 `tag:foo` 的设备）宣告子网 `10.0.0.0/24` 的路由。
 
 ## 反向代理
 
 ### Nginx
 
-```json
+```nginx
 map $http_upgrade $connection_upgrade {
     default      keep-alive;
     'websocket'  upgrade;
@@ -363,4 +363,127 @@ server {
         add_header Strict-Transport-Security "max-age=15552000; includeSubDomains" always;
     }
 }
+```
+
+## 子网路由
+
+### 什么是子网路由？
+
+Tailscale 是一个基于 WireGuard 的零配置 VPN，通常我们希望在每个设备上都安装 Tailscale 客户端，这样可以确保端到端加密通信，无需额外配置。
+然而，在以下情况下，我们无法或不想在每个设备上安装客户端：
+
+1. **不支持安装的设备**：如打印机、老旧网络设备等。
+2. **大型网络集成**：如将整个 AWS VPC 加入 Tailscale 网络。
+3. **逐步迁移**：将传统网络逐步接入 Tailscale。
+
+在这些情况下，我们可以使用 **子网路由器（Subnet Router）**，它可以将物理子网接入到 Tailscale 网络中，使网络中的所有设备都可以通过子网路由器进行访问。
+
+### **工作原理**
+
+子网路由器作为网关，将 Tailnet（Tailscale 网络）和物理子网连接起来。
+ 默认情况下，子网路由器使用 **SNAT（源网络地址转换）**，这意味着子网设备通过路由器访问外部时，源地址会显示为路由器地址。
+ 如果禁用 SNAT，则可以保留设备的原始 IP 地址，但需要手动配置返回路由。
+
+### 配置子网路由
+
+**启用 IP 转发：**
+
+在 Linux 上启用 IP 转发
+
+```bash
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+
+# 或者
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p /etc/sysctl.conf
+```
+
+**广播子网路由：**
+
+使用 `tailscale up` 命令广播子网
+
+```bash
+sudo tailscale up --accept-routes --accept-dns=false --advertise-routes=192.168.1.0/24,10.0.0.0/24 --login-server=https://xxx.xxx.com
+```
+
+**启用路由：**
+
+这里使用 `headscale` 配置
+
+```bash
+headscale route enable -r ID
+```
+
+### 禁用 SNAT（可选）
+
+在默认情况下，Tailscale 子网路由器会启用 SNAT，这会导致：
+
+1. **来源 IP 变化**：从子网内设备发出的流量，源 IP 地址会被替换为子网路由器的 IP。
+2. **对流量来源的识别困难**：接收方无法知道真实的来源设备，只能看到子网路由器的 IP。
+
+禁用 SNAT 后，子网设备访问外部 Tailscale 设备时，**原始设备 IP 会被保留**，这在以下场景中尤为重要：
+
+1. **日志追踪和审计**：需要准确记录哪个设备发起了请求。
+2. **基于 IP 的访问控制**：外部系统可以根据设备的原始 IP 做访问限制或过滤。
+3. **网络故障排查**：可以直接看到具体设备的流量来源，定位问题更方便。
+
+**禁用 SNAT 的配置：**
+
+```bash
+sudo tailscale up --snat-subnet-routes=false
+```
+
+>禁用 SNAT 后，子网设备的流量会保留原始 IP，因此：
+>
+>1. 返回流量的路由配置：
+>   - 由于外部设备收到的来源 IP 是子网内设备的 IP，因此需要在子网内部配置返回路由，让回包通过子网路由器返回原始设备。
+>   - 可以通过在本地设备、VPC 设置或 DHCP 服务器上配置返回路由：
+>     - 网络：`100.64.0.0/10`（Tailscale IP 范围）
+>     - 下一跳（网关）：子网路由器的本地 IP
+>2. 复杂性增加：
+>   - 需要确保所有子网设备正确配置路由，避免因缺少返回路由导致无法通信。
+
+## 常见问题
+
+### UDP 吞吐量优化
+
+**提示信息：**
+
+```bash
+Warning: UDP GRO forwarding is suboptimally configured on enp1s0, UDP forwarding throughput capability will increase with a configuration change.
+See https://tailscale.com/s/ethtool-config-udp-gro
+```
+
+**原因：**
+
+Tailscale **1.54 或更高版本**，配合 **Linux 6.2 或更高版本内核**，支持使用**传输层卸载**（Transport Layer Offloads）来提升 UDP 吞吐量。
+ 如果你的 Linux 设备作为**出口节点**或**子网路由器**，请确保按照以下步骤配置网络设备，以获得最佳性能。
+
+```bash
+# 1. 启用 UDP 吞吐量优化
+NETDEV=$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")
+sudo ethtool -K $NETDEV rx-udp-gro-forwarding on rx-gro-list off
+
+# - `NETDEV=$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")`：自动检测到达 `8.8.8.8` 的网络接口名称。
+# - `ethtool -K`：配置指定网络接口的内核参数。
+#  - `rx-udp-gro-forwarding on`：开启 UDP 转发聚合，减少内核处理包的数量，提升性能。
+#  - `rx-gro-list off`：禁用通用接收聚合列表，避免某些驱动程序导致的吞吐量下降。
+
+# 2. 配置持久化（防止重启丢失）
+sudo mkdir -p /etc/networkd-dispatcher/routable.d/
+printf '#!/bin/sh\n\nethtool -K %s rx-udp-gro-forwarding on rx-gro-list off \n' "$(ip -o route get 8.8.8.8 | cut -f 5 -d " ")" | sudo tee /etc/networkd-dispatcher/routable.d/50-tailscale
+sudo chmod 755 /etc/networkd-dispatcher/routable.d/50-tailscale
+
+# 创建一个脚本文件 /etc/networkd-dispatcher/routable.d/50-tailscale。
+# 脚本内容是设置网络设备的优化参数。
+# 设置脚本权限为 755，即所有者可读写执行，其他用户可读执行。
+
+# 3. 测试脚本
+sudo /etc/networkd-dispatcher/routable.d/50-tailscale
+test $? -eq 0 || echo 'An error occurred.'
+
+# 验证脚本是否正确运行，如果出现错误则输出提示。
 ```

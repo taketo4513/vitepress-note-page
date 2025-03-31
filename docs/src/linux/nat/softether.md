@@ -279,3 +279,144 @@ eof
 # 启动服务
 docker compose up -d
 ```
+
+## 源码编译
+
+### 下载源码
+
+前往[SoftEther 下载中心 (opens new window)](http://softether.fishinfo.cn/)下载**源码**
+
+```sh
+wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.39-9772-beta/softether-src-v4.39-9772-beta.tar.gz
+```
+
+### 安装编译依赖
+
+#### Centos
+
+```sh
+# 安装依赖
+yum -y groupinstall "Development Tools"
+yum -y install readline-devel ncurses-devel openssl-devel
+
+# 解压
+tar -zxvf softether-src-v4.39-9772-beta.tar.gz
+cd v4.39-9772/
+./configure
+make
+```
+
+#### Debian
+
+```sh
+# 安装依赖
+sudo apt-get install gcc make libssl-dev libreadline-dev zlib1g-dev -y
+
+# 解压
+tar -zxvf softether-src-v4.39-9772-beta.tar.gz
+cd v4.39-9772/
+./configure
+make
+```
+
+编译成功
+
+```sh
+taketo@ubuntu:~/package/v4.39-9772$ ll bin/vpnserver/
+total 4436
+drwxrwxr-x 2 taketo taketo    4096 Oct  7 14:31 ./
+drwxrwxr-x 6 taketo taketo    4096 Oct  7 14:30 ../
+-rw------- 1 taketo taketo 2009296 Oct  7 14:31 hamcore.se2
+-rwxrwxr-x 1 taketo taketo 2519200 Oct  7 14:31 vpnserver*
+```
+
+### 破除拆分隧道限制
+
+Split Tunneling （拆分隧道），是 SoftEtherVPN 中比较强悍的一个功能。具体位置在SecureNAT配置界面就可以找到。
+
+![An image](/img/linux/nat/12.png)
+
+但是对于SoftetherVPN 来说，拆分隧道功能并不适合官方下载的版本，从网上查到的信息，某些地区不可以使用该功能在内的一部分功能(当然仅限于官方下载的编译好的版本，对于自己进行源码编译是不限制的)
+
+![An image](/img/linux/nat/13.png)
+
+下载源码后，解压后在`v4.39-9772/src/Cedar`路径下找到`Server.c`文件修改。
+
+```c
+bool SiIsEnterpriseFunctionsRestrictedOnOpenSource(CEDAR *c)
+{
+        char region[128];
+        bool ret = false;
+        // Validate arguments
+        if (c == NULL)
+        {
+                return false;
+        }
+
+
+        SiGetCurrentRegion(c, region, sizeof(region));
+
+        if (StrCmpi(region, "JP") == 0 || StrCmpi(region, "CN") == 0)
+        {
+                ret = true; //将true改为false即可。
+        }
+
+        return ret;
+}
+```
+
+重新编译后即可破除限制。
+
+## 拆分隧道
+
+### 远程网关与本地网关
+
+对于VPN来说，存在**远程网关与本地网关**的概念，以下图以SoftEther VPN 的 SecureNAT 配置为例，接入VPN后本地路由表的对比 。
+
+- 如果使用远程网关，默认路由均走**VPN隧道**，这样VPN服务器压力较大，而且日常的网络访问都需要从VPN服务器作为出口，很显然作为远程接入公司网络该场景使用不太合理
+- 如果使用本地网关，默认路由走的是本地的网络出口
+
+![An image](/img/linux/nat/14.png)
+
+### 本地网关配合静态路由
+
+如果单纯的使用本地网关，是无法直接访问到异地的内网地址的，缺少了一步静态路由。
+
+比如使用本地网关的情况下，公司内网存在一个地址为 192.168.7.5 , 连接VPN后，tracert一下，如图所示，经过几跳以后，在公网直接超时了。
+
+![An image](/img/linux/nat/15.png)
+
+此时我们只需要把VPN分配的虚拟网络的网关，（图中192.168.200.1 就是通过虚拟局域网前往异地内网的网关），作为本地的一条静态路由，指向如果走7网段直接通过网关192.168.200.1，添加后再次tracert 一下, 可以看到直接通过远程网关访问到了异地内网的机器
+
+![An image](/img/linux/nat/16.png)
+
+所以如果使用本地网关，我们需要进行一次静态路由的添加，这里存在的问题也显而易见
+
+- 不添加为本机永久路由，需要每次机器重启后手动添加路由
+- 添加为本机永久路由，可能会在某些网络环境下造成地址冲突等情况
+
+### Split Tunneling
+
+Split Tunneling （拆分隧道），是SoftEther-VPN中比较强悍的一个功能。具体位置在SecureNAT配置界面就可以找到。
+
+简单来讲 **拆分隧道可以理解为推送静态路由**，接入 VPN 以后，server端会推送设置的静态路由到client端，断开VPN后，推送的静态路由失效，完美的解决了上述问题带来的痛点。
+
+但是对于Softether VPN来说，拆分隧道功能并不适合官方下载的版本，从网上查到的信息，某些地区不可以使用该功能在内的一部分功能(当然仅限于官方下载的编译好的版本，对于自己进行源码编译是不限制的)
+
+[Softether VPN破除限制参考](/linux/nat/softethermake/)
+
+#### 配置SecureNAT
+
+清除默认网关地址
+
+![An image](/img/linux/nat/17.png)
+
+#### 配置静态路由表
+
+假设内外 IP 为`192.168.31.0`网段，`255.255.255.0`为内网子网掩码，这里的`192.168.30.1`为虚拟主机网络接口。
+
+![An image](/img/linux/nat/18.png)
+
+#### 设置不使用远程默认网关
+
+![An image](/img/linux/nat/19.png)
