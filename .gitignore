@@ -2,7 +2,7 @@
 **.DS_Store
 
 # We prefer to not use lock files
-**/package-lock.json
+# **/package-lock.json
 
 # Npm
 **/node_modules/
