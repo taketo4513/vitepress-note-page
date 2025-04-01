@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    base: '/repo/',
+    base: '/vitepress-note-page/',
     title: "Take To",
     description: "Online knowledge base",
     head: [['link', { rel: 'icon', href: '/img/favicon.ico' }]],
