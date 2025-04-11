@@ -1,5 +1,21 @@
 # 应用示例
 
+## 保存凭证
+
+在 `Git` 中，默认情况下，每次推送代码时都需要输入用户名和密码。为了方便，可以保存凭证，避免每次都输入。
+
+```sh
+# 设置保存凭证
+git config --global credential.helper store
+
+# 输入用户名和密码
+Username for 'https://github.com': xxx
+Password for 'https://xxx@github.com': xxx
+
+# 清除凭证
+git config --system --unset credential.helper
+```
+
 ## 更换远程仓库
 
 更换`Git`远程仓库：比如，将`Github`的仓库迁移到`Gitee`上。
