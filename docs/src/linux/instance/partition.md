@@ -291,3 +291,10 @@ taketo@ubuntu:~$ sudo mount –a
 /dev/sdb1  		 /newdisk    ext4    defaults   0 	   0
 UUID=sdb1的UUID  /newdisk    ext4    defaults   0 	   0
 ```
+
+保存并退出。你可以测试是否能正常挂载：
+
+```bash
+umount /newdisk
+mount -a
+```
